@@ -4,9 +4,11 @@
 #include <math.h> //para pow, sqrt, sin!!!!!!
 
 int main(void){
+
     int op;
-    double ;
-    float ;
+    double a, b, soma,;
+
+
     setlocale(LC_CTYPE, "Portuguese");
     
     printf("Bem vindo à Calculadora V.2 \n");
@@ -36,12 +38,28 @@ int main(void){
     switch(op){
         case 1:
             while (i != 0){
+                
                 printf("Operação de Soma Selecionada! \n");
                 printf("Você escolheu a operação certa?");
                 printf("(1) Sim | (0) Não");
-                scanf("%d", i)
+                scanf("%d", k)
+                if (k != 0){
+                    
+                    printf("Me informa o primeiro valor por favor! \n");
+                    scanf("%f", a);
+                    printf("Agora me informa o segndo valor \n");
+                    scanf("%f", b);
 
-                printf("Me informa")
+                    soma = a + b
+
+                    printf("A soma desses valores foi: %f \n", soma);
+                
+                }else {
+                    printf("Ok recarregando...");
+                    i = 0
+                }
+                
+                
             }
 
             break;
