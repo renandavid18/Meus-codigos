@@ -121,10 +121,7 @@ int main(int argc, char *argv[]) {
                     fimpara
 
 
-
-
                     while (k != 1) { 
-
 
 
                 	     printf("Selecione a opção que corresponde ao valor de seu empréstimo: \n");
