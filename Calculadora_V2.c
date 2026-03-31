@@ -297,7 +297,13 @@ int main(void){
                                 printf("O seno de %.2f graus e: %.4f \n", graus, sen);
 
                                 }else {
-                                    
+                                    printf("Graus escolhido \n")
+                                    printf("Me informa o Grau por favor! \n");
+                                    scanf("%f", graus);
+
+                                    rad = graus * (M_PI / 180.0);
+
+                                    sen = sen(rad);
                                     printf("O seno desse valor é graus e: %.4f \n", graus, s);
                                     
 
@@ -307,7 +313,7 @@ int main(void){
 
                                 printf("Ok recarregando... \n");
                                 i = 0
-                                
+
                             }
                         }
                         
