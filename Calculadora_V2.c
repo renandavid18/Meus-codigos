@@ -5,7 +5,7 @@
 
 int main(void){
 
-    int op, i, k, j;
+    int op, i, k, j, e;
     double a, b, soma, rad, graus, sen, cos, tan, expo, mult, sub, div, mod, raiz, cpi, loga, loga10, ex, hip;
 
 
@@ -619,6 +619,7 @@ int main(void){
                 default:
                     
                     printf("Opção invalida tente novamente")
+                    e = 0
                 
             }
         }
