@@ -66,8 +66,6 @@ int main(void){
                             printf("Ok recarregando...");
                             i = 0
                         }
-                
-                
                     }
 
                     break;
@@ -97,9 +95,39 @@ int main(void){
                             printf("Ok recarregando...");
                             i = 0
 
-            }
-    
+                        }
+                    }
+                    break;
 
+                    case 3:
+                    
+                     while (i != 0){
+                
+                        printf("Operação de Subtração Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
+                        scanf("%d", k)
+                        
+                        if (k != 0){
+                    
+                            printf("Me informa o primeiro valor por favor! \n");
+                            scanf("%f", a);
+                            printf("Agora me informa o segndo valor \n");
+                            scanf("%f", b);
+
+                            soma = a - b
+
+                            printf("A subtração desses valores foi: %f \n", soma);
+                
+                        }else {
+                           
+                            printf("Ok recarregando...");
+                            i = 0
+
+                        }
+                    }
+                    break;
+            }
         }
     }
 }
