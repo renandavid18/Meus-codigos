@@ -17,7 +17,16 @@ int main(void){
     printf("(4) Divisão");
     printf("(5) Radiciação");
     printf("(6) Exponenciação");
-    printf("(7) S");
+    printf("(7) Módulo");
+    printf("(8) Raiz quadrada");
+    printf("(8) Constante de PI");
+    printf("(8) Seno");
+    printf("(8) Cosseno");
+    printf("(8) Soma");
+    printf("(8) Soma");
+    printf("(8) Soma");
+    printf("(8) Soma");
+    printf("(8) Soma");
     printf("(8) Soma");
 
 }
