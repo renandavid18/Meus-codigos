@@ -4,29 +4,36 @@
 #include <math.h> //para pow, sqrt, sin!!!!!!
 
 int main(void){
+    int op;
+    double ;
+    float ;
     setlocale(LC_CTYPE, "Portuguese");
     
     printf("Bem vindo à Calculadora V.2 \n");
     sytem(pause);
-    
+
     printf("=========================== MENU =========================== \n");
-    prinf("Qual cálculo Deseja ultilizar?");
-    printf("(1) Soma");
-    printf("(2) Subtração");
-    printf("(3) Multiplicação");
-    printf("(4) Divisão");
-    printf("(5) Radiciação");
-    printf("(6) Exponenciação");
-    printf("(7) Módulo");
-    printf("(8) Raiz quadrada");
-    printf("(8) Constante de PI");
-    printf("(8) Seno");
-    printf("(8) Cosseno");
-    printf("(8) Soma");
-    printf("(8) Soma");
-    printf("(8) Soma");
-    printf("(8) Soma");
-    printf("(8) Soma");
-    printf("(8) Soma");
+    printf("Qual cálculo deseja utilizar? \n");
+    printf("(1)  Soma \n");
+    printf("(2)  Subtração \n");
+    printf("(3)  Multiplicação \n");
+    printf("(4)  Divisão \n");
+    printf("(5)  Módulo \n");
+    printf("(6)  Exponenciação (Potência) \n");
+    printf("(7)  Raiz Quadrada \n");
+    printf("(8)  Constante de PI \n");
+    printf("(9)  Seno \n");
+    printf("(10) Cosseno \n");
+    printf("(11) Tangente \n");
+    printf("(12) Exponencial (e^x) \n");
+    printf("(13) Logaritmo Natural \n");
+    printf("(14) Logaritmo Base 10 \n");
+    printf("(15) Hipotenusa \n");
+    printf("(16) Converter Graus para Radiano \n");
+    printf("============================================================ \n");
+    scanf("%d", op);
+
+
+    
 
 }
