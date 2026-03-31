@@ -221,7 +221,7 @@ int main(int argc, char *argv[]) {
 
                                    printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n");
 						}
-                              para x de 1 ate 9 faca
+                              para h de 1 ate 9 faca
                                    escreval(x, " - ", parcela[x])
                               fimpara
                               
@@ -248,7 +248,7 @@ int main(int argc, char *argv[]) {
 
                                    tx_val <- tx[l,c]    // ex: 0,9 (0,9%) 
 
-							para i de 1 ate prc faca 
+							para p de 1 ate prc faca 
 
     								inv_pot <- inv_pot / (1 + tx[l,c]) 
 
