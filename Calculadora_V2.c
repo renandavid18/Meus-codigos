@@ -48,16 +48,17 @@ int main(void){
                         printf("Operação de Soma Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", a);
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", b);
+                            scanf("%f", &a);
 
-                            soma = a + b
+                            printf("Agora me informa o segndo valor \n");
+                            scanf("%f", &b);
+
+                            soma = a + b;
 
                             printf("A soma desses valores foi: %f \n", soma);
                 
@@ -77,16 +78,17 @@ int main(void){
                         printf("Operação de Subtração Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", a);
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", b);
+                            scanf("%f", &a);
 
-                            soma = a - b
+                            printf("Agora me informa o segndo valor \n");
+                            scanf("%f", &b);
+
+                            soma = a - b;
 
                             printf("A subtração desses valores foi: %f \n", sub);
                 
@@ -106,23 +108,24 @@ int main(void){
                         printf("Operação de Multiplicação Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", a);
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", b);
+                            scanf("%f", &a);
 
-                            soma = a * b
+                            printf("Agora me informa o segndo valor \n");
+                            scanf("%f", &b);
+
+                            soma = a * b;
 
                             printf("A Multiplicação desses valores foi: %f \n", mult);
                 
                         }else {
                            
                             printf("Ok recarregando...");
-                            i = 0
+                            i = 0;
 
                         }
                     }
@@ -135,16 +138,17 @@ int main(void){
                         printf("Operação de Subtração Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", a);
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", b);
+                            scanf("%f", &a);
 
-                            soma = a / b
+                            printf("Agora me informa o segndo valor \n");
+                            scanf("%f", &b);
+
+                            soma = a / b;
 
                             printf("A divisão desses valores foi: %f \n", div);
                 
@@ -164,23 +168,24 @@ int main(void){
                         printf("Operação de Módulo Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", a);
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", b);
+                            scanf("%f", &a);
 
-                            mod = a % b
+                            printf("Agora me informa o segndo valor \n");
+                            scanf("%f", &b);
+
+                            mod = a % b;
 
                             printf("O Módulo desses valores é: %f \n", mod);
                 
                         }else {
                            
                             printf("Ok recarregando...");
-                            i = 0
+                            i = 0;
 
                         }
                     }
@@ -194,14 +199,15 @@ int main(void){
                         printf("Operação de exponenciação Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
                             printf("Me informa a base por favor! \n");
-                            scanf("%f", a);
+                            scanf("%f", &a);
+
                             printf("Agora me informa o expoente \n");
-                            scanf("%f", b);
+                            scanf("%f", &b);
 
                             expo = pow(a,b);
 
@@ -210,7 +216,7 @@ int main(void){
                         }else {
                            
                             printf("Ok recarregando...");
-                            i = 0
+                            i = 0;
 
                         }
                     }
@@ -223,12 +229,12 @@ int main(void){
                         printf("Operação de Raiz quadrada Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
                             printf("Me informa o valor por favor! \n");
-                            scanf("%f", a);
+                            scanf("%f", &a);
 
                             raiz = sqrt(a);
 
@@ -237,7 +243,7 @@ int main(void){
                         }else {
                            
                             printf("Ok recarregando... \n");
-                            i = 0
+                            i = 0;
 
                         }
                     }
@@ -250,20 +256,21 @@ int main(void){
                         printf("Operação de Constante vezes PI  Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", a);
-                            cpi = a * M_PI
+                            scanf("%f", &a);
+
+                            cpi = a * M_PI;
 
                             printf("A O valor %f vezes pi é: %f \n", a, cpi);
                 
                         }else {
                            
                             printf("Ok recarregando... \n");
-                            i = 0
+                            i = 0;
 
                         }
                     }
@@ -276,7 +283,7 @@ int main(void){
                         printf("Operação do Seno Selecionada! \n");
                         rintf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                                 
                         if (k != 0){
                                 
@@ -288,7 +295,7 @@ int main(void){
                                 
                                 printf("Graus escolhido \n")
                                 printf("Me informa o Grau por favor! \n");
-                                scanf("%f", graus);
+                                scanf("%f", &graus);
 
                                 rad = graus * (M_PI / 180.0);
 
@@ -300,9 +307,10 @@ int main(void){
 
                                     printf("Inteiro(radiano) escolhido \n")
                                     printf("Me informa o valor por favor! \n");
-                                    scanf("%f", a);
+                                    scanf("%f", &a);
 
                                     sen = sen(a);
+
                                     printf("O seno desse valor é graus e: %.4f \n", sen);
 
                                 }
@@ -310,7 +318,7 @@ int main(void){
                             } else {
 
                                 printf("Ok recarregando... \n");
-                                i = 0
+                                i = 0;
 
                             }
                         }
@@ -324,7 +332,7 @@ int main(void){
                         printf("Operação dp Cosseno Selecionada! \n");
                         rintf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                                 
                         if (k != 0){
                                 
@@ -336,7 +344,7 @@ int main(void){
                                 
                                 printf("Graus escolhido \n")
                                 printf("Me informa o Grau por favor! \n");
-                                scanf("%f", graus);
+                                scanf("%f", &graus);
 
                                 rad = graus * (M_PI / 180.0);
 
@@ -348,9 +356,10 @@ int main(void){
 
                                     printf("Inteiro(radiano) escolhido \n")
                                     printf("Me informa o valor por favor! \n");
-                                    scanf("%f", a);
+                                    scanf("%f", &a);
 
                                     cos = cos(a);
+
                                     printf("O cosseno desse valor é graus e: %.4f \n", cos);
 
                                 }
@@ -358,7 +367,7 @@ int main(void){
                             } else {
 
                                 printf("Ok recarregando... \n");
-                                i = 0
+                                i = 0;
 
                             }
                         }
@@ -373,7 +382,7 @@ int main(void){
                         printf("Operação da Tangente Selecionada! \n");
                         rintf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                                 
                         if (k != 0){
                                 
@@ -397,7 +406,7 @@ int main(void){
 
                                     printf("Inteiro(radiano) escolhido \n")
                                     printf("Me informa o valor por favor! \n");
-                                    scanf("%f", a);
+                                    scanf("%f", &a);
 
                                     tan = tan(a);
 
@@ -408,7 +417,7 @@ int main(void){
                             } else {
 
                                 printf("Ok recarregando... \n");
-                                i = 0
+                                i = 0;
 
                             }
                         }
@@ -422,18 +431,16 @@ int main(void){
                         printf("Operação de Exponencial Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k);
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
-                            printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", a);
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", b);
+                            printf("Me informa o valor por favor! \n");
+                            scanf("%f", &a);
 
-                            soma = a - b;
+                            ex = exp(a);
 
-                            printf("A subtração desses valores foi: %f \n", soma);
+                            printf("O resultado de e^%.2f e: %.4f \n", x, ex);
                 
                         }else {
                            
@@ -444,25 +451,23 @@ int main(void){
                     }
                     break;
 
-                    case 3:
+                case 13:
                     
-                     while (i != 0){
+                    while (i != 0){
                 
                         printf("Operação de Subtração Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", a);
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", b);
+                            scanf("%f", &a);
 
-                            soma = a - b;
+                            ex = exp(a);
 
-                            printf("A subtração desses valores foi: %f \n", soma);
+                            printf("O resultado de e^%.2f e: %.4f \n", x, ex);
                 
                         }else {
                            
