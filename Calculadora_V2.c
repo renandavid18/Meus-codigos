@@ -563,11 +563,11 @@ int main(void){
                     }
                     break;
 
-               case 11:
+               case 17:
                     
                     while (i != 0){
                 
-                        printf("Operação da Tangente Selecionada! \n");
+                        printf("Operação de Graus para Radiano Selecionada! \n");
                         rintf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
@@ -611,6 +611,16 @@ int main(void){
                         }
                         
                     break;
+
+                case 0:
+
+                    printf("Ok Saindo até a próxima!");
+                    
+                break;
+                
+                default:
+                    
+                    printf("Opção invalida tente novamente")
                 
             }
         }
