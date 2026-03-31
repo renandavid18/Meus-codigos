@@ -33,7 +33,22 @@ int main(void){
     printf("============================================================ \n");
     scanf("%d", op);
 
+    switch(op){
+        case 1:
+            while (i != 0){
+                printf("Operação de Soma Selecionada! \n");
+                printf("Você escolheu a operação certa?");
+                printf("(1) Sim | (0) Não");
+                scanf("%d", i)
 
+                printf("Me informa")
+            }
+
+            break;
+
+        case 2:
+
+    }
     
 
 }
