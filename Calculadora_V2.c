@@ -292,7 +292,7 @@ int main(void){
 
                                 sen = sen(a);
 
-                                printf("O seno de %.2f graus e: %.4f \n",a, sen);
+                                printf("O seno de %.2f graus e: %.4f \n", a, sen);
 
                                 }else {
                            
