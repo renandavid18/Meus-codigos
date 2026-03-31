@@ -1,6 +1,7 @@
 #include<stdlib.h>
 #include<locale.h>
 #include<stdio.h>
+#include <math.h> //para pow, sqrt, sin!!!!!!
 
 int main(void){
     setlocale(LC_CTYPE, "Portuguese");
