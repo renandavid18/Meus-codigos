@@ -280,18 +280,19 @@ int main(void){
                                 
                         if (k != 0){
                                 
-                            printf("Me informa se você vai uusar graus ou numero inteiro (radiano)\n")
-                            printf("(1) Sim | (0) Não \n");
+                            printf("Me informa se você vai usar graus ou numero inteiro (radiano)\n")
+                            printf("(1) Graus | (0) Inteiro(radiano) \n");
                             scanf("%d", &j);
 
                             if (j != 0){
-
-                                printf("Me informa o Valor por favor! \n");
+                                
+                                printf("Inteiro(radiano) escolhido \n")
+                                printf("Me informa o Grau por favor! \n");
                                 scanf("%f", a);
 
-                                soma = a - b;
+                                sen = sen(a);
 
-                                printf("O valor de Seno é: %f \n", soma);
+                                printf("O seno de %.2f graus e: %.4f \n",a, sen);
 
                                 }else {
                            
@@ -299,6 +300,11 @@ int main(void){
                                     i = 0
 
                                 }
+                            
+                            } else {
+
+
+                                printf("O seno de %.2f graus e: %.4f \n", graus, s);
                             }
                         }
                         
