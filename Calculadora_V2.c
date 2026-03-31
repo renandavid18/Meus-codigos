@@ -586,9 +586,7 @@ int main(void){
 
                                 rad = graus * (M_PI / 180.0);
 
-                                tan = tan(rad);
-
-                                printf("A tangente de %.2f graus e: %.4f \n", graus, tan);
+                                printf("O radiano desse %.2f graus é: %.4f \n", graus, rad);
 
                                 }else {
 
