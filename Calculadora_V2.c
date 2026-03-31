@@ -34,6 +34,7 @@ int main(void){
         printf("(14) Logaritmo Base 10 \n");
         printf("(15) Hipotenusa \n");
         printf("(16) Converter Graus para Radiano \n");
+        printf("(0)  Sair");
         printf("============================================================ \n");
         scanf("%d", op);
 
