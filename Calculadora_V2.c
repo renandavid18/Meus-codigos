@@ -544,12 +544,15 @@ int main(void){
                         
                         if (k != 0){
                     
-                            printf("Me informa o primeiro valor por favor! \n");
+                            printf("Me informa o valor de x por favor! \n");
                             scanf("%f", &a);
 
-                            ex = exp(a);
+                            printf("Me informa o valor de y por favor! \n");
+                            scanf("%f", &b);
 
-                            printf("O resultado de e^%.2f e: %.4f \n", x, ex);
+                            hip = hypot(x, y);
+
+                            printf("O A hypotenusa é: %.4f \n", hip);
                 
                         }else {
                            
@@ -560,31 +563,53 @@ int main(void){
                     }
                     break;
 
-                case 17:
+               case 11:
                     
                     while (i != 0){
                 
-                        printf("Operação de Graus para Radiano Selecionada! \n");
-                        printf("Você escolheu a operação certa? \n");
+                        printf("Operação da Tangente Selecionada! \n");
+                        rintf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
-                        
+                                
                         if (k != 0){
-                    
-                            printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                                
+                            printf("Me informa se você vai usar graus ou numero inteiro(radiano) \n")
+                            printf("(1) Graus | (0) Inteiro(radiano) \n");
+                            scanf("%d", &j);
 
-                            ex = exp(a);
+                            if (j != 0){
+                                
+                                printf("Graus escolhido \n")
+                                printf("Me informa o Grau por favor! \n");
+                                scanf("%f", graus);
 
-                            printf("O resultado de e^%.2f e: %.4f \n", x, ex);
-                
-                        }else {
-                           
-                            printf("Ok recarregando...");
-                            i = 0;
+                                rad = graus * (M_PI / 180.0);
 
+                                tan = tan(rad);
+
+                                printf("A tangente de %.2f graus e: %.4f \n", graus, tan);
+
+                                }else {
+
+                                    printf("Inteiro(radiano) escolhido \n")
+                                    printf("Me informa o valor por favor! \n");
+                                    scanf("%f", &a);
+
+                                    tan = tan(a);
+
+                                    printf("A tangente desse valor é graus e: %.4f \n", tan);
+
+                                }
+                            
+                            } else {
+
+                                printf("Ok recarregando... \n");
+                                i = 0;
+
+                            }
                         }
-                    }
+                        
                     break;
                 
             }
