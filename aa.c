@@ -94,15 +94,24 @@ int main(int argc, char *argv[]) {
 
 
 
-switch (op1) { 
+          switch (op1) { 
+
+
 
                case 1:
 
-                    printf("======================================================== \n");
-                    printf("                     BANCO DO BRASIL                     \n");
+
+
                     printf("======================================================== \n");
 
-                    para y de 1 ate 2 faca
+                    printf("                     BANCO DO BRASIL                     \n");
+
+                    printf("======================================================== \n");
+
+
+
+
+            	     para y de 1 ate 2 faca
                             timer(3)
                                       escreva("Loading")
                                       escreva(".")
@@ -111,31 +120,63 @@ switch (op1) {
                             timer(0)
                     fimpara
 
+
                     while (k != 1) { 
 
-                         printf("Selecione a opção que corresponde ao valor de seu empréstimo: \n");
+
+                	     printf("Selecione a opção que corresponde ao valor de seu empréstimo: \n");
+
 
                          para z de 1 ate 5 faca
                               escreval(z, " - ", fx[z])
-                         fimpara
+                              fimpara
                          leia(l)
 
+
+
+
+
                          if (l < 1 || l > 5) { 
+
                               printf("Opção inválida! Tente novamente... \n"); 
+
                               opcao_valida = false ;
-                         }
+
+                	     }
+
+
+
+
 
                          printf("Agora digite o valor do emprestimo \n"); 
+
                          scanf("%.2f", emp); 
 
+
+
                          printf("Você deseja selecionar em meses as parcelas? \n");
+
                          printf("(1) Sim | (0) Não (escolher por anos) \n"); 
+
+                         printf("Caso não você escolherá quantos anos irá dividir \n"); 
+
+                         printf("escolha qual for do seu agrado não muda no resultado final \n"); 
+
+                	     printf("OBS: se digitar algo diferente será selecionado a opção meses \n"); 
+
                          scanf("%d", op2); 
+
+
 
                          opcao_valida = true; 
 
+
+
                          if (op2 == 0) { 
+
                               printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n"); 
+
+
 
                               para x de 1 ate 9 faca
                                    escreval(x, " - ", parcela[x])
@@ -143,32 +184,44 @@ switch (op1) {
                               scanf("%d", c);
 
                               if (c = 9) {
-                                   scanf("Digite quantos anos por favor \n");
-                                   scaf("%d", o);
-                                   prc = o ;
-                              } else {
-                                   if (c >= 1 || c <= 8) { 
-                                              prc = c ;
-                                   } else{
-                                        printf("Opção invalida! Reiniciando... \n");
-                                        opcao_valida = false ;
-                                   } 
-                              }
 
+                                   scanf("Digite quantos anos por favor \n");
+
+                                   scaf("%d", o);
+
+                                   prc = o ;
+
+                              } else {
+
+                                   if (c >= 1 || c <= 8) { 
+
+                                           	prc = c ;
+
+                                   } else{
+
+                                        printf("Opção invalida! Reiniciando... \n");
+
+                                        opcao_valida = false ;
+
+                                   } 
+
+                              }
                               if (opcao_valida){
                                    prc = prc * 12 ;
                               }
+                         } else{ 
 
-                         } else { 
                               printf("Você irá pagar em menos de 96 vezes? \n");
+
                               escreval("(1) SIM |(0) Não (- de 96 vezes) \n"); 
+
                               scanf("%d", esc); 
 
                               if (esc == 1) { 
-                                   printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n");
-                              }
 
-                              para x de 1 ate 9 faca
+                                   printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n");
+						}
+                              para h de 1 ate 9 faca
                                    escreval(x, " - ", parcela[x])
                               fimpara
                               
@@ -179,46 +232,82 @@ switch (op1) {
                               } else {
                                    if (o == 9) {
                                         printf("Quantos anos você irá pagar? \n");
-                                        scanf("%d", &c);  
+                                        scanf("%d", &c);  // precisa do & para variáveis do tipo int
                                    } else if (o < 1 || o > 9) {
                                         printf("Opção inválida! Reiniciando... \n");
                                         opcao_valida = false;
                                    }
                               } 
 
-                              if (opcao_valida = true) {
-                                   printf("A taxa ao mês aplicada em cima do empréstimo será de: ", tx[l,c], "%"); 
-                                   tx_val <- tx[l,c]    
 
-                                   para i de 1 ate prc faca 
-                                        inv_pot <- inv_pot / (1 + tx[l,c]) 
-                                   fimpara
+
+                              if (opcao_valida = true){
+
+                                   printf("A taxa ao mês aplicada em cima do empréstimo será de: ", tx[l,c], "%"); 
+
+
+                                   tx_val <- tx[l,c]    // ex: 0,9 (0,9%) 
+
+							para i de 1 ate prc faca 
+
+    								inv_pot <- inv_pot / (1 + tx[l,c]) 
+
+							fimpara
                                    
-                                   mont = emp * (1 + tax_val) ^ prc ;
+                                   
+							mont = emp * (1 + tax_val) ^ prc ;
+
                                    vpar = mont / prc ;  
-                                   jr = mont - emp;
+
+							jr = mont - emp;
                                    jr_m = jr / prc;
 
-                                   printf("----------------------------------------- \n"); 
-                                   printf("RESULTADO DO EMPRÉSTIMO \n"); 
+                                  	printf("----------------------------------------- \n"); 
+
+                                	printf("RESULTADO DO EMPRÉSTIMO \n"); 
+
+                                   printf("Taxa aplicada: %% ao mês \n", tx[l, c]); 
+
+                                   printf("Valor de cada parcela: R$ %.2f", vpar:2:2); 
+
+                                	printf("Total de juros: R$  %.2f \n", jr:2:2);
+                                   
+                                   printf("Total de juros sobre cada parcela foi: R$ %.2f \n" jr_m); 
+
+                                   printf("Total a pagar: R$ %.2f", mont:2:2); 
+
+                                   printf("Liquidado em: %d meses \n", prc; 
+
                                    printf("----------------------------------------- \n");
 
+                                   printf("Digite ENTER para continuar \n"); 
+
+                                   system(pause); 
+
+                                   printf("\n");
+                                   printf("\n");
+
                                    printf("Você deseja refazer as contas no mesmo banco? \n"); 
+
+                                   printf("(1) Sim | (0) Não, qualquer valor diferente disso voltará ao menu \n");
+
                                    scanf("%d", op3); 
 
+
+
                                    if op3 <> 1 { 
+
                                       k <- 1 
+
                                    }
-                              } // FIM DO IF OPCAO_VALIDA
-                         } // FIM DO ELSE (OP2)
-                    } // FIM DO WHILE (K != 1)
-                    break; // FIM DO CASE 1
+                              }
+                         }
+                    }
 
-               case 2:
-                    printf("Banco 2 reconhecido!");
-                    break;
+                              
+               continue;
 
-          } // FIM DO SWITCH
+          case 2:
           
 			
 		
