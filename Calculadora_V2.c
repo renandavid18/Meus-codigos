@@ -580,7 +580,7 @@ int main(void){
 
                             if (j != 0){
                                 
-                                printf("Graus escolhido \n")
+                                printf("Graus escolhido \n");
                                 printf("Me informa o Grau por favor! \n");
                                 scanf("%f", graus);
 
@@ -590,13 +590,13 @@ int main(void){
 
                                 }else {
 
-                                    printf("Inteiro(radiano) escolhido \n")
+                                    printf("Inteiro(radiano) escolhido \n");
                                     printf("Me informa o valor por favor! \n");
                                     scanf("%f", &a);
 
-                                    tan = tan(a);
+                                    rad = graus * (M_PI / 180.0);
 
-                                    printf("A tangente desse valor é graus e: %.4f \n", tan);
+                                    printf("%.2f graus equivalem a %.4f radianos. \n", graus, rad);
 
                                 }
                             
