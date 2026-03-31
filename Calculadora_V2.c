@@ -43,221 +43,204 @@ int main(void){
             switch(op){
                 
                 case 1:
-                    
-                    while (i != 0){
                 
-                        printf("Operação de Soma Selecionada! \n");
-                        printf("Você escolheu a operação certa? \n");
-                        printf("(1) Sim | (0) Não \n");
-                        scanf("%d", &k);
+                    printf("Operação de Soma Selecionada! \n");
+                    printf("Você escolheu a operação certa? \n");
+                    printf("(1) Sim | (0) Não \n");
+                    scanf("%d", &k);
                         
-                        if (k != 0){
+                    if (k != 0){
                     
-                            printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                        printf("Me informa o primeiro valor por favor! \n");
+                        scanf("%f", &a);
 
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", &b);
+                        printf("Agora me informa o segndo valor \n");
+                        scanf("%f", &b);
 
-                            soma = a + b;
+                        soma = a + b;
 
-                            printf("A soma desses valores foi: %f \n", soma);
+                        printf("A soma desses valores foi: %f \n", soma);
                 
-                        }else {
+                    }else {
                            
-                            printf("Ok recarregando...");
-                            i = 0
-                        }
+                        printf("Ok recarregando...");
+                        i = 0
                     }
 
                     break;
 
                 case 2:
-
-                     while (i != 0){
                 
-                        printf("Operação de Subtração Selecionada! \n");
-                        printf("Você escolheu a operação certa? \n");
-                        printf("(1) Sim | (0) Não \n");
-                        scanf("%d", &k);
+                    printf("Operação de Subtração Selecionada! \n");
+                    printf("Você escolheu a operação certa? \n");
+                    printf("(1) Sim | (0) Não \n");
+                    scanf("%d", &k);
                         
-                        if (k != 0){
+                    if (k != 0){
                     
-                            printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                        printf("Me informa o primeiro valor por favor! \n");
+                        scanf("%f", &a);
 
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", &b);
+                        printf("Agora me informa o segndo valor \n");
+                        scanf("%f", &b);
 
-                            soma = a - b;
+                        soma = a - b;
 
-                            printf("A subtração desses valores foi: %f \n", sub);
+                        printf("A subtração desses valores foi: %f \n", sub);
                 
-                        }else {
+                    }else {
                            
-                            printf("Ok recarregando...");
-                            i = 0
+                        printf("Ok recarregando...");
+                        i = 0
 
-                        }
                     }
+                
                     break;
 
                 case 3:
-                    
-                     while (i != 0){
                 
-                        printf("Operação de Multiplicação Selecionada! \n");
-                        printf("Você escolheu a operação certa? \n");
-                        printf("(1) Sim | (0) Não \n");
-                        scanf("%d", &k);
+                    printf("Operação de Multiplicação Selecionada! \n");
+                    printf("Você escolheu a operação certa? \n");
+                    printf("(1) Sim | (0) Não \n");
+                    scanf("%d", &k);
                         
-                        if (k != 0){
+                    if (k != 0){
                     
-                            printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                        printf("Me informa o primeiro valor por favor! \n");
+                        scanf("%f", &a);
 
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", &b);
+                        printf("Agora me informa o segndo valor \n");
+                        scanf("%f", &b);
 
-                            soma = a * b;
+                        soma = a * b;
 
-                            printf("A Multiplicação desses valores foi: %f \n", mult);
+                        printf("A Multiplicação desses valores foi: %f \n", mult);
                 
-                        }else {
+                    }else {
                            
-                            printf("Ok recarregando...");
-                            i = 0;
+                        printf("Ok recarregando...");
+                        i = 0;
 
-                        }
                     }
+        
                     break;
 
                 case 4:
                     
-                     while (i != 0){
-                
-                        printf("Operação de Subtração Selecionada! \n");
-                        printf("Você escolheu a operação certa? \n");
-                        printf("(1) Sim | (0) Não \n");
-                        scanf("%d", &k);
+                    printf("Operação de Subtração Selecionada! \n");
+                    printf("Você escolheu a operação certa? \n");
+                    printf("(1) Sim | (0) Não \n");
+                    scanf("%d", &k);
                         
-                        if (k != 0){
+                    if (k != 0){
                     
-                            printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                        printf("Me informa o primeiro valor por favor! \n");
+                        scanf("%f", &a);
 
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", &b);
+                        printf("Agora me informa o segndo valor \n");
+                        scanf("%f", &b);
 
-                            soma = a / b;
+                        soma = a / b;
 
-                            printf("A divisão desses valores foi: %f \n", div);
+                        printf("A divisão desses valores foi: %f \n", div);
                 
-                        }else {
+                    }else {
                            
-                            printf("Ok recarregando...");
-                            i = 0
+                        printf("Ok recarregando...");
+                        i = 0
 
-                        }
                     }
+                
                     break;
 
                 case 5:
                     
-                     while (i != 0){
-                
-                        printf("Operação de Módulo Selecionada! \n");
-                        printf("Você escolheu a operação certa? \n");
-                        printf("(1) Sim | (0) Não \n");
-                        scanf("%d", &k);
+                    printf("Operação de Módulo Selecionada! \n");
+                    printf("Você escolheu a operação certa? \n");
+                    printf("(1) Sim | (0) Não \n");
+                    scanf("%d", &k);
                         
-                        if (k != 0){
+                    if (k != 0){
                     
-                            printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                        printf("Me informa o primeiro valor por favor! \n");
+                        scanf("%f", &a);
 
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", &b);
+                        printf("Agora me informa o segndo valor \n");
+                        scanf("%f", &b);
 
-                            mod = a % b;
+                        mod = a % b;
 
-                            printf("O Módulo desses valores é: %f \n", mod);
+                        printf("O Módulo desses valores é: %f \n", mod);
                 
-                        }else {
+                    }else {
                            
-                            printf("Ok recarregando...");
-                            i = 0;
+                        printf("Ok recarregando...");
+                        i = 0;
 
-                        }
                     }
+                    
                     break;
 
 
                 case 6:
                     
-                     while (i != 0){
-                
-                        printf("Operação de exponenciação Selecionada! \n");
-                        printf("Você escolheu a operação certa? \n");
-                        printf("(1) Sim | (0) Não \n");
-                        scanf("%d", &k);
+                    printf("Operação de exponenciação Selecionada! \n");
+                    printf("Você escolheu a operação certa? \n");
+                    printf("(1) Sim | (0) Não \n");
+                    scanf("%d", &k);
                         
-                        if (k != 0){
+                    if (k != 0){
                     
-                            printf("Me informa a base por favor! \n");
-                            scanf("%f", &a);
+                        printf("Me informa a base por favor! \n");
+                        scanf("%f", &a);
 
-                            printf("Agora me informa o expoente \n");
-                            scanf("%f", &b);
+                        printf("Agora me informa o expoente \n");
+                        scanf("%f", &b);
 
-                            expo = pow(a,b);
+                        expo = pow(a,b);
 
-                            printf("A subtração desses valores foi: %f \n", expo);
+                        printf("A subtração desses valores foi: %f \n", expo);
                 
-                        }else {
+                    }else {
                            
-                            printf("Ok recarregando...");
-                            i = 0;
+                        printf("Ok recarregando...");
+                        i = 0;
 
                         }
-                    }
+                    
                     break;
 
                 case 7:
                     
-                     while (i != 0){
-                
-                        printf("Operação de Raiz quadrada Selecionada! \n");
-                        printf("Você escolheu a operação certa? \n");
-                        printf("(1) Sim | (0) Não \n");
-                        scanf("%d", &k);
+                    printf("Operação de Raiz quadrada Selecionada! \n");
+                    printf("Você escolheu a operação certa? \n");
+                    printf("(1) Sim | (0) Não \n");
+                    scanf("%d", &k);
                         
-                        if (k != 0){
+                    if (k != 0){
                     
-                            printf("Me informa o valor por favor! \n");
-                            scanf("%f", &a);
+                        printf("Me informa o valor por favor! \n");
+                        scanf("%f", &a);
 
-                            raiz = sqrt(a);
+                        raiz = sqrt(a);
 
-                            printf("A raiz dese valor é: %f \n", raiz);
+                        printf("A raiz dese valor é: %f \n", raiz);
                 
-                        }else {
+                    }else {
                            
                             printf("Ok recarregando... \n");
                             i = 0;
 
                         }
-                    }
+        
                     break;
 
                 case 8:
                     
-                     while (i != 0){
-                
-                        printf("Operação de Constante vezes PI  Selecionada! \n");
-                        printf("Você escolheu a operação certa? \n");
-                        printf("(1) Sim | (0) Não \n");
-                        scanf("%d", &k);
+                    printf("Operação de Constante vezes PI  Selecionada! \n");
+                    printf("Você escolheu a operação certa? \n");
+                    printf("(1) Sim | (0) Não \n");
+                    scanf("%d", &k);
                         
                         if (k != 0){
                     
@@ -274,7 +257,6 @@ int main(void){
                             i = 0;
 
                         }
-                    }
                     break;
 
                 case 9:
@@ -535,7 +517,7 @@ int main(void){
 
                 case 16:
                     
-                    while (i != 0){
+                    
                 
                         printf("Operação de Hipotenusa Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
@@ -560,52 +542,49 @@ int main(void){
                             i = 0;
 
                         }
-                    }
+                
                     break;
 
                case 17:
                     
-                    while (i != 0){
-                
-                        printf("Operação de Graus para Radiano Selecionada! \n");
-                        rintf("Você escolheu a operação certa? \n");
-                        printf("(1) Sim | (0) Não \n");
-                        scanf("%d", &k);
+                    printf("Operação de Graus para Radiano Selecionada! \n");
+                    printf("Você escolheu a operação certa? \n");
+                    printf("(1) Sim | (0) Não \n");
+                    scanf("%d", &k);
                                 
-                        if (k != 0){
+                    if (k != 0){
                                 
-                            printf("Me informa se você vai usar graus ou numero inteiro(radiano) \n")
-                            printf("(1) Graus | (0) Inteiro(radiano) \n");
-                            scanf("%d", &j);
+                        printf("Me informa se você vai usar graus ou numero inteiro(radiano) \n")
+                        printf("(1) Graus | (0) Inteiro(radiano) \n");
+                        scanf("%d", &j);
 
-                            if (j != 0){
+                        if (j != 0){
                                 
-                                printf("Graus escolhido \n");
-                                printf("Me informa o Grau por favor! \n");
-                                scanf("%f", graus);
+                            printf("Graus escolhido \n");
+                            printf("Me informa o Grau por favor! \n");
+                            scanf("%f", graus);
+
+                            rad = graus * (M_PI / 180.0);
+
+                            printf("O radiano desse %.2f graus é: %.4f \n", graus, rad);
+
+                           }else {
+
+                                printf("Inteiro(radiano) escolhido \n");
+                                printf("Me informa o valor por favor! \n");
+                                scanf("%f", &a);
 
                                 rad = graus * (M_PI / 180.0);
 
-                                printf("O radiano desse %.2f graus é: %.4f \n", graus, rad);
-
-                                }else {
-
-                                    printf("Inteiro(radiano) escolhido \n");
-                                    printf("Me informa o valor por favor! \n");
-                                    scanf("%f", &a);
-
-                                    rad = graus * (M_PI / 180.0);
-
-                                    printf("%.2f graus equivalem a %.4f radianos. \n", graus, rad);
-
-                                }
-                            
-                            } else {
-
-                                printf("Ok recarregando... \n");
-                                i = 0;
+                                printf("%.2f graus equivalem a %.4f radianos. \n", graus, rad);
 
                             }
+                            
+                        } else {
+
+                            printf("Ok recarregando... \n");
+                            i = 0;
+
                         }
                         
                     break;
