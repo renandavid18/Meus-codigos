@@ -5,8 +5,8 @@
 
 int main(void){
 
-    int op;
-    double a, b, soma, rad, graus, sen, cos, tan, expo, mult, sub, div, mod, raiz, cpi, ;
+    int op, i, k, j;
+    double a, b, soma, rad, graus, sen, cos, tan, expo, mult, sub, div, mod, raiz, cpi, loga, loga10, ex, hip;
 
 
     setlocale(LC_CTYPE, "Portuguese");
@@ -455,7 +455,88 @@ int main(void){
                     
                     while (i != 0){
                 
-                        printf("Operação de Subtração Selecionada! \n");
+                        printf("Operação de Exponencial Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
+                        scanf("%d", &k);
+                        
+                        if (k != 0){
+                    
+                            printf("Me informa o primeiro valor por favor! \n");
+                            scanf("%f", &a);
+
+                            ex = exp(a);
+
+                            printf("O resultado de e^%.2f e: %.4f \n", x, ex);
+                
+                        }else {
+                           
+                            printf("Ok recarregando...");
+                            i = 0;
+
+                        }
+                    }
+                    break;
+                    
+                case 14:
+                    
+                    while (i != 0){
+                
+                        printf("Operação de Logaritmo Natural Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
+                        scanf("%d", &k);
+                        
+                        if (k != 0){
+                    
+                            printf("Me informa o primeiro valor por favor! \n");
+                            scanf("%f", &a);
+
+                            loga = log(a);
+
+                            printf("O resultado de log(%f) é: %.4f \n", a, loga);
+                
+                        }else {
+                           
+                            printf("Ok recarregando...");
+                            i = 0;
+
+                        }
+                    }
+                    break;
+                
+                case 15:
+                    
+                    while (i != 0){
+                
+                        printf("Operação de Logaritmo de Base 10 Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
+                        scanf("%d", &k);
+                        
+                        if (k != 0){
+                    
+                            printf("Me informa o primeiro valor por favor! \n");
+                            scanf("%f", &a);
+
+                            loga10 = log10(a);
+
+                            printf("O resultado de log10(%f) é: %.4f \n", a, loga10);
+                
+                        }else {
+                           
+                            printf("Ok recarregando...");
+                            i = 0;
+
+                        }
+                    }
+                    break;
+
+                case 16:
+                    
+                    while (i != 0){
+                
+                        printf("Operação de Hipotenusa Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
@@ -478,34 +559,33 @@ int main(void){
                     }
                     break;
 
-                    case 3:
+                case 17:
                     
-                     while (i != 0){
+                    while (i != 0){
                 
-                        printf("Operação de Subtração Selecionada! \n");
+                        printf("Operação de Graus para Radiano Selecionada! \n");
                         printf("Você escolheu a operação certa? \n");
                         printf("(1) Sim | (0) Não \n");
-                        scanf("%d", k)
+                        scanf("%d", &k);
                         
                         if (k != 0){
                     
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", a);
-                            printf("Agora me informa o segndo valor \n");
-                            scanf("%f", b);
+                            scanf("%f", &a);
 
-                            soma = a - b
+                            ex = exp(a);
 
-                            printf("A subtração desses valores foi: %f \n", soma);
+                            printf("O resultado de e^%.2f e: %.4f \n", x, ex);
                 
                         }else {
                            
                             printf("Ok recarregando...");
-                            i = 0
+                            i = 0;
 
                         }
                     }
                     break;
+                
             }
         }
     }
