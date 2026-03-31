@@ -6,7 +6,7 @@
 int main(void){
 
     int op;
-    double a, b, soma,;
+    double a, b, soma, rad, graus, sen, cos, tan, exp, mult, sub, div, mod, raiz, cpi, ;
 
 
     setlocale(LC_CTYPE, "Portuguese");
@@ -286,25 +286,28 @@ int main(void){
 
                             if (j != 0){
                                 
-                                printf("Inteiro(radiano) escolhido \n")
+                                printf("Graus escolhido \n")
                                 printf("Me informa o Grau por favor! \n");
-                                scanf("%f", a);
+                                scanf("%f", graus);
 
-                                sen = sen(a);
+                                rad = graus * (M_PI / 180.0);
 
-                                printf("O seno de %.2f graus e: %.4f \n", a, sen);
+                                sen = sen(rad);
+
+                                printf("O seno de %.2f graus e: %.4f \n", graus, sen);
 
                                 }else {
-                           
-                                    printf("Ok recarregando... \n");
-                                    i = 0
+                                    
+                                    printf("O seno desse valor é graus e: %.4f \n", graus, s);
+                                    
 
                                 }
                             
                             } else {
 
-
-                                printf("O seno de %.2f graus e: %.4f \n", graus, s);
+                                printf("Ok recarregando... \n");
+                                i = 0
+                                
                             }
                         }
                         
