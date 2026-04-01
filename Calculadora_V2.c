@@ -2,6 +2,7 @@
     #include <locale.h>
     #include <stdio.h>
     #include <math.h> //para pow, sqrt, sin!!!!!!
+    #define _USE_MATH_DEFINES // Garante o acesso ao M_PI
 
     int main(void){
 
