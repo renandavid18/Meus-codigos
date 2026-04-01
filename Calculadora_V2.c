@@ -174,7 +174,7 @@
                     
                         }else {
                             
-                            printf("Ok recarregando...");
+                            printf("Ok recarregando... \n");
                             i = 0;
 
                         }
@@ -203,7 +203,7 @@
                     
                         }else {
                             
-                            printf("Ok recarregando...");
+                            printf("Ok recarregando... \n");
                             i = 0;
 
                             }
@@ -574,13 +574,13 @@
 
                     case 0:
 
-                        printf("Ok Saindo até a próxima!");
+                        printf("Ok Saindo até a próxima! \n");
                         
                     break;
                     
                     default:
                         
-                        printf("Opção invalida tente novamente");
+                        printf("Opção invalida tente novamente \n");
                         i = 0;
                     
                 }
