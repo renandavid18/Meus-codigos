@@ -5,7 +5,7 @@
 
     int main(void){
 
-        int op, mod, i, k, j, e, q, c, d;
+        int op, mod, i, q, k, j, e, c, d;
         double a, b, x, y, soma, rad, graus, sen, coss, tang, expo, mult, sub, div, raiz, cpi, loga, loga10, ex, hip;
 
 
@@ -13,8 +13,7 @@
         
         printf("Bem vindo à Calculadora V.2 \n");
         system("pause");
-        int q = 1
-        int i = 1
+
         while (q != 0){
 
             printf("=========================== MENU =========================== \n");
@@ -64,7 +63,7 @@
                     
                         }else {
                             
-                            printf("Ok recarregando...");
+                            printf("Ok recarregando... \n");
                             i = 0;
                         }
 
@@ -91,7 +90,7 @@
                     
                         }else {
                             
-                            printf("Ok recarregando...");
+                            printf("Ok recarregando... \n");
                             i = 0;
 
                         }
@@ -119,7 +118,7 @@
                     
                         }else {
                             
-                            printf("Ok recarregando...");
+                            printf("Ok recarregando... \n");
                             i = 0;
 
                         }
@@ -147,7 +146,7 @@
                     
                         }else {
                             
-                            printf("Ok recarregando...");
+                            printf("Ok recarregando... \n");
                             i = 0;
 
                         }
