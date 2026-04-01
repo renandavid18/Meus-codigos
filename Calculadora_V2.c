@@ -606,7 +606,7 @@
                                     
                                 printf("Graus escolhido \n");
                                 printf("Me informa o Grau por favor! \n");
-                                scanf("%f", graus);
+                                scanf("%f", &graus);
 
                                 rad = graus * (M_PI / 180.0);
 
