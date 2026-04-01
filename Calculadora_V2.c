@@ -6,7 +6,7 @@
 
     int main(void){
 
-        int op, mod, i, q, k, j, e, c, d;
+        int op, mod, i = 1, q = 1, k, j, e, c, d;
         double a, b, x, y, soma, rad, graus, sen, coss, tang, expo, mult, sub, div, raiz, cpi, loga, loga10, ex, hip;
 
 
@@ -274,7 +274,7 @@
                             if (k != 0){
                         
                                 printf("Me informa o primeiro valor por favor! \n");
-                                scanf("%f", &a);
+                                scanf("%lf", &a);
 
                                 cpi = a * M_PI;
 
