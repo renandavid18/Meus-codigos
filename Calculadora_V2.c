@@ -94,7 +94,7 @@
                             printf("Agora me informa o segndo valor \n");
                             scanf("%lf", &b);
 
-                            soma = a - b;
+                            sub = a - b;
 
                             printf("A subtração desses valores foi: %f \n", sub);
 
@@ -125,7 +125,7 @@
                             printf("Agora me informa o segndo valor \n");
                             scanf("%lf", &b);
 
-                            soma = a * b;
+                            mult = a * b;
 
                             printf("A Multiplicação desses valores foi: %f \n", mult);
 
@@ -156,7 +156,7 @@
                             printf("Agora me informa o segndo valor \n");
                             scanf("%lf", &b);
 
-                            soma = a / b;
+                            div = a / b;
 
                             printf("A divisão desses valores foi: %f \n", div);
 
