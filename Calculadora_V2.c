@@ -13,7 +13,8 @@
         
         printf("Bem vindo à Calculadora V.2 \n");
         system("pause");
-
+        int q = 1
+        int i = 1
         while (q != 0){
 
             printf("=========================== MENU =========================== \n");
