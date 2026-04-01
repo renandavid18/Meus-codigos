@@ -5,7 +5,7 @@
 
     int main(void){
 
-        int op, mod, i, k, j, e, c, d;
+        int op, mod, i, q, k, j, e, c, d;
         double a, b, x, y, soma, rad, graus, sen, coss, tang, expo, mult, sub, div, raiz, cpi, loga, loga10, ex, hip;
 
 
@@ -38,6 +38,12 @@
             printf("============================================================ \n");
             scanf("%d", &op);
 
+            if (op == 0){
+                q = 0;
+                printf(" Saindo até a próxima");    
+
+            }
+            
             while (i != 0){
                 
                 switch(op){
@@ -572,12 +578,6 @@
                             
                         break;
 
-                    case 0:
-
-                        printf("Ok Saindo até a próxima! \n");
-                        
-                    break;
-                    
                     default:
                         
                         printf("Opção invalida tente novamente \n");
