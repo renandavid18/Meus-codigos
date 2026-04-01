@@ -43,7 +43,7 @@
             if (op == 0){
                 q = 0;
                 printf(" Saindo até a próxima");    
-                system("pause")
+                system("pause");
 
             }
 
