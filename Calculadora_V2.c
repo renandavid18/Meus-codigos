@@ -11,20 +11,20 @@
 
         setlocale(LC_CTYPE, "Portuguese");
         
-        printf("Bem vindo Ã  Calculadora V.2 \n");
+        printf("Bem vindo à Calculadora V.2 \n");
         system("pause");
         int q = 1
         int i = 1
         while (q != 0){
 
             printf("=========================== MENU =========================== \n");
-            printf("Qual cÃ¡lculo deseja utilizar? \n");
+            printf("Qual cálculo deseja utilizar? \n");
             printf("(1)  Soma \n");
-            printf("(2)  SubtraÃ§Ã£o \n");
-            printf("(3)  MultiplicaÃ§Ã£o \n");
-            printf("(4)  DivisÃ£o \n");
-            printf("(5)  MÃ³dulo \n");
-            printf("(6)  ExponenciaÃ§Ã£o \n");
+            printf("(2)  Subtração \n");
+            printf("(3)  Multiplicação \n");
+            printf("(4)  Divisão \n");
+            printf("(5)  Módulo \n");
+            printf("(6)  Exponenciação \n");
             printf("(7)  Raiz Quadrada \n");
             printf("(8)  Constante vezes PI \n");
             printf("(9)  Seno \n");
@@ -45,9 +45,9 @@
                     
                     case 1:
                     
-                        printf("OperaÃ§Ã£o de Soma Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Soma Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -72,9 +72,9 @@
 
                     case 2:
                     
-                        printf("OperaÃ§Ã£o de SubtraÃ§Ã£o Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Subtração Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -87,7 +87,7 @@
 
                             soma = a - b;
 
-                            printf("A subtraÃ§Ã£o desses valores foi: %f \n", sub);
+                            printf("A subtração desses valores foi: %f \n", sub);
                     
                         }else {
                             
@@ -100,9 +100,9 @@
 
                     case 3:
                     
-                        printf("OperaÃ§Ã£o de MultiplicaÃ§Ã£o Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Multiplicação Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -115,7 +115,7 @@
 
                             soma = a * b;
 
-                            printf("A MultiplicaÃ§Ã£o desses valores foi: %f \n", mult);
+                            printf("A Multiplicação desses valores foi: %f \n", mult);
                     
                         }else {
                             
@@ -128,9 +128,9 @@
 
                     case 4:
                         
-                        printf("OperaÃ§Ã£o de SubtraÃ§Ã£o Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Subtração Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -143,7 +143,7 @@
 
                             soma = a / b;
 
-                            printf("A divisÃ£o desses valores foi: %f \n", div);
+                            printf("A divisão desses valores foi: %f \n", div);
                     
                         }else {
                             
@@ -156,9 +156,9 @@
 
                     case 5:
                         
-                        printf("OperaÃ§Ã£o de MÃ³dulo Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Módulo Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -171,7 +171,7 @@
 
                             mod = c % d;
 
-                            printf("O MÃ³dulo desses valores Ã©: %f \n", mod);
+                            printf("O Módulo desses valores é: %f \n", mod);
                     
                         }else {
                             
@@ -185,9 +185,9 @@
 
                     case 6:
                         
-                        printf("OperaÃ§Ã£o de exponenciaÃ§Ã£o Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de exponenciação Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -200,7 +200,7 @@
 
                             expo = pow(a,b);
 
-                            printf("A subtraÃ§Ã£o desses valores foi: %f \n", expo);
+                            printf("A subtração desses valores foi: %f \n", expo);
                     
                         }else {
                             
@@ -213,9 +213,9 @@
 
                     case 7:
                         
-                        printf("OperaÃ§Ã£o de Raiz quadrada Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Raiz quadrada Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -225,7 +225,7 @@
 
                             raiz = sqrt(a);
 
-                            printf("A raiz dese valor Ã©: %f \n", raiz);
+                            printf("A raiz dese valor é: %f \n", raiz);
                     
                         }else {
                             
@@ -238,9 +238,9 @@
 
                     case 8:
                         
-                        printf("OperaÃ§Ã£o de Constante vezes PI  Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Constante vezes PI  Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                             if (k != 0){
@@ -250,7 +250,7 @@
 
                                 cpi = a * M_PI;
 
-                                printf("A O valor %f vezes pi Ã©: %f \n", a, cpi);
+                                printf("A O valor %f vezes pi é: %f \n", a, cpi);
                     
                             }else {
                             
@@ -262,14 +262,14 @@
 
                     case 9:
                     
-                        printf("OperaÃ§Ã£o do Seno Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação do Seno Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                                     
                         if (k != 0){
                                     
-                            printf("Me informa se vocÃª vai usar graus ou numero inteiro(radiano) \n");
+                            printf("Me informa se você vai usar graus ou numero inteiro(radiano) \n");
                             printf("(1) Graus | (0) Inteiro(radiano) \n");
                             scanf("%d", &j);
 
@@ -293,7 +293,7 @@
 
                                 sen = sin(a);
 
-                                printf("O seno desse valor Ã© graus e: %.4f \n", sen);
+                                printf("O seno desse valor é graus e: %.4f \n", sen);
 
                                 }
                                 
@@ -308,14 +308,14 @@
 
                     case 10:
                         
-                        printf("OperaÃ§Ã£o dp Cosseno Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação dp Cosseno Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                                     
                         if (k != 0){
                                     
-                            printf("Me informa se vocÃª vai usar graus ou numero inteiro(radiano) \n");
+                            printf("Me informa se você vai usar graus ou numero inteiro(radiano) \n");
                             printf("(1) Graus | (0) Inteiro(radiano) \n");
                             scanf("%d", &j);
 
@@ -339,7 +339,7 @@
 
                                 coss = cos(a);
 
-                                printf("O cosseno desse valor Ã© graus e: %.4f \n", cos);
+                                printf("O cosseno desse valor é graus e: %.4f \n", cos);
 
                             }
                                 
@@ -355,14 +355,14 @@
 
                     case 11:
                         
-                        printf("OperaÃ§Ã£o da Tangente Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação da Tangente Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                                     
                         if (k != 0){
                                     
-                            printf("Me informa se vocÃª vai usar graus ou numero inteiro(radiano) \n");
+                            printf("Me informa se você vai usar graus ou numero inteiro(radiano) \n");
                             printf("(1) Graus | (0) Inteiro(radiano) \n");
                             scanf("%d", &j);
 
@@ -386,7 +386,7 @@
 
                                     tang = tan(a);
 
-                                    printf("A tangente desse valor Ã© graus e: %.4f \n", tang);
+                                    printf("A tangente desse valor é graus e: %.4f \n", tang);
 
                                 }
                                 
@@ -401,9 +401,9 @@
 
                     case 12:
                         
-                        printf("OperaÃ§Ã£o de Exponencial Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Exponencial Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -426,9 +426,9 @@
 
                     case 13:
                     
-                        printf("OperaÃ§Ã£o de Exponencial Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Exponencial Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -451,9 +451,9 @@
                         
                     case 14:
                     
-                        printf("OperaÃ§Ã£o de Logaritmo Natural Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Logaritmo Natural Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -463,7 +463,7 @@
 
                             loga = log(a);
 
-                            printf("O resultado de log(%f) Ã©: %.4f \n", a, loga);
+                            printf("O resultado de log(%f) é: %.4f \n", a, loga);
                     
                         }else {
                             
@@ -476,9 +476,9 @@
                     
                     case 15:
                         
-                        printf("OperaÃ§Ã£o de Logaritmo de Base 10 Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Logaritmo de Base 10 Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                             
                         if (k != 0){
@@ -488,7 +488,7 @@
 
                             loga10 = log10(a);
 
-                            printf("O resultado de log10(%f) Ã©: %.4f \n", a, loga10);
+                            printf("O resultado de log10(%f) é: %.4f \n", a, loga10);
                     
                         }else {
                             
@@ -503,9 +503,9 @@
                         
                         
                     
-                        printf("OperaÃ§Ã£o de Hipotenusa Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Hipotenusa Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                         
                         if (k != 0){
@@ -518,7 +518,7 @@
 
                             hip = hypot(x, y);
 
-                            printf("O A hypotenusa Ã©: %.4f \n", hip);
+                            printf("O A hypotenusa é: %.4f \n", hip);
                     
                         }else {
                             
@@ -531,14 +531,14 @@
 
                     case 17:
                         
-                        printf("OperaÃ§Ã£o de Graus para Radiano Selecionada! \n");
-                        printf("VocÃª escolheu a operaÃ§Ã£o certa? \n");
-                        printf("(1) Sim | (0) NÃ£o \n");
+                        printf("Operação de Graus para Radiano Selecionada! \n");
+                        printf("Você escolheu a operação certa? \n");
+                        printf("(1) Sim | (0) Não \n");
                         scanf("%d", &k);
                                     
                         if (k != 0){
                                     
-                            printf("Me informa se vocÃª vai usar graus ou numero inteiro(radiano) \n");
+                            printf("Me informa se você vai usar graus ou numero inteiro(radiano) \n");
                             printf("(1) Graus | (0) Inteiro(radiano) \n");
                             scanf("%d", &j);
 
@@ -550,7 +550,7 @@
 
                                 rad = graus * (M_PI / 180.0);
 
-                                printf("O radiano desse %.2f graus Ã©: %.4f \n", graus, rad);
+                                printf("O radiano desse %.2f graus é: %.4f \n", graus, rad);
 
                             }else {
 
@@ -575,13 +575,13 @@
 
                     case 0:
 
-                        printf("Ok Saindo atÃ© a prÃ³xima!");
+                        printf("Ok Saindo até a próxima!");
                         
                     break;
                     
                     default:
                         
-                        printf("OpÃ§Ã£o invalida tente novamente");
+                        printf("Opção invalida tente novamente");
                         i = 0;
                     
                 }
