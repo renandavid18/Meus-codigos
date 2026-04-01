@@ -43,7 +43,7 @@
                 printf(" Saindo até a próxima");    
 
             }
-            
+
             while (i != 0){
                 
                 switch(op){
@@ -58,14 +58,15 @@
                         if (k != 0){
                         
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             printf("Agora me informa o segndo valor \n");
-                            scanf("%f", &b);
+                            scanf("%lf", &b);
 
                             soma = a + b;
 
                             printf("A soma desses valores foi: %f \n", soma);
+                            
                     
                         }else {
                             
@@ -586,5 +587,6 @@
                 }
             }
         }
+
         return 0;
     }
