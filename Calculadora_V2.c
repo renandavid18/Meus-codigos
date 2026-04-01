@@ -313,6 +313,8 @@
                                 sen = sin(rad);
 
                                 printf("O seno de %.2f graus e: %.4f \n", graus, sen);
+                                i = 0;
+                                system("pause");
 
                             }else {
 
@@ -323,6 +325,8 @@
                                 sen = sin(a);
 
                                 printf("O seno desse valor é graus e: %.4f \n", sen);
+                                i = 0;
+                                system("pause");
 
                                 }
                                 
@@ -360,6 +364,9 @@
 
                                 printf("O cosseno de %.2f graus e: %.4f \n", graus, cos);
 
+                                i = 0;
+                                system("pause");
+
                             }else {
 
                                 printf("Inteiro(radiano) escolhido \n");
@@ -369,6 +376,9 @@
                                 coss = cos(a);
 
                                 printf("O cosseno desse valor é graus e: %.4f \n", cos);
+
+                                i = 0;
+                                system("pause");
 
                             }
                                 
@@ -407,6 +417,9 @@
 
                                 printf("A tangente de %.2f graus e: %.4f \n", graus, tang);
 
+                                i = 0;
+                                system("pause");
+
                                 }else {
 
                                     printf("Inteiro(radiano) escolhido \n");
@@ -416,6 +429,9 @@
                                     tang = tan(a);
 
                                     printf("A tangente desse valor é graus e: %.4f \n", tang);
+
+                                    i = 0;
+                                    system("pause");
 
                                 }
                                 
@@ -443,6 +459,8 @@
                             ex = exp(a);
 
                             printf("O resultado de e^%.2f e: %.4f \n", x, ex);
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -468,6 +486,9 @@
                             ex = exp(a);
 
                             printf("O resultado de e^%.2f e: %.4f \n", x, ex);
+
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -493,6 +514,9 @@
                             loga = log(a);
 
                             printf("O resultado de log(%f) é: %.4f \n", a, loga);
+
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -518,6 +542,9 @@
                             loga10 = log10(a);
 
                             printf("O resultado de log10(%f) é: %.4f \n", a, loga10);
+
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -548,6 +575,9 @@
                             hip = hypot(x, y);
 
                             printf("O A hypotenusa é: %.4f \n", hip);
+
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -581,15 +611,21 @@
 
                                 printf("O radiano desse %.2f graus é: %.4f \n", graus, rad);
 
+                                i = 0;
+                                system("pause");
+
                             }else {
 
-                                    printf("Inteiro(radiano) escolhido \n");
-                                    printf("Me informa o valor por favor! \n");
-                                    scanf("%f", &a);
+                                printf("Inteiro(radiano) escolhido \n");
+                                printf("Me informa o valor por favor! \n");
+                                scanf("%f", &a);
 
-                                    rad = graus * (M_PI / 180.0);
+                                rad = graus * (M_PI / 180.0);
 
-                                    printf("%.2f graus equivalem a %.4f radianos. \n", graus, rad);
+                                printf("%.2f graus equivalem a %.4f radianos. \n", graus, rad);
+
+                                i = 0;
+                                system("pause");
 
                                 }
                                 
