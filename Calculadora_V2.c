@@ -34,7 +34,7 @@
             printf("(14) Logaritmo Base 10 \n");
             printf("(15) Hipotenusa \n");
             printf("(16) Converter Graus para Radiano \n");
-            printf("(0)  Sair");
+            printf("(0)  Sair \n");
             printf("============================================================ \n");
             scanf("%d", &op);
 
@@ -88,10 +88,10 @@
                         if (k != 0){
                         
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             printf("Agora me informa o segndo valor \n");
-                            scanf("%f", &b);
+                            scanf("%lf", &b);
 
                             soma = a - b;
 
@@ -119,10 +119,10 @@
                         if (k != 0){
                         
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             printf("Agora me informa o segndo valor \n");
-                            scanf("%f", &b);
+                            scanf("%lf", &b);
 
                             soma = a * b;
 
@@ -150,10 +150,10 @@
                         if (k != 0){
                         
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             printf("Agora me informa o segndo valor \n");
-                            scanf("%f", &b);
+                            scanf("%lf", &b);
 
                             soma = a / b;
 
@@ -213,10 +213,10 @@
                         if (k != 0){
                         
                             printf("Me informa a base por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             printf("Agora me informa o expoente \n");
-                            scanf("%f", &b);
+                            scanf("%lf", &b);
 
                             expo = pow(a,b);
 
@@ -244,7 +244,7 @@
                         if (k != 0){
                         
                             printf("Me informa o valor por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             raiz = sqrt(a);
 
@@ -306,7 +306,7 @@
                                     
                                 printf("Graus escolhido \n");
                                 printf("Me informa o Grau por favor! \n");
-                                scanf("%f", &graus);
+                                scanf("%lf", &graus);
 
                                 rad = graus * (M_PI / 180.0);
 
@@ -320,7 +320,7 @@
 
                                 printf("Inteiro(radiano) escolhido \n");
                                 printf("Me informa o valor por favor! \n");
-                                scanf("%f", &a);
+                                scanf("%lf", &a);
 
                                 sen = sin(a);
 
@@ -356,7 +356,7 @@
                                     
                                 printf("Graus escolhido \n");
                                 printf("Me informa o Grau por favor! \n");
-                                scanf("%f", &graus);
+                                scanf("%lf", &graus);
 
                                 rad = graus * (M_PI / 180.0);
 
@@ -371,7 +371,7 @@
 
                                 printf("Inteiro(radiano) escolhido \n");
                                 printf("Me informa o valor por favor! \n");
-                                scanf("%f", &a);
+                                scanf("%lf", &a);
 
                                 coss = cos(a);
 
@@ -409,7 +409,7 @@
                                 
                                 printf("Graus escolhido \n");
                                 printf("Me informa o Grau por favor! \n");
-                                scanf("%f", graus);
+                                scanf("%lf", graus);
 
                                 rad = graus * (M_PI / 180.0);
 
@@ -424,7 +424,7 @@
 
                                     printf("Inteiro(radiano) escolhido \n");
                                     printf("Me informa o valor por favor! \n");
-                                    scanf("%f", &a);
+                                    scanf("%lf", &a);
 
                                     tang = tan(a);
 
@@ -454,7 +454,7 @@
                         if (k != 0){
                         
                             printf("Me informa o valor por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             ex = exp(a);
 
@@ -481,7 +481,7 @@
                         if (k != 0){
                         
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             ex = exp(a);
 
@@ -509,7 +509,7 @@
                         if (k != 0){
                         
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             loga = log(a);
 
@@ -537,7 +537,7 @@
                         if (k != 0){
                         
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             loga10 = log10(a);
 
@@ -567,10 +567,10 @@
                         if (k != 0){
                         
                             printf("Me informa o valor de x por favor! \n");
-                            scanf("%f", &a);
+                            scanf("%lf", &a);
 
                             printf("Me informa o valor de y por favor! \n");
-                            scanf("%f", &b);
+                            scanf("%lf", &b);
 
                             hip = hypot(x, y);
 
