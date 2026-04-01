@@ -17,6 +17,7 @@
 
         while (q != 0){
 
+            i = 1;
             printf("=========================== MENU =========================== \n");
             printf("Qual cálculo deseja utilizar? \n");
             printf("(1)  Soma \n");
