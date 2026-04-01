@@ -58,7 +58,7 @@ int main(int argc, char *argv[]) {
 
                printf("após a leitura digite ENTER para continuar \n"); 
 
-               system(pause); 
+               system("pause"); 
 
           } 
 
