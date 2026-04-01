@@ -5,7 +5,7 @@
 
     int main(void){
 
-        int op, mod, i, q, k, j, e, c, d;
+        int op, mod, i, k, j, e, c, d;
         double a, b, x, y, soma, rad, graus, sen, coss, tang, expo, mult, sub, div, raiz, cpi, loga, loga10, ex, hip;
 
 
@@ -36,7 +36,7 @@
             printf("(16) Converter Graus para Radiano \n");
             printf("(0)  Sair");
             printf("============================================================ \n");
-            scanf("%d", op);
+            scanf("%d", &op);
 
             while (i != 0){
                 
