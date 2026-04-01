@@ -67,6 +67,8 @@
 
                             printf("A soma desses valores foi: %f \n", soma);
                             
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -94,6 +96,9 @@
                             soma = a - b;
 
                             printf("A subtração desses valores foi: %f \n", sub);
+
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -122,6 +127,9 @@
                             soma = a * b;
 
                             printf("A Multiplicação desses valores foi: %f \n", mult);
+
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -150,6 +158,9 @@
                             soma = a / b;
 
                             printf("A divisão desses valores foi: %f \n", div);
+
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -178,6 +189,9 @@
                             mod = c % d;
 
                             printf("O Módulo desses valores é: %f \n", mod);
+
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -207,6 +221,9 @@
                             expo = pow(a,b);
 
                             printf("A subtração desses valores foi: %f \n", expo);
+
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -232,6 +249,9 @@
                             raiz = sqrt(a);
 
                             printf("A raiz dese valor é: %f \n", raiz);
+
+                            i = 0;
+                            system("pause");
                     
                         }else {
                             
@@ -257,6 +277,9 @@
                                 cpi = a * M_PI;
 
                                 printf("A O valor %f vezes pi é: %f \n", a, cpi);
+
+                                i = 0;
+                                system("pause");
                     
                             }else {
                             
