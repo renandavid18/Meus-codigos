@@ -11,7 +11,7 @@
         printf("Aqui Iremos mostrar a tabuada de um número qualquer! \n");
 
         printf("Para começar você deseja fazer tabuada de um numero com virgula?")
-        printf("(1) Sim | (0) Não (escolher por anos) \n"); 
+        printf("(1) Sim | (0) Não (Numero Inteiro) \n"); 
         scanf("%d", op);
 
         while (i != 1){  
