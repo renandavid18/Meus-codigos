@@ -13,7 +13,7 @@
         while(i != 1) {  
             
             printf("Aqui Iremos mostrar a tabuada de um número qualquer! \n");
-            printf("Para começar você deseja fazer tabuada de um numero com virgula?");
+            printf("Para começar você deseja fazer tabuada de um numero com virgula? \n");
             printf("(1) Sim | (0) Não (Numero Inteiro) \n"); 
             scanf("%d", &op);
 
@@ -24,7 +24,7 @@
                     printf("Complete com o valor da tabuada que você deseja \n");
                     printf("Tabuada de 1 á ");
                     scanf("%d", &v);
-                    printf("Me informa o o valor que vocÊ deseja ver a tabuada: \n");
+                    printf("\n Me informa o o valor que você deseja ver a tabuada: \n");
                     scanf("%d", &vlt);
                     
                     printf("A tabuada de %d é", vlt);
@@ -57,7 +57,7 @@
                     printf("Complete com o valor da tabuada que você deseja \n");
                     printf("Tabuada de 1 á ");
                     scanf("%d", &v);
-                    printf("Me informa o o valor que vocÊ deseja ver a tabuada: \n");
+                    printf("Me informa o o valor que você deseja ver a tabuada: \n");
                     scanf("%f", &vlt1);
                     
                     printf("A tabuada de %f é", vlt1);
