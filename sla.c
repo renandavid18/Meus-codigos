@@ -30,7 +30,8 @@
                     scanf("%d", &vlt);
                     
                     printf("A tabuada de %d é", vlt);
-
+                    printf("\n============== TABUADA ==============\n\n");
+                    
                     for(j=0; j<=v; j++){
 
                         k = j * vlt;
@@ -76,6 +77,7 @@
                     scanf("%lf", &vlt1);
                     
                     printf("A tabuada de %lf é \n", vlt1);
+                    printf("\n============== TABUADA ==============\n\n");
 
                     for(j=0; j<=v; j++){
 
