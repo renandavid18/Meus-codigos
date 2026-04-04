@@ -23,7 +23,7 @@
                     printf("Digite o valor da tabuada que você deseja");
                     printf("Se digitar 30 vai ter uma tabuada de 1 á 30 se 2 vai ter de 1 á 2.\n");
                     scanf("vlt");
-
+                    
                 break;
 
                 case 1:
