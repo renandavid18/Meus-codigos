@@ -8,13 +8,14 @@
         double vlt2, n;
 
         setlocale(LC_CTYPE, "Portuguese");
-        printf("Aqui Iremos mostrar a tabuada de um número qualquer! \n");
-
-        printf("Para começar você deseja fazer tabuada de um numero com virgula?")
-        printf("(1) Sim | (0) Não (Numero Inteiro) \n"); 
-        scanf("%d", op);
-
+        i = 1
+        
         while (i != 1){  
+            
+            printf("Aqui Iremos mostrar a tabuada de um número qualquer! \n");
+            printf("Para começar você deseja fazer tabuada de um numero com virgula?")
+            printf("(1) Sim | (0) Não (Numero Inteiro) \n"); 
+            scanf("%d", op);
 
             switch (op) {
                 
