@@ -4,11 +4,13 @@
     
     int main() {
         
-        int op, v, i, vlt, n, j, k;  // vlt = valor da tabuada
+        int op, i, vlt, n, j, k;  // vlt = valor da tabuada
+        double vlt1, k1, v;
         
 
         setlocale(LC_CTYPE, "Portuguese");
         i = 0;
+        d = 1;
 
         while(i != 1) {  
             
@@ -23,32 +25,45 @@
                     
                     printf("Complete a frase com o valor da tabuada que você deseja:\n");
                     printf("Tabuada de 1 á ");
-                    scanf("%d", &v);
+                    scanf("%f", &v);
                     printf("\n Informe o valor que você deseja ver na tabuada: \n");
                     scanf("%d", &vlt);
                     
                     printf("A tabuada de %d é", vlt);
+
                     for(j=0; j<=v; j++){
+
                         k = j * vlt;
                         printf("%d X %d = %d \n", vlt1, j, k);
+
                     }
                     
                     system("pause");
                     
                     while(d = 1){
+
                         printf("Deseja continuar? \n");
                         printf("(1) Sim | (0) Não \n");
                         scanf("%d", &c);
+
                         if(c = 0){
+
                             i = 1;
-                            d = 1;
+                            d = 0;
+
                         }
                         if(c = 1){
+
                             i = 0;
-                            d = 1;
-                        }else{
                             d = 0;
+
+                        }else{
+
+                            printf("Opçção inválida verifique sua resposta!");
+                            d = 1;
+
                         }
+
                     } 
                 break;
 
@@ -56,34 +71,49 @@
 
                     printf("Complete com o valor da tabuada que você deseja \n");
                     printf("Tabuada de 1 á ");
-                    scanf("%d", &v);
+                    scanf("%f", &v);
                     printf("Me informa o o valor que você deseja ver a tabuada: \n");
                     scanf("%f", &vlt1);
                     
                     printf("A tabuada de %f é", vlt1);
+
                     for(j=0; j<=v; j++){
-                        k = j * vlt1;
-                        printf("%d X %d = %d \n", vlt1, j, k);
+
+                        k1 = j * vlt1;
+                        printf("%f X %d = %f \n", vlt1, j, k1);
+
                     }
                     
                     system("pause");
                     
                     while(d = 1){
+
                         printf("Deseja continuar? \n");
                         printf("(1) Sim | (0) Não \n");
                         scanf("%d", &c);
+
                         if(c = 0){
+
                             i = 1;
                             d = 1;
+
                         }
                         if(c = 1){
+
                             i = 0;
                             d = 1;
+
                         }else{
+
+                            printf("Opçção inválida verifique sua resposta!");
                             d = 0;
                         }
                     } 
+                break;
 
+                default:
+
+                    printf("Você digitou uma opção inválida tente novamente!");
             }
         }   
     }
