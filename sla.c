@@ -9,7 +9,7 @@
 
         setlocale(LC_CTYPE, "Portuguese");
         i = 1
-        
+
         while (i != 1){  
             
             printf("Aqui Iremos mostrar a tabuada de um número qualquer! \n");
@@ -20,13 +20,12 @@
             switch (op) {
                 
                 case 1:
-                    printf
-                    scanf
+                    printf("Digite o valor da tabuada que você deseja");
+                    printf("Se digitar 30 vai ter uma tabuada de 1 á 30 se 2 vai ter de 1 á 2.\n");
+                    scanf("vlt");
 
             }
-            printf("Digite o valor da tabuada que você deseja");
-            printf("Se digitar 30 vai ter uma tabuada de 1 á 30 se 2 vai ter de 1 á 2.\n");
-            scanf("vlt");
+
         }
 
         
