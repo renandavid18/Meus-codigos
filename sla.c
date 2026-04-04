@@ -4,7 +4,7 @@
     
     int main() {
         
-        int op, i, vlt, n;  // vlt = valor da tabuada
+        int op, i, vlt, n, j, k;  // vlt = valor da tabuada
         
 
         setlocale(LC_CTYPE, "Portuguese");
@@ -15,14 +15,20 @@
             printf("Aqui Iremos mostrar a tabuada de um número qualquer! \n");
             printf("Para começar você deseja fazer tabuada de um numero com virgula?");
             printf("(1) Sim | (0) Não (Numero Inteiro) \n"); 
-            scanf("%d", op);
+            scanf("%d", &op);
 
             switch(op) {
                 
                 case 0:
-                    printf("Complete com o valor da tabuada que você deseja");
+                    printf("Complete com o valor da tabuada que você deseja \n");
                     printf("Tabuada de 1 á ");
-                    scanf("%d", vlt);
+                    scanf("%d", &vlt);
+                    
+                    printf("A tabuada de %d é", vlt);
+                    for(j=1; j<=vlt; j++){
+                        k = j * vlt;
+                        printf("j = %d")
+                    }
 
 
                 break;
