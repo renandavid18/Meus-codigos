@@ -71,16 +71,16 @@
 
                     printf("Complete com o valor da tabuada que você deseja \n");
                     printf("Tabuada de 1 á ");
-                    scanf("%f", &v);
+                    scanf("%lf", &v);
                     printf("Me informa o o valor que você deseja ver a tabuada: \n");
-                    scanf("%f", &vlt1);
+                    scanf("%lf", &vlt1);
                     
-                    printf("A tabuada de %f é", vlt1);
+                    printf("A tabuada de %lf é \n", vlt1);
 
                     for(j=0; j<=v; j++){
 
                         k1 = j * vlt1;
-                        printf("%f X %d = %f \n", vlt1, j, k1);
+                        printf("%lf X %d = %lf \n", vlt1, j, k1);
 
                     }
                     
