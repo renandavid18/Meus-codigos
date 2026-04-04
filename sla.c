@@ -4,7 +4,7 @@
     
     int main() {
         
-        int op, i, vlt, n, j, k;  // vlt = valor da tabuada
+        int op, i, vlt, n, j, k, d, c;  // vlt = valor da tabuada
         double vlt1, k1, v;
         
 
@@ -115,5 +115,9 @@
 
                     printf("Você digitou uma opção inválida tente novamente!");
             }
-        }   
+        }
+        
+        printf("Até a próxima!!!");
+        system("pause");
+
     }
