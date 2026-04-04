@@ -29,7 +29,7 @@
                     printf("A tabuada de %d é", vlt);
                     for(j=0; j<=v; j++){
                         k = j * v;
-                        printf("j = %d")
+                        printf("%d X %d = %d", j, v,)
                     }
 
 
