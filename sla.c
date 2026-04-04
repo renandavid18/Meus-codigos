@@ -4,7 +4,7 @@
     
     int main() {
         
-        int op, vlt, n;  // vlt = valor da tabuada
+        int op, i, vlt, n;  // vlt = valor da tabuada
         double vlt2, n;
 
         setlocale(LC_CTYPE, "Portuguese");
@@ -15,8 +15,12 @@
         scanf("%d", op);
 
         while (i != 1){  
-             
-            switch {
+
+            switch (op) {
+                
+                case 1:
+                    printf
+                    scanf
 
             }
             printf("Digite o valor da tabuada que você deseja");
