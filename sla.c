@@ -4,7 +4,7 @@
     
     int main() {
         
-        int op, i, vlt, n, j, k;  // vlt = valor da tabuada
+        int op, v, i, vlt, n, j, k;  // vlt = valor da tabuada
         
 
         setlocale(LC_CTYPE, "Portuguese");
@@ -22,11 +22,13 @@
                 case 0:
                     printf("Complete com o valor da tabuada que você deseja \n");
                     printf("Tabuada de 1 á ");
+                    scanf("%d", &v);
+                    printf("Me informa o o valor que vocÊ deseja ver a tabuada: \n");
                     scanf("%d", &vlt);
                     
                     printf("A tabuada de %d é", vlt);
-                    for(j=1; j<=vlt; j++){
-                        k = j * vlt;
+                    for(j=0; j<=v; j++){
+                        k = j * v;
                         printf("j = %d")
                     }
 
