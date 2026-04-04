@@ -21,10 +21,10 @@
                 
                 case 0:
                     
-                    printf("Complete com o valor da tabuada que você deseja \n");
+                    printf("Complete a frase com o valor da tabuada que você deseja:\n");
                     printf("Tabuada de 1 á ");
                     scanf("%d", &v);
-                    printf("\n Me informa o o valor que você deseja ver a tabuada: \n");
+                    printf("\n Informe o valor que você deseja ver na tabuada: \n");
                     scanf("%d", &vlt);
                     
                     printf("A tabuada de %d é", vlt);
