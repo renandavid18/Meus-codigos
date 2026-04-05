@@ -9,5 +9,7 @@ int main(void){
     printf("Complete a frase: \n você verá a sequêcia de números de 1 à ");
     scanf("%d", &x);
 
+    printf("Escolha ")
+
 }
     
