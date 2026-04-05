@@ -247,7 +247,7 @@ int main(int argc, char *argv[]) {
 
 
 
-                              if (opcao_valida = true){
+                              if (opcao_valida == true){
 
                                    printf("A taxa ao mês aplicada em cima do empréstimo será de: ", tx[l,c], "%"); 
 
