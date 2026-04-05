@@ -311,7 +311,7 @@ int main(int argc, char *argv[]) {
                     }
 
                               
-               continue;
+               break;
 
           case 2:
           
