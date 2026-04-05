@@ -11,7 +11,7 @@ int main(void){
     for(i=1;i<=100;i++){
         
         j = i + k;
-       printf("%d \n", j);
+       printf("%d valor= %d \n", j);
         
         k = j;
 
