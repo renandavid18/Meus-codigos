@@ -127,7 +127,7 @@ int main(int argc, char *argv[]) {
 
                 	     printf("Selecione a opção que corresponde ao valor de seu empréstimo: \n");
 
-                         if(z=1;z<=5;z++){
+                         for(z=1;z<=5;z++){
                               
                               printf("%d - %  \n" z, fx[z]);
 
@@ -180,10 +180,11 @@ int main(int argc, char *argv[]) {
                               printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n"); 
 
 
-                              for(__DEC64X_MIN__)
-                              para x de 1 ate 9 faca
-                                   escreval(x, " - ", parcela[x])
-                              fimpara
+                              for(x=1;x<=9;x++){
+                              
+                                   printf("%d - %  \n", x, parcela[x]);
+
+                              }
                               scanf("%d", c);
 
                               if (c = 9) {
@@ -224,10 +225,12 @@ int main(int argc, char *argv[]) {
 
                                    printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n");
 						}
-                              para h de 1 ate 9 faca
-                                   escreval(x, " - ", parcela[x])
-                              fimpara
+
+                              for(h=1;h<=9;h++){
                               
+                                   printf("%d - %  \n", x, parcela[x]);
+                                   
+                              } 
                               scanf("%d", o);
 
                               if (o >= 1 && o <= 8) {
@@ -251,11 +254,11 @@ int main(int argc, char *argv[]) {
 
                                    tx_val <- tx[l,c]    // ex: 0,9 (0,9%) 
 
-							para i de 1 ate prc faca 
-
-    								inv_pot <- inv_pot / (1 + tx[l,c]) 
-
-							fimpara
+                                   for(i=1;i<=prc;x++){
+                              
+                                   inv_pot <- inv_pot / (1 + tx[l,c]) 
+                                   
+                                   }
                                    
                                    
 							mont = emp * (1 + tax_val) ^ prc ;
