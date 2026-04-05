@@ -4,6 +4,7 @@
 
 int main(void){
     
+    setlocale(LC_CTYPE, "Portuguese");
     int i, j, k;
     printf("A soma de 50 valores é: \n");
     k = 0;
@@ -11,7 +12,7 @@ int main(void){
     for(i=1;i<=100;i++){
         
         j = i + k;
-       printf("%d valor= %d \n", j);
+       printf("%dº valor = %d \n", j);
         
         k = j;
 
