@@ -48,16 +48,7 @@ int main(int argc, char *argv[]) {
 
           if (expl != 0){
 
-               printf("sobre as taxas todas foram em base de um peril entre medio e baixo de creditos \n"); 
-
-               printf("Onde buscamos a maior fidelidade possível e temos as taxas de 10 bancos \n"); 
-
-               printf("as taxas variam de acordo com a parcela e o valor usado \n"); 
-
-               printf("OBS: As taxas originais variam de acordo com seu perfil de crédito \n"); 
-
-               printf("após a leitura digite ENTER para continuar \n"); 
-
+               printf("sobre as taxas todas foram em base de um peril entre medio e baixo de creditos \n Onde buscamos a maior fidelidade possível e temos as taxas de 10 bancos \n As taxas variam de acordo com a parcela e o valor usado \n OBS: As taxas originais variam de acordo com seu perfil de crédito \n após a leitura digite ENTER para continuar \n"); 
                system("pause"); 
 
           } 
@@ -66,30 +57,7 @@ int main(int argc, char *argv[]) {
 
           printf("====================MENU==================== \n"); 
 
-		printf("Escolha seu banco \n"); 
-
-          printf("1 - Banco do Brasil \n"); 
-
-          printf("2 - Caixa Econômica Federal \n"); 
-
-          printf("3 - Bradesco \n"); 
-
-          printfl("4 - Itaú Unibanco \n"); 
-
-          printf("5 - Santander \n"); 
-
-          printf("6 - Banco Inter \n");  
-
-		printf("7 - Pagbank \n"); 
-
-          printf("8 - Nubank \n"); 
-
-          printf("9 - Mercado pago \n"); 
-
-          printf("10 - Picpay \n");
-
-          printf("0 - Sair \n");
-
+		printf("Escolha seu banco \n 1 - Banco do Brasil \n 2 - Caixa Econômica Federal \n 3 - Bradesco \n 4 - Itaú Unibanco \n 5 - Santander \n 6 - Banco Inter \n 7 - Pagbank \n 8 - Nubank \n 9 - Mercado pago \n 10 - Picpay \n 0 - Sair \n");
           scanf("%d", &op1); 
 
 
@@ -102,11 +70,7 @@ int main(int argc, char *argv[]) {
 
 
 
-                    printf("======================================================== \n");
-
-                    printf("                     BANCO DO BRASIL                     \n");
-
-                    printf("======================================================== \n");
+                    printf("======================================================== \n                      BANCO DO BRASIL                     \n ======================================================== \n");
 
 
 
@@ -157,15 +121,7 @@ int main(int argc, char *argv[]) {
 
 
 
-                         printf("Você deseja selecionar em meses as parcelas? \n");
-
-                         printf("(1) Sim | (0) Não (escolher por anos) \n"); 
-
-                         printf("Caso não você escolherá quantos anos irá dividir \n"); 
-
-                         printf("escolha qual for do seu agrado não muda no resultado final \n"); 
-
-                	     printf("OBS: se digitar algo diferente será selecionado a opção meses \n"); 
+                         printf("Você deseja selecionar em meses as parcelas? \n (1) Sim | (0) Não (escolher por anos) \n Caso não você escolherá quantos anos irá dividir \n escolha qual for do seu agrado não muda no resultado final \n OBS: se digitar algo diferente será selecionado a opção meses \n"); 
 
                          scanf("%d", &op2); 
 
@@ -215,9 +171,7 @@ int main(int argc, char *argv[]) {
                               }
                          } else{ 
 
-                              printf("Você irá pagar em menos de 96 vezes? \n");
-
-                              escreval("(1) SIM |(0) Não (- de 96 vezes) \n"); 
+                              printf("Você irá pagar em menos de 96 vezes? \n (1) SIM |(0) Não (- de 96 vezes) \n"); 
 
                               scanf("%d", &esc); 
 
@@ -268,34 +222,18 @@ int main(int argc, char *argv[]) {
 							jr = mont - emp;
                                    jr_m = jr / prc;
 
-                                  	printf("----------------------------------------- \n"); 
+                                  	printf("----------------------------------------- \n RESULTADO DO EMPRÉSTIMO \n Taxa aplicada: %% ao mês \n", tx[l, c]); 
 
-                                	printf("RESULTADO DO EMPRÉSTIMO \n"); 
+                                   printf("Valor de cada parcela: R$ %.2f Total de juros: R$  %.2f \n Total de juros sobre cada parcela foi: R$ %.2f \n Total a pagar: R$ %.2f Liquidado em: %d meses \n", vpar, jr, jr_m, mont, prc;) 
 
-                                   printf("Taxa aplicada: %% ao mês \n", tx[l, c]); 
-
-                                   printf("Valor de cada parcela: R$ %.2f", vpar); 
-
-                                	printf("Total de juros: R$  %.2f \n", jr);
-                                   
-                                   printf("Total de juros sobre cada parcela foi: R$ %.2f \n" jr_m); 
-
-                                   printf("Total a pagar: R$ %.2f", mont); 
-
-                                   printf("Liquidado em: %d meses \n", prc; 
-
-                                   printf("----------------------------------------- \n");
-
-                                   printf("Digite ENTER para continuar \n"); 
+                                   printf("----------------------------------------- \n Digite ENTER para continuar \n"); 
 
                                    system(pause); 
 
                                    printf("\n");
                                    printf("\n");
 
-                                   printf("Você deseja refazer as contas no mesmo banco? \n"); 
-
-                                   printf("(1) Sim | (0) Não, qualquer valor diferente disso voltará ao menu \n");
+                                   printf("Você deseja refazer as contas no mesmo banco? \n (1) Sim | (0) Não, qualquer valor diferente disso voltará ao menu \n");
 
                                    scanf("%d", &op3); 
 
