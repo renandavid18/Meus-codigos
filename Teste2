@@ -3,14 +3,15 @@
 #include<stdio.h>
 
 int main(void){
-    
+    int i, x, y;
     setlocale(LC_CTYPE, "Portuguese");
     printf("Aqui iremos ver a tabela de 1 a X (sendo x um valor real inteiro)\n");
     printf("Complete a frase: \n você verá a sequêcia de números de 1 à ");
     scanf("%d", &x);
 
-    printf("Complete será ignorado os valores que são multiplo de ")
+    printf("\n Complete será ignorado os valores que são multiplo de ")
     scanf("%d", y);
 
+    for(i)
 }
     
