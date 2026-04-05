@@ -110,15 +110,16 @@ int main(int argc, char *argv[]) {
 
 
 
-
-            	     para y de 1 ate 2 faca
+                    for(y=1;y<=2;y++){
+            	     
                             timer(3)
-                                      escreva("Loading")
-                                      escreva(".")
-                                      escreva(".")
-                                      escreva(".")
+                                      printf("Loading");
+                                      printf(".");
+                                      printf(".");
+                                      printf(". \n");
                             timer(0)
-                    fimpara
+
+                    }
 
 
                     while (k != 1) { 
@@ -126,11 +127,13 @@ int main(int argc, char *argv[]) {
 
                 	     printf("Selecione a opção que corresponde ao valor de seu empréstimo: \n");
 
+                         if(z=1;z<=5;z++){
+                              
+                              printf("%d - %  \n" z, fx[z]);
 
-                         para z de 1 ate 5 faca
-                              escreval(z, " - ", fx[z])
-                              fimpara
-                         leia(l)
+                         }
+                         scanf("%", l);
+
 
 
 
@@ -177,7 +180,7 @@ int main(int argc, char *argv[]) {
                               printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n"); 
 
 
-
+                              for(x)
                               para x de 1 ate 9 faca
                                    escreval(x, " - ", parcela[x])
                               fimpara
