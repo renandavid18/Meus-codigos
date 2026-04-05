@@ -55,9 +55,7 @@ int main(int argc, char *argv[]) {
 
 
 
-          printf("====================MENU==================== \n"); 
-
-		printf("Escolha seu banco \n 1 - Banco do Brasil \n 2 - Caixa Econômica Federal \n 3 - Bradesco \n 4 - Itaú Unibanco \n 5 - Santander \n 6 - Banco Inter \n 7 - Pagbank \n 8 - Nubank \n 9 - Mercado pago \n 10 - Picpay \n 0 - Sair \n");
+          printf("====================MENU==================== \n Escolha seu banco \n 1 - Banco do Brasil \n 2 - Caixa Econômica Federal \n 3 - Bradesco \n 4 - Itaú Unibanco \n 5 - Santander \n 6 - Banco Inter \n 7 - Pagbank \n 8 - Nubank \n 9 - Mercado pago \n 10 - Picpay \n 0 - Sair \n");
           scanf("%d", &op1); 
 
 
