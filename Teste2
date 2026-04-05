@@ -6,8 +6,8 @@ int main(void){
     
     setlocale(LC_CTYPE, "Portuguese");
     printf("Aqui iremos ver a tabela de 1 a X (sendo x um valor real inteiro)\n");
-    printf("Complete a frase: \n você verá a tabuada de 1 à ");
+    printf("Complete a frase: \n você verá a sequêcia de números de 1 à ");
     scanf("%d", &x);
-    
+
 }
     
