@@ -3,15 +3,21 @@
 #include<stdio.h>
 
 int main(void){
-    int i, x, y;
+    int i, x, y, k, j;
     setlocale(LC_CTYPE, "Portuguese");
     printf("Aqui iremos ver a tabela de 1 a X (sendo x um valor real inteiro)\n");
     printf("Complete a frase: \n você verá a sequêcia de números de 1 à ");
     scanf("%d", &x);
 
     printf("\n Complete será ignorado os valores que são multiplo de ")
-    scanf("%d", y);
+    scanf("%d", &y);
 
-    for(i)
+    for(i=1;i<=x;i++){
+        j = i + k;
+        if(k % 3 == 0){
+            continue;
+        }
+        printf("");
+    }
 }
     
