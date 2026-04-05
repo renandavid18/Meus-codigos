@@ -12,11 +12,11 @@ int main(void){
     for(i=1;i<=100;i++){
         
         j = i + k;
-       printf("%dº valor = %d \n", j);
+       printf("%dº valor = %d \n", i, j);
         
         k = j;
 
-        if(i == 51){
+        if(i == 50){
 
             break;
 
