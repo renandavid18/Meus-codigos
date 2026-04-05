@@ -40,7 +40,7 @@ int main(int argc, char *argv[]) {
 
           printf("deseja uma explicação mais detalhada sobre os valores? (1) para sim (0) para não \n"); 
 
-          scanf("%d", expl); 
+          scanf("%d", &expl); 
 
 
 
@@ -90,11 +90,11 @@ int main(int argc, char *argv[]) {
 
           printf("0 - Sair \n");
 
-          scanf("%d", op1); 
+          scanf("%d", &op1); 
 
 
 
-          switch (op1) { 
+          switch(op1) { 
 
 
 
@@ -132,7 +132,7 @@ int main(int argc, char *argv[]) {
                               printf("%d - %  \n" z, fx[z]);
 
                          }
-                         scanf("%", l);
+                         scanf("%", &l);
 
 
 
@@ -153,7 +153,7 @@ int main(int argc, char *argv[]) {
 
                          printf("Agora digite o valor do emprestimo \n"); 
 
-                         scanf("%.2f", emp); 
+                         scanf("%.2f", &emp); 
 
 
 
@@ -167,7 +167,7 @@ int main(int argc, char *argv[]) {
 
                 	     printf("OBS: se digitar algo diferente será selecionado a opção meses \n"); 
 
-                         scanf("%d", op2); 
+                         scanf("%d", &op2); 
 
 
 
@@ -185,13 +185,13 @@ int main(int argc, char *argv[]) {
                                    printf("%d - %  \n", x, parcela[x]);
 
                               }
-                              scanf("%d", c);
+                              scanf("%d", &c);
 
-                              if (c = 9) {
+                              if (c == 9) {
 
                                    scanf("Digite quantos anos por favor \n");
 
-                                   scaf("%d", o);
+                                   scaf("%d", &o);
 
                                    prc = o ;
 
@@ -219,7 +219,7 @@ int main(int argc, char *argv[]) {
 
                               escreval("(1) SIM |(0) Não (- de 96 vezes) \n"); 
 
-                              scanf("%d", esc); 
+                              scanf("%d", &esc); 
 
                               if (esc == 1) { 
 
@@ -231,7 +231,7 @@ int main(int argc, char *argv[]) {
                                    printf("%d - %  \n", x, parcela[x]);
                                    
                               } 
-                              scanf("%d", o);
+                              scanf("%d", &o);
 
                               if (o >= 1 && o <= 8) {
                                    c = o;
@@ -252,11 +252,11 @@ int main(int argc, char *argv[]) {
                                    printf("A taxa ao mês aplicada em cima do empréstimo será de: ", tx[l,c], "%"); 
 
 
-                                   tx_val <- tx[l,c]    // ex: 0,9 (0,9%) 
+                                   tx_val = tx[l,c]    // ex: 0,9 (0,9%) 
 
                                    for(i=1;i<=prc;x++){
                               
-                                   inv_pot <- inv_pot / (1 + tx[l,c]) 
+                                   inv_pot = inv_pot / (1 + tx[l,c]) 
                                    
                                    }
                                    
@@ -274,13 +274,13 @@ int main(int argc, char *argv[]) {
 
                                    printf("Taxa aplicada: %% ao mês \n", tx[l, c]); 
 
-                                   printf("Valor de cada parcela: R$ %.2f", vpar:2:2); 
+                                   printf("Valor de cada parcela: R$ %.2f", vpar); 
 
-                                	printf("Total de juros: R$  %.2f \n", jr:2:2);
+                                	printf("Total de juros: R$  %.2f \n", jr);
                                    
                                    printf("Total de juros sobre cada parcela foi: R$ %.2f \n" jr_m); 
 
-                                   printf("Total a pagar: R$ %.2f", mont:2:2); 
+                                   printf("Total a pagar: R$ %.2f", mont); 
 
                                    printf("Liquidado em: %d meses \n", prc; 
 
@@ -297,13 +297,13 @@ int main(int argc, char *argv[]) {
 
                                    printf("(1) Sim | (0) Não, qualquer valor diferente disso voltará ao menu \n");
 
-                                   scanf("%d", op3); 
+                                   scanf("%d", &op3); 
 
 
 
-                                   if op3 <> 1 { 
+                                   if op3 != 1 { 
 
-                                      k <- 1 
+                                      k = 1 
 
                                    }
                               }
