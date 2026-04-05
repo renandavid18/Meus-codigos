@@ -11,7 +11,7 @@ int main(void){
     for(i=1;i<=100;i++){
         
         j = i + k;
-       printf("%d", j);
+       printf("%d \n", j);
         
         k = j;
 
@@ -20,9 +20,7 @@ int main(void){
             break;
 
         }
-        
-        printf("Aqui estão os resultados!");
-        system("pause");
-
     }
+    printf("Aqui estão os resultados!");
+    system("pause");
 }
