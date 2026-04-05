@@ -180,7 +180,7 @@ int main(int argc, char *argv[]) {
                               printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n"); 
 
 
-                              for(x)
+                              for(__DEC64X_MIN__)
                               para x de 1 ate 9 faca
                                    escreval(x, " - ", parcela[x])
                               fimpara
