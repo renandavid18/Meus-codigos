@@ -17,7 +17,7 @@ int main(void){
         if(k % 3 == 0){
             continue;
         }
-        printf("");
+        printf("%d número");
     }
 }
     
