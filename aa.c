@@ -263,7 +263,7 @@
 
                k = 0 ;
 
-               printf("Deseja visualizar as notas técnicas sobre a composição das taxas? (1) Sim | (0) Não: ");
+               printf("Deseja visualizar as notas técnicas sobre a composição das taxas? (1) Sim | (0) Não: \n");
                scanf("%d", &ex);
 
               if (ex != 0) {
@@ -474,10 +474,10 @@
 
                               }
                          }
-                    }
-               break;
-               
-               case 2:
+                    break;
+
+                    case 2:
+               }
           } 
      }
           
