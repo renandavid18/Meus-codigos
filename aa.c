@@ -47,25 +47,11 @@
 
           while (i != 1) {
 
-
-
-               
-
-               bool opcao_valida = false;
-               int expl, op1, op2, op3, m, k, o, c, prc;
-               float emp, vpar, mont, jr, tx_val;
-
-               m = 0 ;
-
                k = 0 ;
 
                printf("deseja uma explicação mais detalhada sobre os valores? (1) para sim (0) para não \n"); 
 
                scanf("%d", &expl); 
-
-
-
-
 
               if (expl != 0) {
                     system("cls");
@@ -105,28 +91,19 @@
 
                switch(op1) { 
 
-
-
                     case 1:
-
-
 
                          system("cls"); 
                          printf("  \xDA\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBF\n  \xB3                BANCO DO BRASIL                        \xB3\n  \xC8\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBC\n");
 
-
-
-
-                         for(q = 0; q <= 100; q++) {
+                          for(q = 0; q <= 100; q++) {
                          
                               printf("\r[+] Carregando sistema: %d%%", q);
                               fflush(stdout); 
                               Sleep(20); 
                          }
 
-
                          while (k != 1) { 
-
 
                               printf("Selecione a opção que corresponde ao valor de seu empréstimo: \n");
 
@@ -137,11 +114,6 @@
                               }
                               scanf("%", &l);
 
-
-
-
-
-
                               if (l < 1 || l > 5) { 
 
                                    printf("Opção inválida! Tente novamente... \n"); 
@@ -150,14 +122,9 @@
 
                               }
 
-
-
-
-
                               printf("Agora digite o valor do emprestimo \n"); 
 
                               scanf("%.2f", &emp); 
-
 
 
                               printf("Você deseja selecionar em meses as parcelas? \n (1) Sim | (0) Não (escolher por anos) \n Caso não você escolherá quantos anos irá dividir \n escolha qual for do seu agrado não muda no resultado final \n OBS: se digitar algo diferente será selecionado a opção meses \n"); 
@@ -165,15 +132,11 @@
                               scanf("%d", &op2); 
 
 
-
                               opcao_valida = true; 
-
-
 
                               if (op2 == 0) { 
 
                                   printf("Selecione a opcao de parcelas (Anos): \n");  
-
 
                                    for(x=1;x<=9;x++){
                                    
@@ -242,8 +205,6 @@
 
                                         }
                               } 
-
-
 
                               if (opcao_valida) {
                                    
