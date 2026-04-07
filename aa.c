@@ -4,9 +4,9 @@
 
      #include <locale.h> 
 
-     #include <stdbool.h> // <--- Biblioteca necessÃ¡ria para verdadeiro e falso para declarar uma variavel loÃ³gica
+     #include <stdbool.h> // <--- Biblioteca necessária para verdadeiro e falso para declarar uma variavel loógica
 
-     #include <math.h> // OBRIGATÃ“RIO PARA POW()
+     #include <math.h> // OBRIGATÓRIO PARA POW()
      
      #include <windows.h>
 
@@ -15,32 +15,32 @@
 
 
      char fx[5][25] = { 
-          "0 atÃ© 5000R$",
-          "5.001 atÃ© 10.000R$",
-          "10.001 atÃ© 20.000R$",
-          "20.001 atÃ© 50.000R$",
-          "50.001 atÃ© 100.000R$",
+          "0 até 5000R$",
+          "5.001 até 10.000R$",
+          "10.001 até 20.000R$",
+          "20.001 até 50.000R$",
+          "50.001 até 100.000R$",
      };
 
-     // ou char fx[5][25] = { "0 atÃ© 5000R$", "5.001 atÃ© 10.000R$", "10.001 atÃ© 20.000R$", "20.001 atÃ© 50.000R$", "50.001 atÃ© 100.000R$"};
+     // ou char fx[5][25] = { "0 até 5000R$", "5.001 até 10.000R$", "10.001 até 20.000R$", "20.001 até 50.000R$", "50.001 até 100.000R$"};
      //como prefirir usar
 
-     char parcela[9][40] ={ "AtÃ© 12 meses (1 ano)", "AtÃ© 24 meses (2 anos)", "AtÃ© 36 meses (3 anos)", "AtÃ© 48 meses (4 anos)", "AtÃ© 60 meses (5 anos)", "AtÃ© 72 meses (6 anos)", "AtÃ© 84 meses (7 anos)", "AtÃ© 96 meses (8 anos)", "Acima de 9 anos"};
+     char parcela[9][40] ={ "Até 12 meses (1 ano)", "Até 24 meses (2 anos)", "Até 36 meses (3 anos)", "Até 48 meses (4 anos)", "Até 60 meses (5 anos)", "Até 72 meses (6 anos)", "Até 84 meses (7 anos)", "Até 96 meses (8 anos)", "Acima de 9 anos"};
      
      // ou char parcela[9][40] = {
-     //        "AtÃ© 12 meses (1 ano)", 
-     //        "AtÃ© 24 meses (2 anos)", 
-     //        "AtÃ© 36 meses (3 anos)", 
-     //        "AtÃ© 48 meses (4 anos)", 
-     //        "AtÃ© 60 meses (5 anos)", 
-     //        "AtÃ© 72 meses (6 anos)", 
-     //        "AtÃ© 84 meses (7 anos)", 
-     //        "AtÃ© 96 meses (8 anos)", 
+     //        "Até 12 meses (1 ano)", 
+     //        "Até 24 meses (2 anos)", 
+     //        "Até 36 meses (3 anos)", 
+     //        "Até 48 meses (4 anos)", 
+     //        "Até 60 meses (5 anos)", 
+     //        "Até 72 meses (6 anos)", 
+     //        "Até 84 meses (7 anos)", 
+     //        "Até 96 meses (8 anos)", 
      //        "Acima de 9 anos",
      //    };
 
      
-     // Taxa do CrÃ©dito pessoal
+     // Taxa do Crédito pessoal
      double tx[50][9] = {
           // Banco 1 (BB)
           {4.80, 4.75, 4.70, 4.65, 4.60, 4.58, 4.55, 4.52, 4.50},
@@ -60,7 +60,7 @@
           {6.00, 5.95, 5.90, 5.85, 5.80, 5.75, 5.72, 5.70, 5.68},
           {6.10, 6.05, 6.00, 5.95, 5.90, 5.85, 5.82, 5.80, 5.78},
           {6.20, 6.15, 6.10, 6.05, 6.00, 5.95, 5.92, 5.90, 5.88},
-          // Banco 4 (ItaÃº)
+          // Banco 4 (Itaú)
           {5.70, 5.65, 5.60, 5.55, 5.50, 5.48, 5.45, 5.42, 5.40},
           {5.80, 5.75, 5.70, 5.65, 5.60, 5.55, 5.52, 5.50, 5.48},
           {5.90, 5.85, 5.80, 5.75, 5.70, 5.65, 5.62, 5.60, 5.58},
@@ -124,7 +124,7 @@
           {2.00, 1.97, 1.95, 1.93, 1.90, 1.88, 1.85, 1.83, 1.80},
           {2.03, 2.00, 1.98, 1.96, 1.93, 1.91, 1.88, 1.86, 1.83},
           {2.05, 2.02, 2.00, 1.98, 1.95, 1.93, 1.90, 1.88, 1.85},
-          // Banco 4 (ItaÃº)
+          // Banco 4 (Itaú)
           {2.05, 2.02, 2.00, 1.98, 1.95, 1.92, 1.90, 1.88, 1.85},
           {2.08, 2.05, 2.03, 2.01, 1.98, 1.95, 1.93, 1.91, 1.88},
           {2.10, 2.07, 2.05, 2.03, 2.00, 1.97, 1.95, 1.93, 1.90},
@@ -188,7 +188,7 @@
           {1.35, 1.33, 1.30, 1.28, 1.25, 1.23, 1.20, 1.18, 1.15},
           {1.38, 1.36, 1.33, 1.31, 1.28, 1.26, 1.23, 1.21, 1.18},
           {1.40, 1.38, 1.35, 1.33, 1.30, 1.28, 1.25, 1.23, 1.20},
-          // Banco 4 (ItaÃº)
+          // Banco 4 (Itaú)
           {1.35, 1.32, 1.30, 1.28, 1.25, 1.23, 1.20, 1.18, 1.15},
           {1.38, 1.35, 1.33, 1.31, 1.28, 1.26, 1.23, 1.21, 1.18},
           {1.40, 1.37, 1.35, 1.33, 1.30, 1.28, 1.25, 1.23, 1.20},
@@ -243,6 +243,8 @@
 
      int main(int argc, char *argv[]) { 
           
+          SetConsoleCP(65001);
+          SetConsoleOutputCP(65001);
 
           int i = 0;              
           int k = 0;              
@@ -250,7 +252,7 @@
           
           setlocale(LC_CTYPE, "Portuguese");
 
-          printf("Bom dia, seja bem vindo ao simulador de emprÃ©stimo financeiro! \n"); 
+          printf("Bom dia, seja bem vindo ao simulador de empréstimo financeiro! \n"); 
 
           printf("\n"); 
 
@@ -260,7 +262,7 @@
 
                k = 0 ;
 
-               printf("deseja uma explicaÃ§Ã£o mais detalhada sobre os valores? (1) para sim (0) para nÃ£o \n"); 
+               printf("deseja uma explicação mais detalhada sobre os valores? (1) para sim (0) para não \n"); 
 
                scanf("%d", &ex); 
 
@@ -316,7 +318,7 @@
 
                          while (k != 1) { 
 
-                              printf("Selecione a opÃ§Ã£o que corresponde ao valor de seu emprÃ©stimo: \n");
+                              printf("Selecione a opção que corresponde ao valor de seu empréstimo: \n");
 
                               for(z=0;z<=4;z++){
                                    
@@ -329,7 +331,7 @@
 
                               if (l < 1 || l > 5) { 
 
-                                   printf("OpÃ§Ã£o invÃ¡lida! Tente novamente... \n"); 
+                                   printf("Opção inválida! Tente novamente... \n"); 
 
                                    opcao_valida = false ;
 
@@ -340,7 +342,7 @@
                               scanf("%.2f", &emp); 
 
 
-                              printf("VocÃª deseja selecionar em meses as parcelas? \n (1) Sim | (0) NÃ£o (escolher por anos) \n Caso nÃ£o vocÃª escolherÃ¡ quantos anos irÃ¡ dividir \n escolha qual for do seu agrado nÃ£o muda no resultado final \n OBS: se digitar algo diferente serÃ¡ selecionado a opÃ§Ã£o meses \n"); 
+                              printf("Você deseja selecionar em meses as parcelas? \n (1) Sim | (0) Não (escolher por anos) \n Caso não você escolherá quantos anos irá dividir \n escolha qual for do seu agrado não muda no resultado final \n OBS: se digitar algo diferente será selecionado a opção meses \n"); 
 
                               scanf("%d", &op2); 
 
@@ -374,7 +376,7 @@
 
                                         } else{
 
-                                             printf("OpÃ§Ã£o invalida! Reiniciando... \n");
+                                             printf("Opção invalida! Reiniciando... \n");
 
                                              opcao_valida = false ;
 
@@ -386,13 +388,13 @@
                                    }
                               } else{ 
 
-                                   printf("VocÃª irÃ¡ pagar em menos de 96 vezes? \n (1) SIM |(0) NÃ£o (- de 96 vezes) \n"); 
+                                   printf("Você irá pagar em menos de 96 vezes? \n (1) SIM |(0) Não (- de 96 vezes) \n"); 
 
                                    scanf("%d", &esc); 
 
                                    if (esc == 1) { 
 
-                                        printf("Agora selecione a opÃ§Ã£o que corresponde ao numero de parcelas:  \n");
+                                        printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n");
                                    }
 
                                    for(h=0;h<=8;h++){
@@ -408,12 +410,12 @@
 
                                    } else if (o == 9) {
 
-                                             printf("Quantos anos vocÃª irÃ¡ pagar? \n");
+                                             printf("Quantos anos você irá pagar? \n");
                                              scanf("%d", &c);  
 
                                         } else if (o < 1 || o > 9) {
 
-                                             printf("OpÃ§Ã£o invÃ¡lida! Reiniciando... \n");
+                                             printf("Opção inválida! Reiniciando... \n");
                                              opcao_valida = false;
 
                                         }
