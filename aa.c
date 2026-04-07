@@ -690,7 +690,7 @@
                          
                          system("cls"); 
                          printf("  ===================================================  \n");
-                         printf("                CAIXA ECONÔMICA FEDERAL                \n");
+                         printf("                CAIXA ECONOMICA FEDERAL                \n");
                          printf("  ===================================================  \n");
                          
                          for(q = 0; q <= 100; q++) {
@@ -862,9 +862,9 @@
                          
                          system("cls"); 
                          printf("  ===================================================  \n");
-                         printf("                  BANCO DO BRASIL                      \n");
+                         printf("                   BRADESCO S.A.                       \n");
                          printf("  ===================================================  \n");
-                         
+                                             
                          for(q = 0; q <= 100; q++) {
                               printf("\r[+] Sincronizando dados bancários: %d%%", q);
                               fflush(stdout); 
