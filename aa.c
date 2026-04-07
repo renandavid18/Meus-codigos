@@ -27,9 +27,15 @@
 
      int main(int argc, char *argv[]) { 
      
-          bool opcao_valida = false;
-          int expl, op1, op2, m, k, o, c, i, x, y, z, prc;
-          float emp, vpar, mont, jr;
+          int i = 0;              
+          int k = 0;              
+          int op1, op2, op3, expl, l, q, x, y, z, h, o, c, prc, id_transacao, esc;             
+          
+          bool opcao_valida; 
+
+          float emp, vpar,t mont, jr, tx_val, tx_decimal, tac, iof_total, valor_total_financiado, potencia, juros_totais, s_dev, juros_mes, amortizacao;  
+          
+          char cod_seguranca[20];     
           
           setlocale(LC_CTYPE, "Portuguese");
 
@@ -287,7 +293,7 @@
                                    scanf("%d", &op3); 
                                    if (op3 != 1) k = 1;
                                    else system("cls");
-                                   
+
                               }
                          }
                     }
