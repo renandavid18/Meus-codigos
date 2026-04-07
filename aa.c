@@ -234,60 +234,62 @@
 
 
 
-                                   if (opcao_valida == true){
+                                        if (opcao_valida == true){
 
-                                        if (opcao_valida) {
-                                   // --- CALCULOS DIRETOS (SEM VALIDACAO DE MARGEM) ---
-                                   tx_val = tx_pessoal[l][c];
-                                   tx_decimal = tx_val / 100.0;
-                                   tac = 95.00;
-                                   iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
-                                   if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
-                                   
-                                   valor_total_financiado = emp + iof_total + tac;
-                                   potencia = pow(1 + tx_decimal, prc);
-                                   vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
-                                   mont = vpar * prc;
-                                   juros_totais = mont - emp;
+                                             if (opcao_valida) {
+                                            
+                                             tx_val = tx_pessoal[l][c];
+                                             tx_decimal = tx_val / 100.0;
+                                             tac = 95.00;
+                                             iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+                                             
+                                             if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                             valor_total_financiado = emp + iof_total + tac;
+                                             potencia = pow(1 + tx_decimal, prc);
+                                             vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                             mont = vpar * prc;
+                                             juros_totais = mont - emp;
 
-                                   srand(time(NULL));
-                                   id_transacao = rand() % 8999 + 1000;
-                                   sprintf(cod_seguranca, "BB-%X", id_transacao);
+                                             srand(time(NULL));
+                                             id_transacao = rand() % 8999 + 1000;
+                                             sprintf(cod_seguranca, "BB-%X", id_transacao);
 
-                                   system("cls"); 
-                                   printf("\n  \xC9\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBB\n");
-                                   printf("  \xBA                PROTOCOLO DE SIMULACAO                \xBA\n");
-                                   printf("  \xBA  ID: %d-2026          AUTENTICACAO: %-15s \xBA\n", id_transacao, cod_seguranca);
-                                   printf("  \xCC\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xB9\n");
-                                   printf("  \xBA  VALOR SOLICITADO:         R$ %10.2f             \xBA\n", emp);
-                                   printf("  \xBA  (-) TAXAS (TAC/IOF):      R$ %10.2f             \xBA\n", iof_total + tac);
-                                   printf("  \xBA  (=) TOTAL FINANCIADO:     R$ %10.2f             \xBA\n", valor_total_financiado);
-                                   printf("  \xBA  ---------------------------------------------------  \xBA\n");
-                                   printf("  \xBA  PLANO DE PAGAMENTO:       %3d PARCELAS FIXAS       \xBA\n", prc);
-                                   printf("  \xBA  TAXA MENSAL APLICADA:          %6.2f %%              \xBA\n", tx_val);
-                                   printf("  \xBA  VALOR DA PRESTACAO:       R$ %10.2f             \xBA\n", vpar);
-                                   printf("  \xBA  VALOR TOTAL AO FINAL:     R$ %10.2f             \xBA\n", mont);
-                                   printf("  \xBA  CUSTO DO CREDITO:         R$ %10.2f             \xBA\n", juros_totais);
-                                   printf("  \xC8\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBC\n");
+                                             system("cls"); 
+                                             printf("\n  \xC9\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBB\n");
+                                             printf("  \xBA                PROTOCOLO DE SIMULACAO                \xBA\n");
+                                             printf("  \xBA  ID: %d-2026          AUTENTICACAO: %-15s \xBA\n", id_transacao, cod_seguranca);
+                                             printf("  \xCC\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xB9\n");
+                                             printf("  \xBA  VALOR SOLICITADO:         R$ %10.2f             \xBA\n", emp);
+                                             printf("  \xBA  (-) TAXAS (TAC/IOF):      R$ %10.2f             \xBA\n", iof_total + tac);
+                                             printf("  \xBA  (=) TOTAL FINANCIADO:     R$ %10.2f             \xBA\n", valor_total_financiado);
+                                             printf("  \xBA  ---------------------------------------------------  \xBA\n");
+                                             printf("  \xBA  PLANO DE PAGAMENTO:       %3d PARCELAS FIXAS       \xBA\n", prc);
+                                             printf("  \xBA  TAXA MENSAL APLICADA:          %6.2f %%              \xBA\n", tx_val);
+                                             printf("  \xBA  VALOR DA PRESTACAO:       R$ %10.2f             \xBA\n", vpar);
+                                             printf("  \xBA  VALOR TOTAL AO FINAL:     R$ %10.2f             \xBA\n", mont);
+                                             printf("  \xBA  CUSTO DO CREDITO:         R$ %10.2f             \xBA\n", juros_totais);
+                                             printf("  \xC8\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBC\n");
 
-                                   // --- EVOLUCAO MENSAL (AMORTIZACAO) ---
-                                   printf("\n  RESUMO DAS PRIMEIRAS PARCELAS:\n");
-                                   s_dev = valor_total_financiado; 
-                                   for(z = 1; z <= 5 && z <= prc; z++) {
-                                        juros_mes = s_dev * tx_decimal;
-                                        amortizacao = vpar - juros_mes;
-                                        s_dev = s_dev - amortizacao;
-                                        printf("  Mes %02d | Juros: R$ %7.2f | Amortizacao: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                             printf("\n  RESUMO DAS PRIMEIRAS PARCELAS:\n");
+                                             s_dev = valor_total_financiado; 
+                                             for(z = 1; z <= 5 && z <= prc; z++) {
+                                                  juros_mes = s_dev * tx_decimal;
+                                                  amortizacao = vpar - juros_mes;
+                                                  s_dev = s_dev - amortizacao;
+                                                  printf("  Mes %02d | Juros: R$ %7.2f | Amortizacao: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                             }
+
+                                             printf("\nDeseja refazer no mesmo banco? (1) Sim | (0) Nao: ");
+                                             scanf("%d", &op3); 
+                                             if (op3 != 1) k = 1;
+                                             else system("cls");
+                                             }
+                                        }
                                    }
-
-                                   printf("\nDeseja refazer no mesmo banco? (1) Sim | (0) Nao: ");
-                                   scanf("%d", &op3); 
-                                   if (op3 != 1) k = 1;
-                                   else system("cls");
-                              }
                          }
-                    }
-               break;
+                    
+                    break;   
 
                case 2:
           
