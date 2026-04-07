@@ -505,8 +505,11 @@
                printf("\n Selecao de Portfolio: ");
                scanf("%d", &op1);
 
+
                if(op1 == 0) break;
 
+               offset = (op1 - 1) * 5;
+               
                switch(op1) { 
 
                     case 1:
