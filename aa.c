@@ -485,6 +485,7 @@
                     system("pause > nul");
 
                }
+               while(u = 1){
 
                system("cls");
                printf("  __________________________________________________  \n");
@@ -2233,6 +2234,11 @@
                               }
                          }
                     break;
+
+                    default: 
+                    
+                         printf("Opção inválida!")
+                    }
                } 
           }
           return 0;
