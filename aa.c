@@ -236,53 +236,58 @@
 
                                    if (opcao_valida == true){
 
-                                        printf("A taxa ao mês aplicada em cima do empréstimo será de: ", tx[l,c], "%"); 
-
-
-                                        tx_val = tx[l,c]    // ex: 0,9 (0,9%) 
-
-                                        for(i=1;i<=prc;x++){
+                                        if (opcao_valida) {
+                                   // --- CALCULOS DIRETOS (SEM VALIDACAO DE MARGEM) ---
+                                   tx_val = tx_pessoal[l][c];
+                                   tx_decimal = tx_val / 100.0;
+                                   tac = 95.00;
+                                   iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+                                   if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
                                    
-                                        inv_pot = inv_pot / (1 + tx[l,c]) 
-                                        
-                                        }
-                                        
-                                        
-                                        mont = emp * (1 + tax_val) ^ prc ;
+                                   valor_total_financiado = emp + iof_total + tac;
+                                   potencia = pow(1 + tx_decimal, prc);
+                                   vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                   mont = vpar * prc;
+                                   juros_totais = mont - emp;
 
-                                        vpar = mont / prc ;  
+                                   srand(time(NULL));
+                                   id_transacao = rand() % 8999 + 1000;
+                                   sprintf(cod_seguranca, "BB-%X", id_transacao);
 
-                                        jr = mont - emp;
-                                        jr_m = jr / prc;
+                                   system("cls"); 
+                                   printf("\n  \xC9\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBB\n");
+                                   printf("  \xBA                PROTOCOLO DE SIMULACAO                \xBA\n");
+                                   printf("  \xBA  ID: %d-2026          AUTENTICACAO: %-15s \xBA\n", id_transacao, cod_seguranca);
+                                   printf("  \xCC\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xB9\n");
+                                   printf("  \xBA  VALOR SOLICITADO:         R$ %10.2f             \xBA\n", emp);
+                                   printf("  \xBA  (-) TAXAS (TAC/IOF):      R$ %10.2f             \xBA\n", iof_total + tac);
+                                   printf("  \xBA  (=) TOTAL FINANCIADO:     R$ %10.2f             \xBA\n", valor_total_financiado);
+                                   printf("  \xBA  ---------------------------------------------------  \xBA\n");
+                                   printf("  \xBA  PLANO DE PAGAMENTO:       %3d PARCELAS FIXAS       \xBA\n", prc);
+                                   printf("  \xBA  TAXA MENSAL APLICADA:          %6.2f %%              \xBA\n", tx_val);
+                                   printf("  \xBA  VALOR DA PRESTACAO:       R$ %10.2f             \xBA\n", vpar);
+                                   printf("  \xBA  VALOR TOTAL AO FINAL:     R$ %10.2f             \xBA\n", mont);
+                                   printf("  \xBA  CUSTO DO CREDITO:         R$ %10.2f             \xBA\n", juros_totais);
+                                   printf("  \xC8\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBC\n");
 
-                                        printf("----------------------------------------- \n RESULTADO DO EMPRÉSTIMO \n Taxa aplicada: %% ao mês \n", tx[l, c]); 
-
-                                        printf("Valor de cada parcela: R$ %.2f Total de juros: R$  %.2f \n Total de juros sobre cada parcela foi: R$ %.2f \n Total a pagar: R$ %.2f Liquidado em: %d meses \n", vpar, jr, jr_m, mont, prc;) 
-
-                                        printf("----------------------------------------- \n Digite ENTER para continuar \n"); 
-
-                                        system(pause); 
-
-                                        printf("\n");
-                                        printf("\n");
-
-                                        printf("Você deseja refazer as contas no mesmo banco? \n (1) Sim | (0) Não, qualquer valor diferente disso voltará ao menu \n");
-
-                                        scanf("%d", &op3); 
-
-
-
-                                        if op3 != 1 { 
-
-                                        k = 1 
-
-                                        }
+                                   // --- EVOLUCAO MENSAL (AMORTIZACAO) ---
+                                   printf("\n  RESUMO DAS PRIMEIRAS PARCELAS:\n");
+                                   s_dev = valor_total_financiado; 
+                                   for(z = 1; z <= 5 && z <= prc; z++) {
+                                        juros_mes = s_dev * tx_decimal;
+                                        amortizacao = vpar - juros_mes;
+                                        s_dev = s_dev - amortizacao;
+                                        printf("  Mes %02d | Juros: R$ %7.2f | Amortizacao: R$ %7.2f\n", z, juros_mes, amortizacao);
                                    }
+
+                                   printf("\nDeseja refazer no mesmo banco? (1) Sim | (0) Nao: ");
+                                   scanf("%d", &op3); 
+                                   if (op3 != 1) k = 1;
+                                   else system("cls");
                               }
                          }
-
-                                   
-                    break;
+                    }
+               break;
 
                case 2:
           
