@@ -87,15 +87,11 @@
 
 
 
-                         for(y=1;y<=2;y++){
+                         for(q = 0; q <= 100; q++) {
                          
-                              timer(3)
-                                        printf("Loading");
-                                        printf(".");
-                                        printf(".");
-                                        printf(". \n");
-                              timer(0)
-
+                              printf("\r[+] Carregando sistema: %d%%", q);
+                              fflush(stdout); 
+                              Sleep(20); 
                          }
 
 
