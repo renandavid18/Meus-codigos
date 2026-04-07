@@ -13,7 +13,7 @@
 
 
 
-     char parcela[8] = "Até 12 meses (1 ano)", "Até 24 meses (2 anos)", "Até 36 meses (3 anos)", "Até 48 meses (4 anos)", "Até 60 meses (5 anos)", "Até 72 meses (6 anos)", "Até 84 meses (7 anos)", "Até 96 meses (8 anos)", "Acima de 9 anos";
+     char parcela[9][40] = "Até 12 meses (1 ano)", "Até 24 meses (2 anos)", "Até 36 meses (3 anos)", "Até 48 meses (4 anos)", "Até 60 meses (5 anos)", "Até 72 meses (6 anos)", "Até 84 meses (7 anos)", "Até 96 meses (8 anos)", "Acima de 9 anos";
      
      int op1, op2, op3, expl, l, q, x, y, z, h, o, c, prc, id_transacao, esc;             
           
@@ -132,9 +132,9 @@
 
                                   printf("Selecione a opcao de parcelas (Anos): \n");  
 
-                                   for(x=0;x<=8;x++){
+                                   for(x=0;x<=88;x++){
                                    
-                                        printf("%d - %  \n", x, parcela[x]);
+                                        printf("%d - %s  \n", x + 1, parcela[x]);
 
                                    }
                                    scanf("%d", &c);
