@@ -439,9 +439,6 @@
           };
 
      int main(int argc, char *argv[]) { 
-          
-          SetConsoleCP(65001);
-          SetConsoleOutputCP(65001);
 
           int op1, op2 = 1, op3, ex, l, q, x, y, z, h, o, c, f, prc, id_transacao, esc;
           
@@ -453,7 +450,7 @@
           
           char cod_seguranca[20];  
 
-          setlocale(LC_ALL, "Portuguese");
+          setlocale(LC_CTYPE, "Portuguese");
 
           printf("Sistema de Simulaç?o de Crédito Integrado - Vers?o 2.2026\n");
           printf("Seja bem-vindo. Iniciando interface de atendimento...\n\n");
@@ -473,9 +470,11 @@
                     printf(" |              INFORMACOES TECNICAS                 | \n");
                     printf(" |___________________________________________________| \n");
                     printf(" |                                                   | \n");
-                    printf(" | 1. Taxas baseadas no Credit Score de mercado.     | \n");
-                    printf(" | 2. Parametros atualizados via BACEN (10 inst.)    | \n");
-                    printf(" | 3. O CET inclui IOF e tarifas (TAC).              | \n");
+                    printf(" ?   1. Taxas calculadas com base no perfil médio    ?\n");
+                    printf(" ?      de risco (Credit Score) do mercado.          ?\n");
+                    printf(" ?   2. Parâmetros atualizados via BACEN (10 inst.)  ?\n");
+                    printf(" ?   3. O CET (Custo Efetivo Total) inclui IOF e     ?\n");
+                    printf(" ?      tarifas administrativas (TAC).               ?\n");
                     printf(" |___________________________________________________| \n");
                     printf(" |         Pressione ENTER para continuar...         | \n");
                     printf(" |___________________________________________________| \n");
@@ -484,34 +483,37 @@
                }
 
                system("cls");
-               printf("  ????????????????????????????????????????????????????\n");
-               printf("  ?        SELECIONE A INSTITUI??O FINANCEIRA        ?\n");
-               printf("  ????????????????????????????????????????????????????\n");
-               printf("  ?  [01] Banco do Brasil                            ?\n");
-               printf("  ?  [02] Caixa Econômica Federal                    ?\n");
-               printf("  ?  [03] Bradesco S.A.                              ?\n");
-               printf("  ?  [04] Ita? Unibanco                              ?\n");
-               printf("  ?  [05] Santander Brasil                           ?\n");
-               printf("  ?  [06] Banco Inter                                ?\n");
-               printf("  ?  [07] PagBank                                    ?\n");
-               printf("  ?  [08] Nubank                                     ?\n");
-               printf("  ?  [09] Mercado Pago                               ?\n");
-               printf("  ?  [10] PicPay                                     ?\n");
-               printf("  ?                                                  ?\n");
-               printf("  ?  [00] Encerrar Sess?o                            ?\n");
-               printf("  ????????????????????????????????????????????????????\n");
-               printf("\n Seleç?o de Portf?lio: ");
+               printf("  __________________________________________________  \n");
+               printf(" |        SELECIONE A INSTITUICAO FINANCEIRA        | \n");
+               printf(" |__________________________________________________| \n");
+               printf(" |                                                  | \n");
+               printf(" |  [01] Banco do Brasil                            | \n");
+               printf(" |  [02] Caixa Economica Federal                    | \n");
+               printf(" |  [03] Bradesco S.A.                              | \n");
+               printf(" |  [04] Itau Unibanco                              | \n");
+               printf(" |  [05] Santander Brasil                           | \n");
+               printf(" |  [06] Banco Inter                                | \n");
+               printf(" |  [07] PagBank                                    | \n");
+               printf(" |  [08] Nubank                                     | \n");
+               printf(" |  [09] Mercado Pago                               | \n");
+               printf(" |  [10] PicPay                                     | \n");
+               printf(" |                                                  | \n");
+               printf(" |  [00] Encerrar Sessao                            | \n");
+               printf(" |__________________________________________________| \n");
+               printf("\n Selecao de Portfolio: ");
                scanf("%d", &op1);
 
                if(op1 == 0) break;
 
                switch(op1) { 
-                    case 1:
-                         system("cls"); 
-                         printf("  ?????????????????????????????????????????????????\n");
-                         printf("  ?                BANCO DO BRASIL                ?\n");
-                         printf("  ?????????????????????????????????????????????????\n");
 
+                    case 1:
+                         
+                         system("cls"); 
+                         printf("  ===================================================  \n");
+                         printf("                  BANCO DO BRASIL                      \n");
+                         printf("  ===================================================  \n");
+                         
                          for(q = 0; q <= 100; q++) {
                               printf("\r[+] Sincronizando dados banc?rios: %d%%", q);
                               fflush(stdout); 
@@ -601,21 +603,22 @@
                                    sprintf(cod_seguranca, "BB-%X", id_transacao);
 
                                    system("cls"); 
-                                   printf("\n  ????????????????????????????????????????????????????\n");
-                                   printf("  ?             PROTOCOLO DE SIMULA??O               ?\n");
-                                   printf("  ?  Ref: %d-2026          TOKEN: %-15s   ?\n", id_transacao, cod_seguranca);
-                                   printf("  ????????????????????????????????????????????????????\n");
-                                   printf("  ?  VALOR DO CR?DITO:            R$ %10.2f      ?\n", emp);
-                                   printf("  ?  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      ?\n", iof_total + tac);
-                                   printf("  ?  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      ?\n", valor_total_financiado);
-                                   printf("  ?  --------------------------------------------    ?\n");
-                                   printf("  ?  PRAZO DO CONTRATO:           %3d PRESTA??ES    ?\n", prc);
-                                   printf("  ?  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. ?\n", tx_val);
-                                   printf("  ?  VALOR DA PARCELA FIXA:       R$ %10.2f      ?\n", vpar);
-                                   printf("  ?  TOTAL A PAGAR (FINAL):       R$ %10.2f      ?\n", mont);
-                                   printf("  ?  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      ?\n", juros_totais);
-                                   printf("  ????????????????????????????????????????????????????\n");
-
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                   printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                   printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                   printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                   printf(" |  ----------------------------------------------  | \n");
+                                   printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                   printf(" |  TAXA DE JUROS NOMINAL:             %6.2f %% p.m. | \n", tx_val);
+                                   printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                   printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                   printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                   printf(" |__________________________________________________| \n");
+                                   
                                    printf("\nFLUXO DE AMORTIZA??O (Projeç?o das 5 primeiras parcelas):\n");
                                    s_dev = valor_total_financiado;    
 
