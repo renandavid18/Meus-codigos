@@ -2254,21 +2254,24 @@
                     }    
                }
 
-               printf("Deseja continuar?")
-                    escreval("(1) Sim | (0) Não(finalizar)")
-                    leia(fim)
+               while (m = 1){
+                    printf("Deseja continuar?");
+                    printf("(1) Sim | (0) Não(finalizar)");
+                    sacanf("%d", &fim);
 
-                        se fim = 1 entao
-                        m <- 1
-                        senao
-                             se fim = 0
-                                m <- 1
-                                i <- 1
-                             senao
-                                  se (fim <> 0) e (fim <> 1) entao
-                                  escreval("Opção invalida!")
-                                  fimse
-                             fimse
-                        fimse
+                    if (fim = 1){
+
+                         m <- 1
+                         senao
+                              se fim = 0
+                                   i <- 1
+                                   i <- 1
+                              senao
+                                   se (fim <> 0) e (fim <> 1) entao
+                                   escreval("Opção invalida!")
+                                   fimse
+                              fimse
+                         fimse
+               }
      }
 }
