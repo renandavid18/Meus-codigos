@@ -13,8 +13,8 @@
 
 
 
-     char parcela[8] = "01 a 12 meses (Ate 1 ano)", "13 a 24 meses (Ate 2 anos)", "25 a 36 meses (Ate 3 anos)", "37 a 48 meses (Ate 4 anos)", "49 a 60 meses (Ate 5 anos)", "61 a 72 meses (Ate 6 anos)", "73 a 84 meses (Ate 7 anos)", "85 a 96 meses (Ate 8 anos)", "Acima de 96 meses (9 anos +)";
-          
+     char parcela[8] = "Até 12 meses (1 ano)", "Até 24 meses (2 anos)", "Até 36 meses (3 anos)", "Até 48 meses (4 anos)", "Até 60 meses (5 anos)", "Até 72 meses (6 anos)", "Até 84 meses (7 anos)", "Até 96 meses (8 anos)", "Acima de 9 anos";
+     
      int op1, op2, op3, expl, l, q, x, y, z, h, o, c, prc, id_transacao, esc;             
           
      bool opcao_valida; 
