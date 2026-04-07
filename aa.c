@@ -584,6 +584,11 @@
                                    }
                               } 
 
+                              printf("\nSelecione a modalidade de credito:\n");
+printf("[1] Credito Pessoal\n[2] Credito Consignado\n[3] Financiamento\n");
+printf("Escolha: ");
+scanf("%d", &esc);
+
                               if (opcao_valida) {
 
                                    tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1]; 
