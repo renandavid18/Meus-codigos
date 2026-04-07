@@ -2252,8 +2252,9 @@
                               u = 1;
                          break;
                     }    
+               }
 
-                    printf("Deseja continuar?")
+               printf("Deseja continuar?")
                     escreval("(1) Sim | (0) Não(finalizar)")
                     leia(fim)
 
@@ -2269,7 +2270,5 @@
                                   fimse
                              fimse
                         fimse
-
-               }
-          return 0;
      }
+}
