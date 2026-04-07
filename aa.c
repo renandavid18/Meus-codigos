@@ -221,16 +221,21 @@
                                    scanf("%d", &o);
 
                                    if (o >= 1 && o <= 8) {
+
                                         c = o;
-                                   } else {
-                                        if (o == 9) {
+
+                                   } else if (o == 9) {
+
                                              printf("Quantos anos você irá pagar? \n");
                                              scanf("%d", &c);  
+
                                         } else if (o < 1 || o > 9) {
+
                                              printf("Opção inválida! Reiniciando... \n");
                                              opcao_valida = false;
+
                                         }
-                                   } 
+                              } 
 
 
 
