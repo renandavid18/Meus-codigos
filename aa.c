@@ -190,7 +190,7 @@ int main(int argc, char *argv[]) {
                               } else {
                                    if (o == 9) {
                                         printf("Quantos anos você irá pagar? \n");
-                                        scanf("%d", &c);  // precisa do & para variáveis do tipo int
+                                        scanf("%d", &c);  
                                    } else if (o < 1 || o > 9) {
                                         printf("Opção inválida! Reiniciando... \n");
                                         opcao_valida = false;
