@@ -184,7 +184,7 @@
 
 
 
-          // Taxa do financiamento
+          // Taxa do crédito Consignado
 
           double tx_consignado[50][9] = {
 
