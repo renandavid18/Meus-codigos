@@ -12,9 +12,29 @@
 
 
 
+     char fx[5][25] = { 
+          "0 até 5000R$",
+          "5.001 até 10.000R$",
+          "10.001 até 20.000R$",
+          "20.001 até 50.000R$",
+          "50.001 até 100.000R$",
+     };
+
+     // ou char fx[5][25] = { "0 até 5000R$", "5.001 até 10.000R$", "10.001 até 20.000R$", "20.001 até 50.000R$", "50.001 até 100.000R$"};
+     //como prefirir usar
 
      char parcela[9][40] = "Até 12 meses (1 ano)", "Até 24 meses (2 anos)", "Até 36 meses (3 anos)", "Até 48 meses (4 anos)", "Até 60 meses (5 anos)", "Até 72 meses (6 anos)", "Até 84 meses (7 anos)", "Até 96 meses (8 anos)", "Acima de 9 anos";
-     
+     // ou char parcela[9][40] = {
+     //   "Até 12 meses (1 ano)", 
+     //   "Até 24 meses (2 anos)", 
+     //   "Até 36 meses (3 anos)", 
+     //   "Até 48 meses (4 anos)", 
+     //   "Até 60 meses (5 anos)", 
+     //   "Até 72 meses (6 anos)", 
+     //   "Até 84 meses (7 anos)", 
+     //   "Até 96 meses (8 anos)", 
+     //   "Acima de 9 anos"
+     //};
      
      // Taxa do Crédito pessoal
      double tx[50][9] = {
@@ -300,7 +320,7 @@
 
                               }
                               scanf("%", &f);
-                              
+
                               l = f;
 
                               if (l < 1 || l > 5) { 
