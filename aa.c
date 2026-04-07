@@ -22,21 +22,22 @@
      parcela[6], "73 a 84 meses (Ate 7 anos)";
      parcela[7], "85 a 96 meses (Ate 8 anos)";
      parcela[8], "Acima de 96 meses (9 anos +)";
+          
+     int op1, op2, op3, expl, l, q, x, y, z, h, o, c, prc, id_transacao, esc;             
+          
+     bool opcao_valida; 
 
+     float emp, vpar,t mont, jr, tx_val, tx_decimal, tac, iof_total, valor_total_financiado, potencia, juros_totais, s_dev, juros_mes, amortizacao;  
+          
+     char cod_seguranca[20];  
 
 
      int main(int argc, char *argv[]) { 
           
-          
+
           int i = 0;              
           int k = 0;              
-          int op1, op2, op3, expl, l, q, x, y, z, h, o, c, prc, id_transacao, esc;             
-          
-          bool opcao_valida; 
-
-          float emp, vpar,t mont, jr, tx_val, tx_decimal, tac, iof_total, valor_total_financiado, potencia, juros_totais, s_dev, juros_mes, amortizacao;  
-          
-          char cod_seguranca[20];     
+   
           
           setlocale(LC_CTYPE, "Portuguese");
 
