@@ -438,11 +438,13 @@
 
           };
 
+
+
      int main(int argc, char *argv[]) { 
 
-          int op1, op2 = 1, op3, ex, l, q, x, y, z, h, o, c, f, prc, id_transacao, esc;
+          int op1, op3, ex, l, q, x, y, z, h, o, c, f, prc, id_transacao, esc, lin;
           
-          int i = 0, k = 0;
+          int i = 0, k = 0,  op2 = 1;
           
           bool opcao_valida; 
           
@@ -508,7 +510,7 @@
 
                if(op1 == 0) break;
 
-               offset = (op1 - 1) * 5;
+               lin = (op1 - 1) * 5;
                
                switch(op1) { 
 
@@ -532,7 +534,7 @@
                                    printf("[%d] - %s\n", z + 1, fx[z]);
                               }
                               scanf(" %d", &f); 
-                              l = f - 1; 
+                              l = lin + (f - 1); 
 
                               if (l < 0 || l > 4) { 
                                    printf("Opção inválida! Tente novamente...\n"); 
