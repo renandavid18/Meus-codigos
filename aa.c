@@ -208,7 +208,7 @@
           {1.85, 1.80, 1.75, 1.70, 1.65, 1.60, 1.55, 1.50, 1.45}
      };
 
-     int op1, op2, op3, expl, l, q, x, y, z, h, o, c, prc, id_transacao, esc;             
+     int op1, op2, op3, expl, l, q, x, y, z, h, o, c, f, prc, id_transacao, esc;             
           
      bool opcao_valida; 
 
@@ -299,7 +299,9 @@
                                    printf("%d - %  \n" z, fx[z]);
 
                               }
-                              scanf("%", &l);
+                              scanf("%", &f);
+                              
+                              l = f;
 
                               if (l < 1 || l > 5) { 
 
