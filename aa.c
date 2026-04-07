@@ -8,7 +8,7 @@
 
      #include <math.h> // OBRIGATÓRIO PARA POW()
 
-     
+
      parcela[0], "01 a 12 meses (Ate 1 ano)";
      parcela[1], "13 a 24 meses (Ate 2 anos)";
      parcela[2], "25 a 36 meses (Ate 3 anos)";
@@ -79,7 +79,11 @@
 
 
 
-                         printf("======================================================== \n                      BANCO DO BRASIL                     \n ======================================================== \n");
+                         system("cls"); 
+                         printf("  \xDA\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBF\n");
+                         printf("  \xB3                BANCO DO BRASIL                        \xB3\n");
+                         printf("  \xC8\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBC\n");
+
 
 
 
