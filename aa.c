@@ -584,10 +584,20 @@
                                    }
                               } 
 
-                              printf("\nSelecione a modalidade de credito:\n");
-printf("[1] Credito Pessoal\n[2] Credito Consignado\n[3] Financiamento\n");
-printf("Escolha: ");
-scanf("%d", &esc);
+                              system("cls");
+                              printf("  __________________________________________________  \n");
+                              printf(" |                                                  | \n");
+                              printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                              printf(" |__________________________________________________| \n");
+                              printf(" |                                                  | \n");
+                              printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                              printf(" |  [2] Credito Consignado (Desconto em Folha)      | \n");
+                              printf(" |  [3] Financiamento (Bens e Servicos)             | \n");
+                              printf(" |                                                  | \n");
+                              printf(" |__________________________________________________| \n");
+                              printf("\n Modalidade: ");
+                              scanf("%d", &esc);
+
 
                               if (opcao_valida) {
 
