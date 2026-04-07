@@ -57,35 +57,17 @@
 
 
 
-               if (expl != 0) {
-                    
-                    system("cls");
-                    printf("  \xDA\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBF\n");
-                    printf("  \xB3                INFORMACOES TECNICAS               \xB3\n");
-                    printf("  \xC3\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xB4\n");
-                    printf("  \xB3 - Taxas baseadas em perfil de credito medio/baixo. \xB3\n");
-                    printf("  \xB3 - Simulacao fiel com dados de 10 bancos reais.     \xB3\n");
-                    printf("  \xB3 - Variacao conforme parcelas e valor solicitado.  \xB3\n");
-                    printf("  \xB3 OBS: Taxas finais dependem do seu score de CPF.   \xB3\n");
-                    printf("  \xC8\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBC\n");
-                    printf("\n Pressione qualquer tecla para prosseguir para o menu...");
-                    system("pause > nul"); 
-               }
+               if (expl != 0){
 
-               system("cls");
-               printf("  \xC9\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBB\n");
-               printf("  \xBA                MENU DE SELECAO: BANCO                \xBA\n");
-               printf("  \xCC\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xB9\n");
-               printf("  \xBA  01. Banco do Brasil       06. Banco Inter         \xBA\n");
-               printf("  \xBA  02. Caixa Economica       07. Pagbank             \xBA\n");
-               printf("  \xBA  03. Bradesco              08. Nubank              \xBA\n");
-               printf("  \xBA  04. Itau Unibanco         09. Mercado Pago        \xBA\n");
-               printf("  \xBA  05. Santander             10. Picpay              \xBA\n");
-               printf("  \xBA                                                    \xBA\n");
-               printf("  \xBA  00. SAIR DO SISTEMA                               \xBA\n");
-               printf("  \xC8\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBC\n");
-               printf("\n Digite sua opcao: ");
-               scanf("%d", &op1);
+                    printf("sobre as taxas todas foram em base de um peril entre medio e baixo de creditos \n Onde buscamos a maior fidelidade possível e temos as taxas de 10 bancos \n As taxas variam de acordo com a parcela e o valor usado \n OBS: As taxas originais variam de acordo com seu perfil de crédito \n após a leitura digite ENTER para continuar \n"); 
+                    system("pause"); 
+
+               } 
+
+
+
+               printf("====================MENU==================== \n Escolha seu banco \n 1 - Banco do Brasil \n 2 - Caixa Econômica Federal \n 3 - Bradesco \n 4 - Itaú Unibanco \n 5 - Santander \n 6 - Banco Inter \n 7 - Pagbank \n 8 - Nubank \n 9 - Mercado pago \n 10 - Picpay \n 0 - Sair \n");
+               scanf("%d", &op1); 
 
 
 
