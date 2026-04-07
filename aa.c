@@ -528,7 +528,7 @@
                               for(z=0; z<=4; z++) {
                                    printf("[%d] - %s\n", z + 1, fx[z]);
                               }
-                              scanf("%d", &f); // Corrigido de "%" para "%d"
+                              scanf(" %d", &f); 
                               l = f - 1; 
 
                               if (l < 0 || l > 4) { 
