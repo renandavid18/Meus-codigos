@@ -252,7 +252,8 @@
           
           setlocale(LC_CTYPE, "Portuguese");
 
-          printf("Bom dia, seja bem vindo ao simulador de empréstimo financeiro! \n"); 
+          printf("Sistema de Simulação de Crédito Integrado - Versão 2.2026\n");
+          printf("Seja bem-vindo. Iniciando interface de atendimento...\n\n");
 
           printf("\n"); 
 
@@ -262,9 +263,8 @@
 
                k = 0 ;
 
-               printf("deseja uma explicação mais detalhada sobre os valores? (1) para sim (0) para não \n"); 
-
-               scanf("%d", &ex); 
+               printf("Deseja visualizar as notas técnicas sobre a composição das taxas? (1) Sim | (0) Não: ");
+               scanf("%d", &ex);
 
               if (ex != 0) {
                     system("cls");
@@ -282,23 +282,23 @@
                } 
 
                system("cls");
-               printf("  \xC9\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBB\n");
-               printf("  \xBA           ESCOLHA A INSTITUICAO BANCARIA             \xBA\n");
-               printf("  \xCC\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xB9\n");
-               printf("  \xBA  [01] Banco do Brasil                               \xBA\n");
-               printf("  \xBA  [02] Caixa Economica Federal                      \xBA\n");
-               printf("  \xBA  [03] Bradesco                                     \xBA\n");
-               printf("  \xBA  [04] Itau Unibanco                                \xBA\n");
-               printf("  \xBA  [05] Santander                                    \xBA\n");
-               printf("  \xBA  [06] Banco Inter                                  \xBA\n");
-               printf("  \xBA  [07] Pagbank                                      \xBA\n");
-               printf("  \xBA  [08] Nubank                                       \xBA\n");
-               printf("  \xBA  [09] Mercado Pago                                 \xBA\n");
-               printf("  \xBA  [10] Picpay                                       \xBA\n");
-               printf("  \xBA                                                    \xBA\n");
-               printf("  \xBA  [00] Sair do Sistema                               \xBA\n");
-               printf("  \xC8\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xCD\xBC\n");
-               printf("\n Digite sua opcao: ");
+               printf("  ??????????????????????????????????????????????????\n");
+               printf("  ?       SELECIONE A INSTITUIÇÃO FINANCEIRA       ?\n");
+               printf("  ??????????????????????????????????????????????????\n");
+               printf("  ?  [01] Banco do Brasil                          ?\n");
+               printf("  ?  [02] Caixa Econômica Federal                  ?\n");
+               printf("  ?  [03] Bradesco S.A.                            ?\n");
+               printf("  ?  [04] Itaú Unibanco                            ?\n");
+               printf("  ?  [05] Santander Brasil                         ?\n");
+               printf("  ?  [06] Banco Inter                              ?\n");
+               printf("  ?  [07] PagBank                                  ?\n");
+               printf("  ?  [08] Nubank                                   ?\n");
+               printf("  ?  [09] Mercado Pago                             ?\n");
+               printf("  ?  [10] PicPay                                   ?\n");
+               printf("  ?                                                ?\n");
+               printf("  ?  [00] Encerrar Sessão                          ?\n");
+               printf("  ??????????????????????????????????????????????????\n");
+               printf("\n Seleção de Portfólio: ");
                scanf("%d", &op1);
 
 
@@ -311,18 +311,18 @@
 
                           for(q = 0; q <= 100; q++) {
                          
-                              printf("\r[+] Carregando sistema: %d%%", q);
+                              printf("\r[+] Sincronizando dados bancários: %d%%", q);
                               fflush(stdout); 
                               Sleep(20); 
                          }
 
                          while (k != 1) { 
 
-                              printf("Selecione a opção que corresponde ao valor de seu empréstimo: \n");
+                              printf("Selecione a faixa de capital para enquadramento da proposta:\n");
 
                               for(z=0;z<=4;z++){
                                    
-                                   printf("%d - %s  \n", z + 1, fx[z]);
+                                   printf("[%d] - %s\n", z + 1, fx[z]);
 
                               }
                               scanf("%", &f);
@@ -337,14 +337,13 @@
 
                               }
 
-                              printf("Agora digite o valor do emprestimo \n"); 
+                              printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                              scanf("%f", &emp);
 
-                              scanf("%.2f", &emp); 
 
-
-                              printf("Você deseja selecionar em meses as parcelas? \n (1) Sim | (0) Não (escolher por anos) \n Caso não você escolherá quantos anos irá dividir \n escolha qual for do seu agrado não muda no resultado final \n OBS: se digitar algo diferente será selecionado a opção meses \n"); 
-
-                              scanf("%d", &op2); 
+                              printf("\nSelecione a unidade de tempo do contrato:\n");
+                              printf("(1) Período em Meses | (0) Período em Anos\n");
+                              printf("Nota: O cálculo final converterá automaticamente para parcelas mensais.\n");
 
 
                               opcao_valida = true; 
