@@ -268,18 +268,19 @@
 
               if (ex != 0) {
                     system("cls");
-                    printf("  \xDA\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBF\n");
-                    printf("  \xB3                INFORMACOES TECNICAS               \xB3\n");
-                    printf("  \xC3\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xB4\n");
-                    printf("  \xB3 As taxas sao baseadas em perfis de credito       \xB3\n");
-                    printf("  \xB3 entre medio e baixo, buscando fidelidade real.   \xB3\n");
-                    printf("  \xB3 O calculo utiliza dados de 10 bancos distintos.  \xB3\n");
-                    printf("  \xB3 Os valores variam conforme parcela e emprestimo. \xB3\n"); // Ajustado aqui
-                    printf("  \xC3\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xB4\n");
-                    printf("  \xB3         Pressione ENTER para continuar...         \xB3\n");
-                    printf("  \xC8\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBC\n");
+                    printf("  ?????????????????????????????????????????????????\n");
+                    printf("  ?             INFORMAÇÕES TÉCNICAS              ?\n");
+                    printf("  ?????????????????????????????????????????????????\n");
+                    printf("  ? 1. Taxas calculadas com base no perfil médio  ?\n");
+                    printf("  ?    de risco (Credit Score) do mercado.        ?\n");
+                    printf("  ? 2. Parâmetros atualizados via BACEN (10 inst.)?\n");
+                    printf("  ? 3. O CET (Custo Efetivo Total) inclui IOF e   ?\n");
+                    printf("  ?    tarifas administrativas (TAC).             ?\n");
+                    printf("  ?????????????????????????????????????????????????\n");
+                    printf("  ?      Pressione ENTER para continuar...        ?\n");
+                    printf("  ?????????????????????????????????????????????????\n");
                     system("pause > nul");
-               } 
+              }
 
                system("cls");
                printf("  ??????????????????????????????????????????????????\n");
