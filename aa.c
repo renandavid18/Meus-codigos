@@ -2262,16 +2262,13 @@
                     if (fim = 1){
 
                          m <- 1
-                         senao
-                              se fim = 0
-                                   i <- 1
-                                   i <- 1
-                              senao
-                                   se (fim <> 0) e (fim <> 1) entao
-                                   escreval("Opção invalida!")
-                                   fimse
-                              fimse
-                         fimse
+                    }else if(fim = 0){
+                         m <- 1
+                         i <- 1
+                    } else{
+                    printf("Opção invalida!");
+                    }
                }
+          }
      }
-}
+
