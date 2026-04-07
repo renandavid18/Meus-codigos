@@ -2262,11 +2262,16 @@
                     if (fim = 1){
 
                          m <- 1
+
                     }else if(fim = 0){
+
                          m <- 1
                          i <- 1
+
                     } else{
+
                     printf("Opção invalida!");
+                    
                     }
                }
           }
