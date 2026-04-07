@@ -14,42 +14,42 @@
      
      char fx[5][25] = {
 
-          "0 até 5000R$",
+          "0 at? 5000R$",
 
-          "5.001 até 10.000R$",
+          "5.001 at? 10.000R$",
 
-          "10.001 até 20.000R$",
+          "10.001 at? 20.000R$",
 
-          "20.001 até 50.000R$",
+          "20.001 at? 50.000R$",
 
-          "50.001 até 100.000R$",
+          "50.001 at? 100.000R$",
 
      };
 
-     // ou char fx[5][25] = { "0 até 5000R$", "5.001 até 10.000R$", "10.001 até 20.000R$", "20.001 até 50.000R$", "50.001 até 100.000R$"};
+     // ou char fx[5][25] = { "0 at? 5000R$", "5.001 at? 10.000R$", "10.001 at? 20.000R$", "20.001 at? 50.000R$", "50.001 at? 100.000R$"};
 
      //como prefirir usar
 
 
-     char parcela[9][40] ={ "Até 12 meses (1 ano)", "Até 24 meses (2 anos)", "Até 36 meses (3 anos)", "Até 48 meses (4 anos)", "Até 60 meses (5 anos)", "Até 72 meses (6 anos)", "Até 84 meses (7 anos)", "Até 96 meses (8 anos)", "Acima de 9 anos"};
+     char parcela[9][40] ={ "At? 12 meses (1 ano)", "At? 24 meses (2 anos)", "At? 36 meses (3 anos)", "At? 48 meses (4 anos)", "At? 60 meses (5 anos)", "At? 72 meses (6 anos)", "At? 84 meses (7 anos)", "At? 96 meses (8 anos)", "Acima de 9 anos"};
 
      // ou char parcela[9][40] = {
 
-     //        "Até 12 meses (1 ano)",
+     //        "At? 12 meses (1 ano)",
 
-     //        "Até 24 meses (2 anos)",
+     //        "At? 24 meses (2 anos)",
 
-     //        "Até 36 meses (3 anos)",
+     //        "At? 36 meses (3 anos)",
 
-     //        "Até 48 meses (4 anos)",
+     //        "At? 48 meses (4 anos)",
 
-     //        "Até 60 meses (5 anos)",
+     //        "At? 60 meses (5 anos)",
 
-     //        "Até 72 meses (6 anos)",
+     //        "At? 72 meses (6 anos)",
 
-     //        "Até 84 meses (7 anos)",
+     //        "At? 84 meses (7 anos)",
 
-     //        "Até 96 meses (8 anos)",
+     //        "At? 96 meses (8 anos)",
 
      //        "Acima de 9 anos",
 
@@ -57,7 +57,7 @@
 
 
 
-     // Taxa do Cr‚dito pessoal
+     // Taxa do Crédito pessoal
           double tx[50][9] = {
 
                // Banco 1 (BB)
@@ -96,7 +96,7 @@
 
                {6.20, 6.15, 6.10, 6.05, 6.00, 5.95, 5.92, 5.90, 5.88},
 
-               // Banco 4 (Ita£)
+               // Banco 4 (Ita?)
 
                {5.70, 5.65, 5.60, 5.55, 5.50, 5.48, 5.45, 5.42, 5.40},
 
@@ -224,7 +224,7 @@
 
                {2.05, 2.02, 2.00, 1.98, 1.95, 1.93, 1.90, 1.88, 1.85},
 
-               // Banco 4 (Ita£)
+               // Banco 4 (Ita?)
 
                {2.05, 2.02, 2.00, 1.98, 1.95, 1.92, 1.90, 1.88, 1.85},
 
@@ -352,7 +352,7 @@
 
                {1.40, 1.38, 1.35, 1.33, 1.30, 1.28, 1.25, 1.23, 1.20},
 
-               // Banco 4 (Ita£)
+               // Banco 4 (Ita?)
 
                {1.35, 1.32, 1.30, 1.28, 1.25, 1.23, 1.20, 1.18, 1.15},
 
@@ -455,52 +455,52 @@
 
           setlocale(LC_ALL, "Portuguese");
 
-          printf("Sistema de Simula‡Æo de Cr‚dito Integrado - VersÆo 2.2026\n");
+          printf("Sistema de Simulaç?o de Crédito Integrado - Vers?o 2.2026\n");
           printf("Seja bem-vindo. Iniciando interface de atendimento...\n\n");
 
           while (i != 1) {
 
                k = 0;
 
-               printf("Deseja visualizar as notas t‚cnicas sobre a composi‡Æo das taxas? (1) Sim | (0) NÆo: \n");
+               printf("Deseja visualizar as notas técnicas sobre a composiç?o das taxas? (1) Sim | (0) N?o: \n");
                scanf("%d", &ex);
 
                if (ex != 0) {
 
                     system("cls");
-                    printf("  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿\n");
-                    printf("  ³             INFORMA€åES TCNICAS                ³\n");
-                    printf("  ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´\n");
-                    printf("  ³ 1. Taxas calculadas com base no perfil m‚dio    ³\n");
-                    printf("  ³    de risco (Credit Score) do mercado.          ³\n");
-                    printf("  ³ 2. Parƒmetros atualizados via BACEN (10 inst.)  ³\n");
-                    printf("  ³ 3. O CET (Custo Efetivo Total) inclui IOF e     ³\n");
-                    printf("  ³    tarifas administrativas (TAC).               ³\n");
-                    printf("  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ\n");
-                    printf("  ³      Pressione ENTER para continuar...          ³\n");
-                    printf("  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ\n");
+                    printf("  ???????????????????????????????????????????????????\n");
+                    printf("  ?             INFORMA??ES T?CNICAS                ?\n");
+                    printf("  ???????????????????????????????????????????????????\n");
+                    printf("  ? 1. Taxas calculadas com base no perfil médio    ?\n");
+                    printf("  ?    de risco (Credit Score) do mercado.          ?\n");
+                    printf("  ? 2. Parâmetros atualizados via BACEN (10 inst.)  ?\n");
+                    printf("  ? 3. O CET (Custo Efetivo Total) inclui IOF e     ?\n");
+                    printf("  ?    tarifas administrativas (TAC).               ?\n");
+                    printf("  ???????????????????????????????????????????????????\n");
+                    printf("  ?      Pressione ENTER para continuar...          ?\n");
+                    printf("  ???????????????????????????????????????????????????\n");
                     system("pause > nul");
 
                }
 
                system("cls");
-               printf("  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿\n");
-               printf("  ³        SELECIONE A INSTITUI€ÇO FINANCEIRA        ³\n");
-               printf("  ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´\n");
-               printf("  ³  [01] Banco do Brasil                            ³\n");
-               printf("  ³  [02] Caixa Econ“mica Federal                    ³\n");
-               printf("  ³  [03] Bradesco S.A.                              ³\n");
-               printf("  ³  [04] Ita£ Unibanco                              ³\n");
-               printf("  ³  [05] Santander Brasil                           ³\n");
-               printf("  ³  [06] Banco Inter                                ³\n");
-               printf("  ³  [07] PagBank                                    ³\n");
-               printf("  ³  [08] Nubank                                     ³\n");
-               printf("  ³  [09] Mercado Pago                               ³\n");
-               printf("  ³  [10] PicPay                                     ³\n");
-               printf("  ³                                                  ³\n");
-               printf("  ³  [00] Encerrar SessÆo                            ³\n");
-               printf("  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ\n");
-               printf("\n Sele‡Æo de Portf¢lio: ");
+               printf("  ????????????????????????????????????????????????????\n");
+               printf("  ?        SELECIONE A INSTITUI??O FINANCEIRA        ?\n");
+               printf("  ????????????????????????????????????????????????????\n");
+               printf("  ?  [01] Banco do Brasil                            ?\n");
+               printf("  ?  [02] Caixa Econômica Federal                    ?\n");
+               printf("  ?  [03] Bradesco S.A.                              ?\n");
+               printf("  ?  [04] Ita? Unibanco                              ?\n");
+               printf("  ?  [05] Santander Brasil                           ?\n");
+               printf("  ?  [06] Banco Inter                                ?\n");
+               printf("  ?  [07] PagBank                                    ?\n");
+               printf("  ?  [08] Nubank                                     ?\n");
+               printf("  ?  [09] Mercado Pago                               ?\n");
+               printf("  ?  [10] PicPay                                     ?\n");
+               printf("  ?                                                  ?\n");
+               printf("  ?  [00] Encerrar Sess?o                            ?\n");
+               printf("  ????????????????????????????????????????????????????\n");
+               printf("\n Seleç?o de Portf?lio: ");
                scanf("%d", &op1);
 
                if(op1 == 0) break;
@@ -508,12 +508,12 @@
                switch(op1) { 
                     case 1:
                          system("cls"); 
-                         printf("  ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»\n");
-                         printf("  º                BANCO DO BRASIL                º\n");
-                         printf("  ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼\n");
+                         printf("  ?????????????????????????????????????????????????\n");
+                         printf("  ?                BANCO DO BRASIL                ?\n");
+                         printf("  ?????????????????????????????????????????????????\n");
 
                          for(q = 0; q <= 100; q++) {
-                              printf("\r[+] Sincronizando dados banc rios: %d%%", q);
+                              printf("\r[+] Sincronizando dados banc?rios: %d%%", q);
                               fflush(stdout); 
                               Sleep(10); 
                          }
@@ -528,21 +528,21 @@
                               l = f - 1; 
 
                               if (l < 0 || l > 4) { 
-                                   printf("Op‡Æo inv lida! Tente novamente...\n"); 
+                                   printf("Opç?o inv?lida! Tente novamente...\n"); 
                                    continue;
                               }
 
-                              printf("\nInforme o valor l¡quido solicitado (Principal): R$ ");
+                              printf("\nInforme o valor l?quido solicitado (Principal): R$ ");
                               scanf("%f", &emp);
 
                               printf("\nSelecione a unidade de tempo do contrato:\n");
-                              printf("(1) Per¡odo em Meses | (0) Per¡odo em Anos\n");
+                              printf("(1) Per?odo em Meses | (0) Per?odo em Anos\n");
                               scanf("%d", &op2);
 
                               opcao_valida = true; 
 
                               if (op2 == 0) { 
-                                   printf("Selecione a op‡Æo de parcelas (Anos): \n");  
+                                   printf("Selecione a opç?o de parcelas (Anos): \n");  
                                    for(x=0; x<=8; x++) {
                                         printf("%d - %s\n", x + 1, parcela[x]);
                                    }
@@ -554,11 +554,11 @@
                                    } else if (c >= 1 && c <= 8) {
                                         prc = c * 12;
                                    } else {
-                                        printf("Op‡Æo inv lida!\n");
+                                        printf("Opç?o inv?lida!\n");
                                         opcao_valida = false;
                                    }
                               } else { 
-                                   printf("Selecione o n£mero de parcelas mensais:\n");
+                                   printf("Selecione o n?mero de parcelas mensais:\n");
                                    for(h=0; h<=8; h++) {
                                         printf("%d - %s\n", h + 1, parcela[h]);
                                    } 
@@ -601,22 +601,22 @@
                                    sprintf(cod_seguranca, "BB-%X", id_transacao);
 
                                    system("cls"); 
-                                   printf("\n  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿\n");
-                                   printf("  ³             PROTOCOLO DE SIMULA€ÇO               ³\n");
-                                   printf("  ³  Ref: %d-2026          TOKEN: %-15s   ³\n", id_transacao, cod_seguranca);
-                                   printf("  ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´\n");
-                                   printf("  ³  VALOR DO CRDITO:            R$ %10.2f      ³\n", emp);
-                                   printf("  ³  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      ³\n", iof_total + tac);
-                                   printf("  ³  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      ³\n", valor_total_financiado);
-                                   printf("  ³  --------------------------------------------    ³\n");
-                                   printf("  ³  PRAZO DO CONTRATO:           %3d PRESTA€åES    ³\n", prc);
-                                   printf("  ³  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. ³\n", tx_val);
-                                   printf("  ³  VALOR DA PARCELA FIXA:       R$ %10.2f      ³\n", vpar);
-                                   printf("  ³  TOTAL A PAGAR (FINAL):       R$ %10.2f      ³\n", mont);
-                                   printf("  ³  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      ³\n", juros_totais);
-                                   printf("  ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ\n");
+                                   printf("\n  ????????????????????????????????????????????????????\n");
+                                   printf("  ?             PROTOCOLO DE SIMULA??O               ?\n");
+                                   printf("  ?  Ref: %d-2026          TOKEN: %-15s   ?\n", id_transacao, cod_seguranca);
+                                   printf("  ????????????????????????????????????????????????????\n");
+                                   printf("  ?  VALOR DO CR?DITO:            R$ %10.2f      ?\n", emp);
+                                   printf("  ?  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      ?\n", iof_total + tac);
+                                   printf("  ?  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      ?\n", valor_total_financiado);
+                                   printf("  ?  --------------------------------------------    ?\n");
+                                   printf("  ?  PRAZO DO CONTRATO:           %3d PRESTA??ES    ?\n", prc);
+                                   printf("  ?  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. ?\n", tx_val);
+                                   printf("  ?  VALOR DA PARCELA FIXA:       R$ %10.2f      ?\n", vpar);
+                                   printf("  ?  TOTAL A PAGAR (FINAL):       R$ %10.2f      ?\n", mont);
+                                   printf("  ?  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      ?\n", juros_totais);
+                                   printf("  ????????????????????????????????????????????????????\n");
 
-                                   printf("\nFLUXO DE AMORTIZA€ÇO (Proje‡Æo das 5 primeiras parcelas):\n");
+                                   printf("\nFLUXO DE AMORTIZA??O (Projeç?o das 5 primeiras parcelas):\n");
                                    s_dev = valor_total_financiado;    
 
                                    for(z = 1; z <= 5 && z <= prc; z++) {
@@ -624,11 +624,11 @@
                                         juros_mes = s_dev * tx_decimal;
                                         amortizacao = vpar - juros_mes;
                                         s_dev = s_dev - amortizacao;
-                                        printf("  Parcela %02d | Juros: R$ %7.2f | Amortiza‡Æo: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                        printf("  Parcela %02d | Juros: R$ %7.2f | Amortizaç?o: R$ %7.2f\n", z, juros_mes, amortizacao);
                               
                                    }
 
-                                   printf("\nDeseja realizar uma nova cota‡Æo? (1) Sim | (0) Menu: ");
+                                   printf("\nDeseja realizar uma nova cotaç?o? (1) Sim | (0) Menu: ");
                                    scanf("%d", &op3); 
                                    if (op3 != 1) k = 1;
                                    else system("cls");
