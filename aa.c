@@ -446,7 +446,7 @@
           
           bool opcao_valida; 
           
-          float emp, vpar, mont, jr, tx_val, tx_decimal, tx_pessoal, tac, iof_total, valor_total_financiado, potencia, juros_totais, s_dev, juros_mes, amortizacao;   
+          double emp, vpar, mont, jr, tx_val, tx_decimal, tx_pessoal, tac, iof_total, valor_total_financiado, potencia, juros_totais, s_dev, juros_mes, amortizacao;   
           
           char cod_seguranca[20];  
 
