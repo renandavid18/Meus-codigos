@@ -615,7 +615,7 @@
                                    printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
                                    printf(" |  ----------------------------------------------  | \n");
                                    printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
-                                   printf(" |  TAXA DE JUROS NOMINAL:             %6.2f %% p.m. | \n", tx_val);
+                                   printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
                                    printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
                                    printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
                                    printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
