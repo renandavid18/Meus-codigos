@@ -26,7 +26,8 @@
 
 
      int main(int argc, char *argv[]) { 
-     
+          
+          
           int i = 0;              
           int k = 0;              
           int op1, op2, op3, expl, l, q, x, y, z, h, o, c, prc, id_transacao, esc;             
