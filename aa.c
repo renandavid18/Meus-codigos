@@ -690,7 +690,7 @@
                          
                          system("cls"); 
                          printf("  ===================================================  \n");
-                         printf("                  BANCO DO BRASIL                      \n");
+                         printf("                CAIXA ECONÔMICA FEDERAL                \n");
                          printf("  ===================================================  \n");
                          
                          for(q = 0; q <= 100; q++) {
