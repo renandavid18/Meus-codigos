@@ -166,7 +166,7 @@
 
                               if (op2 == 0) { 
 
-                                   printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n"); 
+                                  printf("Selecione a opcao de parcelas (Anos): \n");  
 
 
                                    for(x=1;x<=9;x++){
