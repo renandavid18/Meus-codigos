@@ -686,6 +686,7 @@
                                         else system("cls");
                                    }
                               }
+                              u = 0;
                          break;
 
                          case 2:
@@ -858,6 +859,7 @@
                                         else system("cls");
                                    }
                               }
+                              u = 0;
                          break;
 
                          case 3:
@@ -1030,6 +1032,7 @@
                                         else system("cls");
                                    }
                               }
+                              u = 0;
                          break;
 
                          case 4:
@@ -1202,6 +1205,7 @@
                                         else system("cls");
                                    }
                               }
+                              u = 0;
                          break;
 
                          case 5:
@@ -1374,6 +1378,7 @@
                                         else system("cls");
                                    }
                               }
+                              u = 0;
                          break;
 
                          case 6:
@@ -1546,6 +1551,7 @@
                                         else system("cls");
                                    }
                               }
+                              u = 0;
                          break;
 
                          case 7:
@@ -1718,6 +1724,7 @@
                                         else system("cls");
                                    }
                               }
+                              u = 0;
                          break;
 
                          case 8:
@@ -1890,6 +1897,7 @@
                                         else system("cls");
                                    }
                               }
+                              u = 0;
                          break;
 
                          case 9:
@@ -2062,6 +2070,7 @@
                                         else system("cls");
                                    }
                               }
+                              u = 0;
                          break;
 
                          case 10:
@@ -2234,12 +2243,13 @@
                                         else system("cls");
                                    }
                               }
+                              u = 0;
                          break;
 
                          default: 
                          
                               printf("Opção inválida!");
-                              u = 1
+                              u = 1;
                          break;
                     }    
 
