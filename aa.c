@@ -468,18 +468,18 @@
                if (ex != 0) {
 
                     system("cls");
-    printf("  ___________________________________________________  \n");
-    printf(" |                                                   | \n");
-    printf(" |              INFORMACOES TECNICAS                 | \n");
-    printf(" |___________________________________________________| \n");
-    printf(" |                                                   | \n");
-    printf(" | 1. Taxas baseadas no Credit Score de mercado.     | \n");
-    printf(" | 2. Parametros atualizados via BACEN (10 inst.)    | \n");
-    printf(" | 3. O CET inclui IOF e tarifas (TAC).              | \n");
-    printf(" |___________________________________________________| \n");
-    printf(" |         Pressione ENTER para continuar...         | \n");
-    printf(" |___________________________________________________| \n");
-    system("pause > nul");
+                    printf("  ___________________________________________________  \n");
+                    printf(" |                                                   | \n");
+                    printf(" |              INFORMACOES TECNICAS                 | \n");
+                    printf(" |___________________________________________________| \n");
+                    printf(" |                                                   | \n");
+                    printf(" | 1. Taxas baseadas no Credit Score de mercado.     | \n");
+                    printf(" | 2. Parametros atualizados via BACEN (10 inst.)    | \n");
+                    printf(" | 3. O CET inclui IOF e tarifas (TAC).              | \n");
+                    printf(" |___________________________________________________| \n");
+                    printf(" |         Pressione ENTER para continuar...         | \n");
+                    printf(" |___________________________________________________| \n");
+                    system("pause > nul");
 
                }
 
