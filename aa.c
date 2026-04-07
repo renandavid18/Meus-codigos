@@ -10,6 +10,8 @@
      
      #include <windows.h>
 
+     #include <time.h>
+
 
 
      char fx[5][25] = { 
@@ -23,7 +25,7 @@
      // ou char fx[5][25] = { "0 até 5000R$", "5.001 até 10.000R$", "10.001 até 20.000R$", "20.001 até 50.000R$", "50.001 até 100.000R$"};
      //como prefirir usar
 
-     char parcela[9][40] = "Até 12 meses (1 ano)", "Até 24 meses (2 anos)", "Até 36 meses (3 anos)", "Até 48 meses (4 anos)", "Até 60 meses (5 anos)", "Até 72 meses (6 anos)", "Até 84 meses (7 anos)", "Até 96 meses (8 anos)", "Acima de 9 anos";
+     char parcela[9][40] ={ "Até 12 meses (1 ano)", "Até 24 meses (2 anos)", "Até 36 meses (3 anos)", "Até 48 meses (4 anos)", "Até 60 meses (5 anos)", "Até 72 meses (6 anos)", "Até 84 meses (7 anos)", "Até 96 meses (8 anos)", "Acima de 9 anos"};
      
      // ou char parcela[9][40] = {
      //        "Até 12 meses (1 ano)", 
@@ -36,7 +38,7 @@
      //        "Até 96 meses (8 anos)", 
      //        "Acima de 9 anos",
      //    };
-     
+
      
      // Taxa do Crédito pessoal
      double tx[50][9] = {
@@ -230,11 +232,11 @@
           {1.85, 1.80, 1.75, 1.70, 1.65, 1.60, 1.55, 1.50, 1.45}
      };
 
-     int op1, op2, op3, expl, l, q, x, y, z, h, o, c, f, prc, id_transacao, esc;             
+     int op1, op2, op3, ex, l, q, x, y, z, h, o, c, f, prc, id_transacao, esc;             
           
      bool opcao_valida; 
 
-     float emp, vpar,t mont, jr, tx_val, tx_decimal, tac, iof_total, valor_total_financiado, potencia, juros_totais, s_dev, juros_mes, amortizacao;  
+     float emp, vpar, mont, jr, tx_val, tx_decimal, tx_pessoal, tac, iof_total, valor_total_financiado, potencia, juros_totais, s_dev, juros_mes, amortizacao;  
           
      char cod_seguranca[20];  
 
@@ -260,9 +262,9 @@
 
                printf("deseja uma explicação mais detalhada sobre os valores? (1) para sim (0) para não \n"); 
 
-               scanf("%d", &expl); 
+               scanf("%d", &ex); 
 
-              if (expl != 0) {
+              if (ex != 0) {
                     system("cls");
                     printf("  \xDA\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBF\n");
                     printf("  \xB3                INFORMACOES TECNICAS               \xB3\n");
@@ -316,9 +318,9 @@
 
                               printf("Selecione a opção que corresponde ao valor de seu empréstimo: \n");
 
-                              for(z=1;z<=5;z++){
+                              for(z=0;z<=4;z++){
                                    
-                                   printf("%d - %  \n" z, fx[z]);
+                                   printf("%d - %s  \n", z + 1, fx[z]);
 
                               }
                               scanf("%", &f);
@@ -349,7 +351,7 @@
 
                                   printf("Selecione a opcao de parcelas (Anos): \n");  
 
-                                   for(x=0;x<=88;x++){
+                                   for(x=0;x<=8;x++){
                                    
                                         printf("%d - %s  \n", x + 1, parcela[x]);
 
@@ -360,7 +362,7 @@
 
                                         scanf("Digite quantos anos por favor \n");
 
-                                        scaf("%d", &o);
+                                        scanf("%d", &o);
 
                                         prc = o ;
 
@@ -393,9 +395,9 @@
                                         printf("Agora selecione a opção que corresponde ao numero de parcelas:  \n");
                                    }
 
-                                   for(h=1;h<=9;h++){
+                                   for(h=0;h<=8;h++){
                                    
-                                        printf("%d - %  \n", x, parcela[x]);
+                                        printf("%d - %  \n", h + 1, parcela[h]);
                                         
                                    } 
                                    scanf("%d", &o);
@@ -419,7 +421,7 @@
 
                               if (opcao_valida) {
                                    
-                                   tx_val = tx_pessoal[l][c];
+                                   tx_val = tx[l][c];
                                    tx_decimal = tx_val / 100.0;
                                    tac = 95.00;
                                    iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
@@ -469,9 +471,9 @@
                               }
                          }
                     }
-               break;  
-
-               case 2:
+               break; 
+          } 
+     }
           
 			
 		
