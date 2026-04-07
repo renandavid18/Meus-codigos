@@ -775,7 +775,7 @@
                               printf("\n Modalidade: ");
                               scanf("%d", &esc1);
 
-                              switch(esc1){
+                              
                                    case 1:
                                         
                                         tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
