@@ -444,7 +444,7 @@
 
           int op1, op3, ex, l, q, x, y, z, h, o, c, f, prc, id_transacao, esc, lin;
           
-          int i = 0, k = 0,  op2 = 1;
+          int i = 0, k = 0,  op2 = 1, u = 1;
           
           bool opcao_valida; 
           
@@ -485,6 +485,7 @@
                     system("pause > nul");
 
                }
+
                while(u = 1){
 
                system("cls");
@@ -2238,7 +2239,7 @@
                     default: 
                     
                          printf("Opção inválida!")
-                    }
+               
                } 
           }
           return 0;
