@@ -477,6 +477,8 @@
                     printf(" ?      tarifas administrativas (TAC).               ? \n");
                     printf(" |   4. Os valores variam conforme parcela           | \n");
                     printf(" |      e emprestimo.                                | \n");
+                    printf(" |   5. | \n");
+                    printf(" |___________________________________________________| \n");
                     printf(" |___________________________________________________| \n");
                     printf(" |         Pressione ENTER para continuar...         | \n");
                     printf(" |___________________________________________________| \n");
