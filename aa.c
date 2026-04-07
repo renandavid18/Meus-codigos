@@ -13,15 +13,7 @@
 
 
 
-     parcela[0], "01 a 12 meses (Ate 1 ano)";
-     parcela[1], "13 a 24 meses (Ate 2 anos)";
-     parcela[2], "25 a 36 meses (Ate 3 anos)";
-     parcela[3], "37 a 48 meses (Ate 4 anos)";
-     parcela[4], "49 a 60 meses (Ate 5 anos)";
-     parcela[5], "61 a 72 meses (Ate 6 anos)";
-     parcela[6], "73 a 84 meses (Ate 7 anos)";
-     parcela[7], "85 a 96 meses (Ate 8 anos)";
-     parcela[8], "Acima de 96 meses (9 anos +)";
+     char parcela[8] = "01 a 12 meses (Ate 1 ano)", "13 a 24 meses (Ate 2 anos)", "25 a 36 meses (Ate 3 anos)", "37 a 48 meses (Ate 4 anos)", "49 a 60 meses (Ate 5 anos)", "61 a 72 meses (Ate 6 anos)", "73 a 84 meses (Ate 7 anos)", "85 a 96 meses (Ate 8 anos)", "Acima de 96 meses (9 anos +)";
           
      int op1, op2, op3, expl, l, q, x, y, z, h, o, c, prc, id_transacao, esc;             
           
