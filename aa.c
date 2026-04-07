@@ -65,11 +65,11 @@
                     printf("  \xB3 As taxas sao baseadas em perfis de credito       \xB3\n");
                     printf("  \xB3 entre medio e baixo, buscando fidelidade real.   \xB3\n");
                     printf("  \xB3 O calculo utiliza dados de 10 bancos distintos.  \xB3\n");
-                    printf("  \xB3 Os valores variam conforme parcela e o empréstimo.   \xB3\n");
+                    printf("  \xB3 Os valores variam conforme parcela e emprestimo. \xB3\n"); // Ajustado aqui
                     printf("  \xC3\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xB4\n");
-                    printf("  \xB3      Pressione ENTER para continuar...           \xB3\n");
+                    printf("  \xB3         Pressione ENTER para continuar...         \xB3\n");
                     printf("  \xC8\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xC4\xBC\n");
-                    system("pause > nul"); 
+                    system("pause > nul");
                } 
 
                system("cls");
