@@ -132,7 +132,7 @@
 
                                   printf("Selecione a opcao de parcelas (Anos): \n");  
 
-                                   for(x=1;x<=9;x++){
+                                   for(x=0;x<=8;x++){
                                    
                                         printf("%d - %  \n", x, parcela[x]);
 
