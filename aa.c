@@ -519,7 +519,7 @@
                          for(q = 0; q <= 100; q++) {
                               printf("\r[+] Sincronizando dados bancários: %d%%", q);
                               fflush(stdout); 
-                              Sleep(10); 
+                              sleep(25); 
                          }
                          printf("\n");
 
@@ -537,7 +537,7 @@
                               }
 
                               printf("\nInforme o valor líquido solicitado (Principal): R$ ");
-                              scanf("%f", &emp);
+                              scanf("%lf", &emp);
 
                               printf("\nSelecione a unidade de tempo do contrato:\n");
                               printf("(1) Período em Meses | (0) Período em Anos\n");
@@ -591,17 +591,42 @@
                               printf(" |__________________________________________________| \n");
                               printf(" |                                                  | \n");
                               printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
-                              printf(" |  [2] Credito Consignado (Desconto em Folha)      | \n");
-                              printf(" |  [3] Financiamento (Bens e Servicos)             | \n");
+                              printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                              printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
                               printf(" |                                                  | \n");
                               printf(" |__________________________________________________| \n");
                               printf("\n Modalidade: ");
-                              scanf("%d", &esc);
+                              scanf("%d", &esc1);
 
+                              switch(esc1){
+                                   case 1:
+                                        
+                                        tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                   
+                                   break;
+                                   
+                                   case 2:
+
+                                        tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                   break;
+
+                                   case 3:
+
+                                        tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                   break;
+
+                                   default: 
+
+                                        opcao_valida = false;
+
+                                   break;
+                              }
 
                               if (opcao_valida) {
 
-                                   tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1]; 
                                    tx_decimal = tx_val / 100.0;
                                    tac = 95.00;
                                    iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
