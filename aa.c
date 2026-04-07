@@ -6,6 +6,9 @@
 
      #include <stdbool.h> // <--- Biblioteca necessária para verdadeiro e falso para declarar uma variavel loógica
 
+     #include <math.h> // OBRIGATÓRIO PARA POW()
+
+     
      parcela[0], "01 a 12 meses (Ate 1 ano)";
      parcela[1], "13 a 24 meses (Ate 2 anos)";
      parcela[2], "25 a 36 meses (Ate 3 anos)";
