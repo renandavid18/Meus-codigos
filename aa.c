@@ -470,11 +470,13 @@
                     printf(" |              INFORMACOES TECNICAS                 | \n");
                     printf(" |___________________________________________________| \n");
                     printf(" |                                                   | \n");
-                    printf(" ?   1. Taxas calculadas com base no perfil médio    ?\n");
-                    printf(" ?      de risco (Credit Score) do mercado.          ?\n");
-                    printf(" ?   2. Parâmetros atualizados via BACEN (10 inst.)  ?\n");
-                    printf(" ?   3. O CET (Custo Efetivo Total) inclui IOF e     ?\n");
-                    printf(" ?      tarifas administrativas (TAC).               ?\n");
+                    printf(" ?   1. Taxas calculadas com base no perfil médio    ? \n");
+                    printf(" ?      de risco (Credit Score) do mercado.          ? \n");
+                    printf(" ?   2. Parâmetros atualizados via BACEN (10 inst.)  ? \n");
+                    printf(" ?   3. O CET (Custo Efetivo Total) inclui IOF e     ? \n");
+                    printf(" ?      tarifas administrativas (TAC).               ? \n");
+                    printf(" |   4. Os valores variam conforme parcela           | \n");
+                    printf(" |      e emprestimo.                                | \n");
                     printf(" |___________________________________________________| \n");
                     printf(" |         Pressione ENTER para continuar...         | \n");
                     printf(" |___________________________________________________| \n");
