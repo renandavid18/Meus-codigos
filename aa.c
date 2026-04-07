@@ -536,7 +536,7 @@
                               scanf(" %d", &f); 
                               l = lin + (f - 1); 
 
-                              if (l < 0 || l > 4) { 
+                              if (f < 0 || f > 4) { 
                                    printf("Opção inválida! Tente novamente...\n"); 
                                    continue;
                               }
