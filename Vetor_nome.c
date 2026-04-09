@@ -10,30 +10,32 @@
 
         setlocale(LC_CTYPE,"Portuguese");
 
-        printf("Digite seu nome completo: \n");
+        printf("Digíte seu nome completo: \n");
         scanf("%39[^\n]s", nome);
         fflush(stdin);
         
-        printf("\nDigite seu ano de nascimento: ");
+        printf("\nDigíte seu ano de nascimento: ");
         scanf("%d", &nasc);
 
-        printf("\nDigite o ano atual: ");
+        printf("\nDigíte o ano atual: ");
         scanf("%d", &atual);
 
         id = atual - nasc;
 
-        printf("VocÃª fez aniversÃ¡rio? \n");
-        printf("Digite: \n (1) Sim | (0) NÃ£o \n");        
+        printf("Você já fez aniversário? \n");
+        printf("Digite: \n (1) Sim | (0) Não \n");        
         scanf("%d", &an);
 
         if(an = 0){
             id = id - 1;
         }
 
-        printf("Estamos em que perÃ­odo do dia? \n |(1) ManhÃ£| \n |(2) Tarde| \n |(3) Noite| \n");
+        printf("Estamos em que período do dia? \n |(1) Manhã| \n |(2) Tarde| \n |(3) Noite| \n");
         scanf("%d", &p);
       
         
-        printf("%s %s sua idade Ã©: %d", nome, periodo[p], id);
+        printf("%s %s sua idade é: %d", nome, periodo[p], id);
+
+        system("pause");
     
     }
