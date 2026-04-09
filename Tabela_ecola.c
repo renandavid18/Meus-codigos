@@ -25,12 +25,13 @@
 
         }
 
-        printf("Nome dos Alunos                                             | 1º bimestre | 2º bimestre | Média bimestral | 3º bimestre | 4º bimestre | Média final |\n");
+        printf("| Nome dos Alunos                                             | 1º bimestre | 2º bimestre | Média bimestral | 3º bimestre | 4º bimestre | Média final |\n");
         
         for(j=0;j<=19;j++){
 
+            printf("| %60s | %11.2lf")
             
-            
+
         }
 
         system("pause");
