@@ -17,17 +17,20 @@
             
             printf("Digite o nome do aluno nº: %d\n", i+1);
             fgets(alunos[i], 40, stdin);
-            fflush(stdin);
 
             printf("Agora me informa a nota no %dº bimestre do aluno nº: %d\n", i+1, i+1);
             scanf("%lf", nota);
 
+            fflush(stdin); //limpa qualquer ENTER que houver
+
         }
 
-         printf("Nome dos Alunos                                             | 1º bimestre | 2º bimestre | Média bimestral | 3º bimestre | 4º bimestre | Média final |\n");
+        printf("Nome dos Alunos                                             | 1º bimestre | 2º bimestre | Média bimestral | 3º bimestre | 4º bimestre | Média final |\n");
+        
         for(j=0;j<=19;j++){
 
-           
+            
+            
         }
 
         system("pause");
