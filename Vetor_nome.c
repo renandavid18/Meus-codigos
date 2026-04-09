@@ -8,27 +8,29 @@
 
         int id, nasc, atual, an = 1, p;
 
-        printf("Digite seu nome completo:");
+        setlocale(LC_CTYPE,"Portuguese");
+
+        printf("Digite seu nome completo: \n");
         scanf("%39[^\n]s", nome);
         fflush(stdin);
         
-        printf("\nDigite seu ano de nascimento:");
+        printf("\nDigite seu ano de nascimento: ");
         scanf("%d", &nasc);
 
-        printf("\nDigite o ano atual:");
+        printf("\nDigite o ano atual: ");
         scanf("%d", &atual);
 
         id = atual - nasc;
 
         printf("Você fez aniversário? \n");
-        printf("Digite: \n (1) Sim | (0) Não");        
+        printf("Digite: \n (1) Sim | (0) Não \n");        
         scanf("%d", &an);
 
         if(an = 0){
             id = id - 1;
         }
 
-        printf("Estamos em que período do dia? \n |(1) Manhã| \n |(2) Tarde| \n |(3) Noite|");
+        printf("Estamos em que período do dia? \n |(1) Manhã| \n |(2) Tarde| \n |(3) Noite| \n");
         scanf("%d", &p);
       
         
