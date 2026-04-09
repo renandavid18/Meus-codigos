@@ -34,7 +34,7 @@
         scanf("%d", &p);
       
         
-        printf("%s %s sua idade é: %d", nome, periodo[p], id);
+        printf("%s %s sua idade é: %d \n", nome, periodo[p], id);
 
         system("pause");
     
