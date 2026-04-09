@@ -26,15 +26,17 @@
         printf("Digite: \n (1) Sim | (0) Não \n");        
         scanf("%d", &an);
 
-        if(an = 0){
-            id = id - 1;
+        if(an == 0){
+            id--;
         }
 
         printf("Estamos em que período do dia? \n |(1) Manhã| \n |(2) Tarde| \n |(3) Noite| \n");
         scanf("%d", &p);
+
+        p--;
       
         
-        printf("%s %s sua idade é: %d \n", nome, periodo[p], id);
+        printf("%s %s sua idade é: %d \n", periodo[p], nome, id);
 
         system("pause");
     
