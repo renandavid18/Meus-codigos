@@ -1,0 +1,2279 @@
+     #include <stdio.h>
+     #include <stdlib.h>
+     
+     #include <locale.h>
+     
+     #include <stdbool.h>
+     
+     #include <math.h>
+     
+     #include <windows.h>
+     
+     #include <time.h>
+
+     
+     char fx[5][25] = {
+
+          "0 atÚ 5000R$",
+
+          "5.001 atÚ 10.000R$",
+
+          "10.001 atÚ 20.000R$",
+
+          "20.001 atÚ 50.000R$",
+
+          "50.001 atÚ 100.000R$",
+
+     };
+
+     // ou char fx[5][25] = { "0 atÚ 5000R$", "5.001 atÚ 10.000R$", "10.001 atÚ 20.000R$", "20.001 atÚ 50.000R$", "50.001 atÚ 100.000R$"};
+
+     //como prefirir usar
+
+
+     char parcela[9][40] ={ "AtÚ 12 meses (1 ano)", "AtÚ 24 meses (2 anos)", "AtÚ 36 meses (3 anos)", "AtÚ 48 meses (4 anos)", "AtÚ 60 meses (5 anos)", "AtÚ 72 meses (6 anos)", "AtÚ 84 meses (7 anos)", "AtÚ 96 meses (8 anos)", "Acima de 9 anos"};
+
+     // ou char parcela[9][40] = {
+
+     //        "AtÚ 12 meses (1 ano)",
+
+     //        "AtÚ 24 meses (2 anos)",
+
+     //        "AtÚ 36 meses (3 anos)",
+
+     //        "AtÚ 48 meses (4 anos)",
+
+     //        "AtÚ 60 meses (5 anos)",
+
+     //        "AtÚ 72 meses (6 anos)",
+
+     //        "AtÚ 84 meses (7 anos)",
+
+     //        "AtÚ 96 meses (8 anos)",
+
+     //        "Acima de 9 anos",
+
+     //    };
+
+
+
+     // Taxa do Crédito pessoal
+          double tx[50][9] = {
+
+               // Banco 1 (BB)
+
+               {4.80, 4.75, 4.70, 4.65, 4.60, 4.58, 4.55, 4.52, 4.50},
+
+               {4.90, 4.85, 4.80, 4.75, 4.70, 4.65, 4.60, 4.58, 4.55},
+
+               {5.00, 4.95, 4.90, 4.85, 4.80, 4.75, 4.70, 4.65, 4.60},
+
+               {5.10, 5.05, 5.00, 4.95, 4.90, 4.85, 4.80, 4.75, 4.70},
+
+               {5.20, 5.15, 5.10, 5.05, 5.00, 4.95, 4.90, 4.85, 4.80},
+
+               // Banco 2 (Caixa)
+
+               {4.70, 4.65, 4.60, 4.55, 4.50, 4.48, 4.45, 4.42, 4.40},
+
+               {4.80, 4.75, 4.70, 4.65, 4.60, 4.55, 4.52, 4.50, 4.48},
+
+               {4.90, 4.85, 4.80, 4.75, 4.70, 4.65, 4.60, 4.55, 4.52},
+
+               {5.00, 4.95, 4.90, 4.85, 4.80, 4.75, 4.70, 4.65, 4.60},
+
+               {5.10, 5.05, 5.00, 4.95, 4.90, 4.85, 4.80, 4.75, 4.70},
+
+               // Banco 3 (Bradesco)
+
+               {5.80, 5.75, 5.70, 5.65, 5.60, 5.58, 5.55, 5.52, 5.50},
+
+               {5.90, 5.85, 5.80, 5.75, 5.70, 5.65, 5.62, 5.60, 5.58},
+
+               {6.00, 5.95, 5.90, 5.85, 5.80, 5.75, 5.72, 5.70, 5.68},
+
+               {6.10, 6.05, 6.00, 5.95, 5.90, 5.85, 5.82, 5.80, 5.78},
+
+               {6.20, 6.15, 6.10, 6.05, 6.00, 5.95, 5.92, 5.90, 5.88},
+
+               // Banco 4 (Itaú)
+
+               {5.70, 5.65, 5.60, 5.55, 5.50, 5.48, 5.45, 5.42, 5.40},
+
+               {5.80, 5.75, 5.70, 5.65, 5.60, 5.55, 5.52, 5.50, 5.48},
+
+               {5.90, 5.85, 5.80, 5.75, 5.70, 5.65, 5.62, 5.60, 5.58},
+
+               {6.00, 5.95, 5.90, 5.85, 5.80, 5.75, 5.72, 5.70, 5.68},
+
+               {6.10, 6.05, 6.00, 5.95, 5.90, 5.85, 5.82, 5.80, 5.78},
+
+               // Banco 5 (Santander)
+
+               {6.10, 6.05, 6.00, 5.95, 5.90, 5.88, 5.85, 5.82, 5.80},
+
+               {6.20, 6.15, 6.10, 6.05, 6.00, 5.95, 5.92, 5.90, 5.88},
+
+               {6.30, 6.25, 6.20, 6.15, 6.10, 6.05, 6.02, 6.00, 5.98},
+
+               {6.40, 6.35, 6.30, 6.25, 6.20, 6.15, 6.12, 6.10, 6.08},
+
+               {6.50, 6.45, 6.40, 6.35, 6.30, 6.25, 6.22, 6.20, 6.18},
+
+               // Banco 6 (Inter)
+
+               {4.30, 4.25, 4.20, 4.15, 4.10, 4.05, 4.00, 3.95, 3.90},
+
+               {4.45, 4.40, 4.35, 4.30, 4.25, 4.20, 4.15, 4.10, 4.05},
+
+               {4.60, 4.55, 4.50, 4.45, 4.40, 4.35, 4.30, 4.25, 4.20},
+
+               {4.75, 4.70, 4.65, 4.60, 4.55, 4.50, 4.45, 4.40, 4.35},
+
+               {4.90, 4.85, 4.80, 4.75, 4.70, 4.65, 4.60, 4.55, 4.50},
+
+               // Banco 7 (PagBank)
+
+               {5.80, 5.70, 5.60, 5.50, 5.40, 5.30, 5.20, 5.10, 5.00},
+
+               {6.00, 5.90, 5.80, 5.70, 5.60, 5.50, 5.40, 5.30, 5.20},
+
+               {6.20, 6.10, 6.00, 5.90, 5.80, 5.70, 5.60, 5.50, 5.40},
+
+               {6.40, 6.30, 6.20, 6.10, 6.00, 5.90, 5.80, 5.70, 5.60},
+
+               {6.60, 6.50, 6.40, 6.30, 6.20, 6.10, 6.00, 5.90, 5.80},
+
+               // Banco 8 (Nubank)
+
+               {5.20, 5.10, 5.00, 4.90, 4.80, 4.75, 4.70, 4.60, 4.50},
+
+               {5.45, 5.35, 5.25, 5.15, 5.05, 5.00, 4.95, 4.85, 4.75},
+
+               {5.70, 5.60, 5.50, 5.40, 5.30, 5.25, 5.20, 5.10, 5.00},
+
+               {5.95, 5.85, 5.75, 5.65, 5.55, 5.50, 5.45, 5.35, 5.25},
+
+               {6.20, 6.10, 6.00, 5.90, 5.80, 5.75, 5.70, 5.60, 5.50},
+
+               // Banco 9 (Mercado Pago)
+
+               {7.50, 7.35, 7.20, 7.05, 6.90, 6.80, 6.70, 6.60, 6.50},
+
+               {7.75, 7.60, 7.45, 7.30, 7.15, 7.05, 6.95, 6.85, 6.75},
+
+               {8.00, 7.85, 7.70, 7.55, 7.40, 7.30, 7.20, 7.10, 7.00},
+
+               {8.25, 8.10, 7.95, 7.80, 7.65, 7.55, 7.45, 7.35, 7.25},
+
+               {8.50, 8.35, 8.20, 8.05, 7.90, 7.80, 7.70, 7.60, 7.50},
+
+               // Banco 10 (PicPay)
+
+               {7.20, 7.05, 6.90, 6.75, 6.60, 6.45, 6.30, 6.15, 6.00},
+
+               {7.45, 7.30, 7.15, 7.00, 6.85, 6.70, 6.55, 6.40, 6.25},
+
+               {7.70, 7.55, 7.40, 7.25, 7.10, 6.95, 6.80, 6.65, 6.50},
+
+               {7.95, 7.80, 7.65, 7.50, 7.35, 7.20, 7.05, 6.90, 6.75},
+
+               {8.20, 8.05, 7.90, 7.75, 7.60, 7.45, 7.30, 7.15, 7.00}
+
+          };
+
+
+
+          // Taxa do crédito Consignado
+
+          double tx_consignado[50][9] = {
+
+               // Banco 1 (BB)
+
+               {1.65, 1.62, 1.60, 1.58, 1.55, 1.53, 1.50, 1.48, 1.45},
+
+               {1.68, 1.65, 1.63, 1.61, 1.58, 1.56, 1.53, 1.51, 1.48},
+
+               {1.70, 1.67, 1.65, 1.63, 1.60, 1.58, 1.55, 1.53, 1.50},
+
+               {1.73, 1.70, 1.68, 1.66, 1.63, 1.61, 1.58, 1.56, 1.53},
+
+               {1.75, 1.72, 1.70, 1.68, 1.65, 1.63, 1.60, 1.58, 1.55},
+
+               // Banco 2 (Caixa)
+
+               {1.58, 1.55, 1.52, 1.50, 1.48, 1.45, 1.42, 1.40, 1.38},
+
+               {1.62, 1.60, 1.58, 1.55, 1.52, 1.50, 1.48, 1.45, 1.42},
+
+               {1.65, 1.63, 1.60, 1.58, 1.55, 1.52, 1.50, 1.48, 1.45},
+
+               {1.68, 1.66, 1.64, 1.61, 1.58, 1.56, 1.54, 1.51, 1.48},
+
+               {1.72, 1.70, 1.68, 1.65, 1.62, 1.60, 1.58, 1.55, 1.52},
+
+               // Banco 3 (Bradesco)
+
+               {1.95, 1.92, 1.90, 1.88, 1.85, 1.83, 1.80, 1.78, 1.75},
+
+               {1.98, 1.95, 1.93, 1.91, 1.88, 1.86, 1.83, 1.81, 1.78},
+
+               {2.00, 1.97, 1.95, 1.93, 1.90, 1.88, 1.85, 1.83, 1.80},
+
+               {2.03, 2.00, 1.98, 1.96, 1.93, 1.91, 1.88, 1.86, 1.83},
+
+               {2.05, 2.02, 2.00, 1.98, 1.95, 1.93, 1.90, 1.88, 1.85},
+
+               // Banco 4 (Itaú)
+
+               {2.05, 2.02, 2.00, 1.98, 1.95, 1.92, 1.90, 1.88, 1.85},
+
+               {2.08, 2.05, 2.03, 2.01, 1.98, 1.95, 1.93, 1.91, 1.88},
+
+               {2.10, 2.07, 2.05, 2.03, 2.00, 1.97, 1.95, 1.93, 1.90},
+
+               {2.13, 2.10, 2.08, 2.06, 2.03, 2.00, 1.98, 1.96, 1.93},
+
+               {2.15, 2.12, 2.10, 2.08, 2.05, 2.02, 2.00, 1.98, 1.95},
+
+               // Banco 5 (Santander)
+
+               {2.10, 2.08, 2.05, 2.02, 2.00, 1.98, 1.95, 1.92, 1.90},
+
+               {2.12, 2.10, 2.07, 2.04, 2.02, 2.00, 1.97, 1.94, 1.92},
+
+               {2.15, 2.13, 2.10, 2.07, 2.05, 2.03, 2.00, 1.97, 1.95},
+
+               {2.18, 2.16, 2.13, 2.10, 2.08, 2.06, 2.03, 2.00, 1.98},
+
+               {2.20, 2.18, 2.15, 2.12, 2.10, 2.08, 2.05, 2.02, 2.00},
+
+               // Banco 6 (Inter)
+
+               {1.75, 1.73, 1.70, 1.68, 1.65, 1.63, 1.60, 1.58, 1.55},
+
+               {1.78, 1.76, 1.73, 1.71, 1.68, 1.66, 1.63, 1.61, 1.58},
+
+               {1.80, 1.78, 1.75, 1.73, 1.70, 1.68, 1.65, 1.63, 1.60},
+
+               {1.83, 1.81, 1.78, 1.76, 1.73, 1.71, 1.68, 1.66, 1.63},
+
+               {1.85, 1.83, 1.80, 1.78, 1.75, 1.73, 1.70, 1.68, 1.65},
+
+               // Banco 7 (PagBank)
+
+               {1.98, 1.95, 1.92, 1.90, 1.88, 1.85, 1.82, 1.80, 1.78},
+
+               {2.00, 1.97, 1.94, 1.92, 1.90, 1.87, 1.84, 1.82, 1.80},
+
+               {2.03, 2.00, 1.97, 1.95, 1.93, 1.90, 1.87, 1.85, 1.83},
+
+               {2.05, 2.02, 1.99, 1.97, 1.95, 1.92, 1.89, 1.87, 1.85},
+
+               {2.08, 2.05, 2.02, 2.00, 1.98, 1.95, 1.92, 1.90, 1.88},
+
+               // Banco 8 (Nubank)
+
+               {1.85, 1.83, 1.80, 1.78, 1.75, 1.73, 1.70, 1.68, 1.65},
+
+               {1.88, 1.86, 1.83, 1.81, 1.78, 1.76, 1.73, 1.71, 1.68},
+
+               {1.90, 1.88, 1.85, 1.83, 1.80, 1.78, 1.75, 1.73, 1.70},
+
+               {1.93, 1.91, 1.88, 1.86, 1.83, 1.81, 1.78, 1.76, 1.73},
+
+               {1.95, 1.93, 1.90, 1.88, 1.85, 1.83, 1.80, 1.78, 1.75},
+
+               // Banco 9 (Mercado Pago)
+
+               {2.50, 2.45, 2.40, 2.35, 2.30, 2.25, 2.20, 2.15, 2.10},
+
+               {2.53, 2.48, 2.43, 2.38, 2.33, 2.28, 2.23, 2.18, 2.13},
+
+               {2.55, 2.50, 2.45, 2.40, 2.35, 2.30, 2.25, 2.20, 2.15},
+
+               {2.58, 2.53, 2.48, 2.43, 2.38, 2.33, 2.28, 2.23, 2.18},
+
+               {2.60, 2.55, 2.50, 2.45, 2.40, 2.35, 2.30, 2.25, 2.20},
+
+               // Banco 10 (PicPay)
+
+               {2.40, 2.35, 2.30, 2.25, 2.20, 2.15, 2.10, 2.05, 2.00},
+
+               {2.43, 2.38, 2.33, 2.28, 2.23, 2.18, 2.13, 2.08, 2.03},
+
+               {2.45, 2.40, 2.35, 2.30, 2.25, 2.20, 2.15, 2.10, 2.05},
+
+               {2.48, 2.43, 2.38, 2.33, 2.28, 2.23, 2.18, 2.13, 2.08},
+
+               {2.50, 2.45, 2.40, 2.35, 2.30, 2.25, 2.20, 2.15, 2.10}
+
+          };
+
+
+
+          // Taxa do financiamento
+
+          double tx_financiamento[50][9] = {  
+
+               // Banco 1 (BB)
+
+               {1.35, 1.30, 1.25, 1.20, 1.15, 1.10, 1.05, 1.00, 0.95},
+
+               {1.38, 1.33, 1.28, 1.23, 1.18, 1.13, 1.08, 1.03, 0.98},
+
+               {1.40, 1.35, 1.30, 1.25, 1.20, 1.15, 1.10, 1.05, 1.00},
+
+               {1.42, 1.37, 1.32, 1.27, 1.22, 1.17, 1.12, 1.07, 1.02},
+
+               {1.45, 1.40, 1.35, 1.30, 1.25, 1.20, 1.15, 1.10, 1.05},
+
+               // Banco 2 (Caixa)
+
+               {1.25, 1.20, 1.15, 1.10, 1.05, 1.00, 0.95, 0.90, 0.85},
+
+               {1.28, 1.23, 1.18, 1.13, 1.08, 1.03, 0.98, 0.93, 0.88},
+
+               {1.30, 1.25, 1.20, 1.15, 1.10, 1.05, 1.00, 0.95, 0.90},
+
+               {1.32, 1.27, 1.22, 1.17, 1.12, 1.07, 1.02, 0.97, 0.92},
+
+               {1.35, 1.30, 1.25, 1.20, 1.15, 1.10, 1.05, 1.00, 0.95},
+
+               // Banco 3 (Bradesco)
+
+               {1.30, 1.28, 1.25, 1.23, 1.20, 1.18, 1.15, 1.13, 1.10},
+
+               {1.32, 1.30, 1.27, 1.25, 1.22, 1.20, 1.17, 1.15, 1.12},
+
+               {1.35, 1.33, 1.30, 1.28, 1.25, 1.23, 1.20, 1.18, 1.15},
+
+               {1.38, 1.36, 1.33, 1.31, 1.28, 1.26, 1.23, 1.21, 1.18},
+
+               {1.40, 1.38, 1.35, 1.33, 1.30, 1.28, 1.25, 1.23, 1.20},
+
+               // Banco 4 (Itaú)
+
+               {1.35, 1.32, 1.30, 1.28, 1.25, 1.23, 1.20, 1.18, 1.15},
+
+               {1.38, 1.35, 1.33, 1.31, 1.28, 1.26, 1.23, 1.21, 1.18},
+
+               {1.40, 1.37, 1.35, 1.33, 1.30, 1.28, 1.25, 1.23, 1.20},
+
+               {1.42, 1.39, 1.37, 1.35, 1.32, 1.30, 1.28, 1.26, 1.23},
+
+               {1.45, 1.42, 1.40, 1.38, 1.35, 1.33, 1.30, 1.28, 1.25},
+
+               // Banco 5 (Santander)
+
+               {1.40, 1.38, 1.35, 1.32, 1.30, 1.28, 1.25, 1.22, 1.20},
+
+               {1.42, 1.40, 1.37, 1.34, 1.32, 1.30, 1.27, 1.24, 1.22},
+
+               {1.45, 1.43, 1.40, 1.37, 1.35, 1.33, 1.30, 1.27, 1.25},
+
+               {1.48, 1.46, 1.43, 1.40, 1.38, 1.36, 1.33, 1.30, 1.28},
+
+               {1.50, 1.48, 1.45, 1.42, 1.40, 1.38, 1.35, 1.32, 1.30},
+
+               // Banco 6 (Inter)
+
+               {1.25, 1.23, 1.20, 1.18, 1.15, 1.13, 1.10, 1.08, 1.05},
+
+               {1.28, 1.26, 1.23, 1.21, 1.18, 1.16, 1.13, 1.11, 1.08},
+
+               {1.30, 1.28, 1.25, 1.23, 1.20, 1.18, 1.15, 1.13, 1.10},
+
+               {1.33, 1.31, 1.28, 1.26, 1.23, 1.21, 1.18, 1.16, 1.13},
+
+               {1.35, 1.33, 1.30, 1.28, 1.25, 1.23, 1.20, 1.18, 1.15},
+
+               // Banco 7 (PagBank)
+
+               {1.38, 1.35, 1.32, 1.30, 1.28, 1.25, 1.23, 1.20, 1.18},
+
+               {1.40, 1.37, 1.34, 1.32, 1.30, 1.27, 1.24, 1.22, 1.20},
+
+               {1.43, 1.40, 1.37, 1.35, 1.33, 1.30, 1.27, 1.25, 1.23},
+
+               {1.45, 1.42, 1.39, 1.37, 1.35, 1.32, 1.29, 1.27, 1.25},
+
+               {1.48, 1.45, 1.42, 1.40, 1.38, 1.35, 1.32, 1.30, 1.28},
+
+               // Banco 8 (Nubank)
+
+               {1.30, 1.28, 1.25, 1.23, 1.20, 1.18, 1.15, 1.13, 1.10},
+
+               {1.32, 1.30, 1.27, 1.25, 1.22, 1.20, 1.17, 1.15, 1.12},
+
+               {1.35, 1.33, 1.30, 1.28, 1.25, 1.23, 1.20, 1.18, 1.15},
+
+               {1.38, 1.36, 1.33, 1.31, 1.28, 1.26, 1.23, 1.21, 1.18},
+
+               {1.40, 1.38, 1.35, 1.33, 1.30, 1.28, 1.25, 1.23, 1.20},
+
+               // Banco 9 (Mercado Pago)
+
+               {1.80, 1.75, 1.70, 1.65, 1.60, 1.55, 1.50, 1.45, 1.40},
+
+               {1.83, 1.78, 1.73, 1.68, 1.63, 1.58, 1.53, 1.48, 1.43},
+
+               {1.85, 1.80, 1.75, 1.70, 1.65, 1.60, 1.55, 1.50, 1.45},
+
+               {1.88, 1.83, 1.78, 1.73, 1.68, 1.63, 1.58, 1.53, 1.48},
+
+               {1.90, 1.85, 1.80, 1.75, 1.70, 1.65, 1.60, 1.55, 1.50},
+
+               // Banco 10 (PicPay)
+
+               {1.75, 1.70, 1.65, 1.60, 1.55, 1.50, 1.45, 1.40, 1.35},
+
+               {1.78, 1.73, 1.68, 1.63, 1.58, 1.53, 1.48, 1.43, 1.38},
+
+               {1.80, 1.75, 1.70, 1.65, 1.60, 1.55, 1.50, 1.45, 1.40},
+
+               {1.83, 1.78, 1.73, 1.68, 1.63, 1.58, 1.53, 1.48, 1.43},
+
+               {1.85, 1.80, 1.75, 1.70, 1.65, 1.60, 1.55, 1.50, 1.45}
+
+          };
+
+
+
+     int main(int argc, char *argv[]) { 
+
+          int op1, op3, ex, l, q, x, y, z, h, o, c, f, prc, id_transacao, esc, lin;
+          
+          int i = 0, k = 0,  op2 = 1, u = 1;
+          
+          bool opcao_valida; 
+          
+          double emp, vpar, mont, jr, tx_val, tx_decimal, tx_pessoal, tac, iof_total, valor_total_financiado, potencia, juros_totais, s_dev, juros_mes, amortizacao;   
+          
+          char cod_seguranca[20];  
+
+          setlocale(LC_CTYPE, "Portuguese");
+
+          printf("Sistema de Simulação de Crédito Integrado - Versão 2.2026\n");
+          printf("Seja bem-vindo. Iniciando interface de atendimento...\n\n");
+
+          while (i != 1) {
+
+               k = 0;
+
+               printf("Deseja visualizar as notas técnicas sobre a composição das taxas? (1) Sim | (0) Não: \n");
+               scanf("%d", &ex);
+
+               if (ex != 0) {
+
+                    system("cls");
+                    printf("  ___________________________________________________  \n");
+                    printf(" |                                                   | \n");
+                    printf(" |              INFORMACOES TECNICAS                 | \n");
+                    printf(" |___________________________________________________| \n");
+                    printf(" |                                                   | \n");
+                    printf(" │   1. Taxas calculadas com base no perfil médio    │ \n");
+                    printf(" │      de risco (Credit Score) do mercado.          │ \n");
+                    printf(" │   2. Parâmetros atualizados via BACEN (10 inst.)  │ \n");
+                    printf(" │   3. O CET (Custo Efetivo Total) inclui IOF e     │ \n");
+                    printf(" │      tarifas administrativas (TAC).               │ \n");
+                    printf(" |   4. Os valores variam conforme parcela           | \n");
+                    printf(" |      e emprestimo.                                | \n");
+                    printf(" |___________________________________________________| \n");
+                    printf(" |         Pressione ENTER para continuar...         | \n");
+                    printf(" |___________________________________________________| \n");
+                    system("pause > nul");
+
+               }
+
+               while(u = 1){
+
+                    system("cls");
+                    printf("  __________________________________________________  \n");
+                    printf(" |        SELECIONE A INSTITUICAO FINANCEIRA        | \n");
+                    printf(" |__________________________________________________| \n");
+                    printf(" |                                                  | \n");
+                    printf(" |  [01] Banco do Brasil                            | \n");
+                    printf(" |  [02] Caixa Economica Federal                    | \n");
+                    printf(" |  [03] Bradesco S.A.                              | \n");
+                    printf(" |  [04] Itau Unibanco                              | \n");
+                    printf(" |  [05] Santander Brasil                           | \n");
+                    printf(" |  [06] Banco Inter                                | \n");
+                    printf(" |  [07] PagBank                                    | \n");
+                    printf(" |  [08] Nubank                                     | \n");
+                    printf(" |  [09] Mercado Pago                               | \n");
+                    printf(" |  [10] PicPay                                     | \n");
+                    printf(" |                                                  | \n");
+                    printf(" |  [00] Encerrar Sessao                            | \n");
+                    printf(" |__________________________________________________| \n");
+                    printf("\n Selecao de Portfolio: ");
+                    scanf("%d", &op1);
+
+
+                    if(op1 == 0) break;
+
+                    lin = (op1 - 1) * 5;
+                    
+                    switch(op1) { 
+
+                         case 1:
+                              
+                              system("cls"); 
+                              printf("  ===================================================  \n");
+                              printf("                  BANCO DO BRASIL                      \n");
+                              printf("  ===================================================  \n");
+                              
+                              for(q = 0; q <= 100; q++) {
+                                   printf("\r[+] Sincronizando dados bancários: %d%%", q);
+                                   fflush(stdout); 
+                                   sleep(25); 
+                              }
+                              printf("\n");
+
+                              while (k != 1) { 
+                                   printf("\nSelecione a faixa de capital para enquadramento da proposta:\n");
+                                   for(z=0; z<=4; z++) {
+                                        printf("[%d] - %s\n", z + 1, fx[z]);
+                                   }
+                                   scanf(" %d", &f); 
+                                   l = lin + (f - 1); 
+
+                                   if (f < 0 || f > 4) { 
+                                        printf("Opção inválida! Tente novamente...\n"); 
+                                        continue;
+                                   }
+
+                                   printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                                   scanf("%lf", &emp);
+
+                                   printf("\nSelecione a unidade de tempo do contrato:\n");
+                                   printf("(1) Período em Meses | (0) Período em Anos\n");
+                                   scanf("%d", &op2);
+
+                                   opcao_valida = true; 
+
+                                   if (op2 == 0) { 
+                                        printf("Selecione a opção de parcelas (Anos): \n");  
+                                        for(x=0; x<=8; x++) {
+                                             printf("%d - %s\n", x + 1, parcela[x]);
+                                        }
+                                        scanf("%d", &c);
+                                        if (c == 9) {
+                                             printf("Digite quantos anos: ");
+                                             scanf("%d", &o);
+                                             prc = o * 12;
+                                        } else if (c >= 1 && c <= 8) {
+                                             prc = c * 12;
+                                        } else {
+                                             printf("Opção inválida!\n");
+                                             opcao_valida = false;
+                                        }
+                                   } else { 
+                                        printf("Selecione o número de parcelas mensais:\n");
+                                        for(h=0; h<=8; h++) {
+                                             printf("%d - %s\n", h + 1, parcela[h]);
+                                        } 
+                                        scanf("%d", &o);
+                                        
+                                        if (o >= 1 && o <= 8) {
+
+                                             prc = o * 12; 
+
+                                        } else if (o == 9) {
+
+                                             printf("Quantos meses no total? ");
+                                             scanf("%d", &prc);
+
+                                        } else {
+
+                                             opcao_valida = false;
+
+                                        }
+                                   } 
+
+                                   system("cls");
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                                   printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                                   printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf("\n Modalidade: ");
+                                   scanf("%d", &esc1);
+
+                                   switch(esc1){
+                                        case 1:
+                                             
+                                             tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                        
+                                        break;
+                                        
+                                        case 2:
+
+                                             tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                        break;
+
+                                        case 3:
+
+                                             tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                        break;
+
+                                        default: 
+
+                                             opcao_valida = false;
+
+                                        break;
+                                   }
+
+                                   if (opcao_valida) {
+
+                                        tx_decimal = tx_val / 100.0;
+                                        tac = 95.00;
+                                        iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+
+                                        if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                        valor_total_financiado = emp + iof_total + tac;
+                                        potencia = pow(1 + tx_decimal, prc);
+                                        vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                        mont = vpar * prc;
+                                        juros_totais = mont - emp;
+
+                                        srand(time(NULL));
+
+                                        id_transacao = rand() % 8999 + 1000;
+                                        sprintf(cod_seguranca, "BB-%X", id_transacao);
+
+                                        system("cls"); 
+                                        printf("  __________________________________________________  \n");
+                                        printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                        printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                        printf(" |__________________________________________________| \n");
+                                        printf(" |                                                  | \n");
+                                        printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                        printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                        printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                        printf(" |  ----------------------------------------------  | \n");
+                                        printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                        printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
+                                        printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                        printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                        printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                        printf(" |__________________________________________________| \n");
+                                        
+                                        printf("\nFLUXO DE AMORTIZAÇÃO (Projeção das 5 primeiras parcelas):\n");
+                                        s_dev = valor_total_financiado;    
+
+                                        for(z = 1; z <= 5 && z <= prc; z++) {
+
+                                             juros_mes = s_dev * tx_decimal;
+                                             amortizacao = vpar - juros_mes;
+                                             s_dev = s_dev - amortizacao;
+                                             printf("  Parcela %02d | Juros: R$ %7.2f | Amortização: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                   
+                                        }
+
+                                        printf("\nDeseja realizar uma nova cotação? (1) Sim | (0) Menu: ");
+                                        scanf("%d", &op3); 
+                                        if (op3 != 1) k = 1;
+                                        else system("cls");
+                                   }
+                              }
+                              u = 0;
+                         break;
+
+                         case 2:
+                              
+                              system("cls"); 
+                              printf("  ===================================================  \n");
+                              printf("                CAIXA ECONOMICA FEDERAL                \n");
+                              printf("  ===================================================  \n");
+                              
+                              for(q = 0; q <= 100; q++) {
+                                   printf("\r[+] Sincronizando dados bancários: %d%%", q);
+                                   fflush(stdout); 
+                                   sleep(25); 
+                              }
+                              printf("\n");
+
+                              while (k != 1) { 
+                                   printf("\nSelecione a faixa de capital para enquadramento da proposta:\n");
+                                   for(z=0; z<=4; z++) {
+                                        printf("[%d] - %s\n", z + 1, fx[z]);
+                                   }
+                                   scanf(" %d", &f); 
+                                   l = lin + (f - 1); 
+
+                                   if (f < 0 || f > 4) { 
+                                        printf("Opção inválida! Tente novamente...\n"); 
+                                        continue;
+                                   }
+
+                                   printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                                   scanf("%lf", &emp);
+
+                                   printf("\nSelecione a unidade de tempo do contrato:\n");
+                                   printf("(1) Período em Meses | (0) Período em Anos\n");
+                                   scanf("%d", &op2);
+
+                                   opcao_valida = true; 
+
+                                   if (op2 == 0) { 
+                                        printf("Selecione a opção de parcelas (Anos): \n");  
+                                        for(x=0; x<=8; x++) {
+                                             printf("%d - %s\n", x + 1, parcela[x]);
+                                        }
+                                        scanf("%d", &c);
+                                        if (c == 9) {
+                                             printf("Digite quantos anos: ");
+                                             scanf("%d", &o);
+                                             prc = o * 12;
+                                        } else if (c >= 1 && c <= 8) {
+                                             prc = c * 12;
+                                        } else {
+                                             printf("Opção inválida!\n");
+                                             opcao_valida = false;
+                                        }
+                                   } else { 
+                                        printf("Selecione o número de parcelas mensais:\n");
+                                        for(h=0; h<=8; h++) {
+                                             printf("%d - %s\n", h + 1, parcela[h]);
+                                        } 
+                                        scanf("%d", &o);
+                                        
+                                        if (o >= 1 && o <= 8) {
+
+                                             prc = o * 12; 
+
+                                        } else if (o == 9) {
+
+                                             printf("Quantos meses no total? ");
+                                             scanf("%d", &prc);
+
+                                        } else {
+
+                                             opcao_valida = false;
+
+                                        }
+                                   } 
+
+                                   system("cls");
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                                   printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                                   printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf("\n Modalidade: ");
+                                   scanf("%d", &esc1);
+
+                                   switch(esc1){
+                                        case 1:
+                                             
+                                             tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                        
+                                        break;
+                                        
+                                        case 2:
+
+                                             tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                        break;
+
+                                        case 3:
+
+                                             tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                        break;
+
+                                        default: 
+
+                                             opcao_valida = false;
+
+                                        break;
+                                   }
+
+                                   if (opcao_valida) {
+
+                                        tx_decimal = tx_val / 100.0;
+                                        tac = 95.00;
+                                        iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+
+                                        if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                        valor_total_financiado = emp + iof_total + tac;
+                                        potencia = pow(1 + tx_decimal, prc);
+                                        vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                        mont = vpar * prc;
+                                        juros_totais = mont - emp;
+
+                                        srand(time(NULL));
+
+                                        id_transacao = rand() % 8999 + 1000;
+                                        sprintf(cod_seguranca, "BB-%X", id_transacao);
+
+                                        system("cls"); 
+                                        printf("  __________________________________________________  \n");
+                                        printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                        printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                        printf(" |__________________________________________________| \n");
+                                        printf(" |                                                  | \n");
+                                        printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                        printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                        printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                        printf(" |  ----------------------------------------------  | \n");
+                                        printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                        printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
+                                        printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                        printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                        printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                        printf(" |__________________________________________________| \n");
+                                        
+                                        printf("\nFLUXO DE AMORTIZAÇÃO (Projeção das 5 primeiras parcelas):\n");
+                                        s_dev = valor_total_financiado;    
+
+                                        for(z = 1; z <= 5 && z <= prc; z++) {
+
+                                             juros_mes = s_dev * tx_decimal;
+                                             amortizacao = vpar - juros_mes;
+                                             s_dev = s_dev - amortizacao;
+                                             printf("  Parcela %02d | Juros: R$ %7.2f | Amortização: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                   
+                                        }
+
+                                        printf("\nDeseja realizar uma nova cotação? (1) Sim | (0) Menu: ");
+                                        scanf("%d", &op3); 
+                                        if (op3 != 1) k = 1;
+                                        else system("cls");
+                                   }
+                              }
+                              u = 0;
+                         break;
+
+                         case 3:
+                              
+                              system("cls"); 
+                              printf("  ===================================================  \n");
+                              printf("                     BRADESCO                          \n");
+                              printf("  ===================================================  \n");
+                                                  
+                              for(q = 0; q <= 100; q++) {
+                                   printf("\r[+] Sincronizando dados bancários: %d%%", q);
+                                   fflush(stdout); 
+                                   sleep(25); 
+                              }
+                              printf("\n");
+
+                              while (k != 1) { 
+                                   printf("\nSelecione a faixa de capital para enquadramento da proposta:\n");
+                                   for(z=0; z<=4; z++) {
+                                        printf("[%d] - %s\n", z + 1, fx[z]);
+                                   }
+                                   scanf(" %d", &f); 
+                                   l = lin + (f - 1); 
+
+                                   if (f < 0 || f > 4) { 
+                                        printf("Opção inválida! Tente novamente...\n"); 
+                                        continue;
+                                   }
+
+                                   printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                                   scanf("%lf", &emp);
+
+                                   printf("\nSelecione a unidade de tempo do contrato:\n");
+                                   printf("(1) Período em Meses | (0) Período em Anos\n");
+                                   scanf("%d", &op2);
+
+                                   opcao_valida = true; 
+
+                                   if (op2 == 0) { 
+                                        printf("Selecione a opção de parcelas (Anos): \n");  
+                                        for(x=0; x<=8; x++) {
+                                             printf("%d - %s\n", x + 1, parcela[x]);
+                                        }
+                                        scanf("%d", &c);
+                                        if (c == 9) {
+                                             printf("Digite quantos anos: ");
+                                             scanf("%d", &o);
+                                             prc = o * 12;
+                                        } else if (c >= 1 && c <= 8) {
+                                             prc = c * 12;
+                                        } else {
+                                             printf("Opção inválida!\n");
+                                             opcao_valida = false;
+                                        }
+                                   } else { 
+                                        printf("Selecione o número de parcelas mensais:\n");
+                                        for(h=0; h<=8; h++) {
+                                             printf("%d - %s\n", h + 1, parcela[h]);
+                                        } 
+                                        scanf("%d", &o);
+                                        
+                                        if (o >= 1 && o <= 8) {
+
+                                             prc = o * 12; 
+
+                                        } else if (o == 9) {
+
+                                             printf("Quantos meses no total? ");
+                                             scanf("%d", &prc);
+
+                                        } else {
+
+                                             opcao_valida = false;
+
+                                        }
+                                   } 
+
+                                   system("cls");
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                                   printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                                   printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf("\n Modalidade: ");
+                                   scanf("%d", &esc1);
+
+                                   switch(esc1){
+                                        case 1:
+                                             
+                                             tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                        
+                                        break;
+                                        
+                                        case 2:
+
+                                             tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                        break;
+
+                                        case 3:
+
+                                             tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                        break;
+
+                                        default: 
+
+                                             opcao_valida = false;
+
+                                        break;
+                                   }
+
+                                   if (opcao_valida) {
+
+                                        tx_decimal = tx_val / 100.0;
+                                        tac = 95.00;
+                                        iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+
+                                        if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                        valor_total_financiado = emp + iof_total + tac;
+                                        potencia = pow(1 + tx_decimal, prc);
+                                        vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                        mont = vpar * prc;
+                                        juros_totais = mont - emp;
+
+                                        srand(time(NULL));
+
+                                        id_transacao = rand() % 8999 + 1000;
+                                        sprintf(cod_seguranca, "BB-%X", id_transacao);
+
+                                        system("cls"); 
+                                        printf("  __________________________________________________  \n");
+                                        printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                        printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                        printf(" |__________________________________________________| \n");
+                                        printf(" |                                                  | \n");
+                                        printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                        printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                        printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                        printf(" |  ----------------------------------------------  | \n");
+                                        printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                        printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
+                                        printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                        printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                        printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                        printf(" |__________________________________________________| \n");
+                                        
+                                        printf("\nFLUXO DE AMORTIZAÇÃO (Projeção das 5 primeiras parcelas):\n");
+                                        s_dev = valor_total_financiado;    
+
+                                        for(z = 1; z <= 5 && z <= prc; z++) {
+
+                                             juros_mes = s_dev * tx_decimal;
+                                             amortizacao = vpar - juros_mes;
+                                             s_dev = s_dev - amortizacao;
+                                             printf("  Parcela %02d | Juros: R$ %7.2f | Amortização: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                   
+                                        }
+
+                                        printf("\nDeseja realizar uma nova cotação? (1) Sim | (0) Menu: ");
+                                        scanf("%d", &op3); 
+                                        if (op3 != 1) k = 1;
+                                        else system("cls");
+                                   }
+                              }
+                              u = 0;
+                         break;
+
+                         case 4:
+                              
+                              system("cls"); 
+                              printf("  ===================================================  \n");
+                              printf("                   ITAU UNIBANCO                       \n");
+                              printf("  ===================================================  \n");
+                              
+                              for(q = 0; q <= 100; q++) {
+                                   printf("\r[+] Sincronizando dados bancários: %d%%", q);
+                                   fflush(stdout); 
+                                   sleep(25); 
+                              }
+                              printf("\n");
+
+                              while (k != 1) { 
+                                   printf("\nSelecione a faixa de capital para enquadramento da proposta:\n");
+                                   for(z=0; z<=4; z++) {
+                                        printf("[%d] - %s\n", z + 1, fx[z]);
+                                   }
+                                   scanf(" %d", &f); 
+                                   l = lin + (f - 1); 
+
+                                   if (f < 0 || f > 4) { 
+                                        printf("Opção inválida! Tente novamente...\n"); 
+                                        continue;
+                                   }
+
+                                   printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                                   scanf("%lf", &emp);
+
+                                   printf("\nSelecione a unidade de tempo do contrato:\n");
+                                   printf("(1) Período em Meses | (0) Período em Anos\n");
+                                   scanf("%d", &op2);
+
+                                   opcao_valida = true; 
+
+                                   if (op2 == 0) { 
+                                        printf("Selecione a opção de parcelas (Anos): \n");  
+                                        for(x=0; x<=8; x++) {
+                                             printf("%d - %s\n", x + 1, parcela[x]);
+                                        }
+                                        scanf("%d", &c);
+                                        if (c == 9) {
+                                             printf("Digite quantos anos: ");
+                                             scanf("%d", &o);
+                                             prc = o * 12;
+                                        } else if (c >= 1 && c <= 8) {
+                                             prc = c * 12;
+                                        } else {
+                                             printf("Opção inválida!\n");
+                                             opcao_valida = false;
+                                        }
+                                   } else { 
+                                        printf("Selecione o número de parcelas mensais:\n");
+                                        for(h=0; h<=8; h++) {
+                                             printf("%d - %s\n", h + 1, parcela[h]);
+                                        } 
+                                        scanf("%d", &o);
+                                        
+                                        if (o >= 1 && o <= 8) {
+
+                                             prc = o * 12; 
+
+                                        } else if (o == 9) {
+
+                                             printf("Quantos meses no total? ");
+                                             scanf("%d", &prc);
+
+                                        } else {
+
+                                             opcao_valida = false;
+
+                                        }
+                                   } 
+
+                                   system("cls");
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                                   printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                                   printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf("\n Modalidade: ");
+                                   scanf("%d", &esc1);
+
+                                   switch(esc1){
+                                        case 1:
+                                             
+                                             tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                        
+                                        break;
+                                        
+                                        case 2:
+
+                                             tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                        break;
+
+                                        case 3:
+
+                                             tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                        break;
+
+                                        default: 
+
+                                             opcao_valida = false;
+
+                                        break;
+                                   }
+
+                                   if (opcao_valida) {
+
+                                        tx_decimal = tx_val / 100.0;
+                                        tac = 95.00;
+                                        iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+
+                                        if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                        valor_total_financiado = emp + iof_total + tac;
+                                        potencia = pow(1 + tx_decimal, prc);
+                                        vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                        mont = vpar * prc;
+                                        juros_totais = mont - emp;
+
+                                        srand(time(NULL));
+
+                                        id_transacao = rand() % 8999 + 1000;
+                                        sprintf(cod_seguranca, "BB-%X", id_transacao);
+
+                                        system("cls"); 
+                                        printf("  __________________________________________________  \n");
+                                        printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                        printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                        printf(" |__________________________________________________| \n");
+                                        printf(" |                                                  | \n");
+                                        printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                        printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                        printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                        printf(" |  ----------------------------------------------  | \n");
+                                        printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                        printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
+                                        printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                        printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                        printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                        printf(" |__________________________________________________| \n");
+                                        
+                                        printf("\nFLUXO DE AMORTIZAÇÃO (Projeção das 5 primeiras parcelas):\n");
+                                        s_dev = valor_total_financiado;    
+
+                                        for(z = 1; z <= 5 && z <= prc; z++) {
+
+                                             juros_mes = s_dev * tx_decimal;
+                                             amortizacao = vpar - juros_mes;
+                                             s_dev = s_dev - amortizacao;
+                                             printf("  Parcela %02d | Juros: R$ %7.2f | Amortização: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                   
+                                        }
+
+                                        printf("\nDeseja realizar uma nova cotação? (1) Sim | (0) Menu: ");
+                                        scanf("%d", &op3); 
+                                        if (op3 != 1) k = 1;
+                                        else system("cls");
+                                   }
+                              }
+                              u = 0;
+                         break;
+
+                         case 5:
+                              
+                              system("cls"); 
+                              printf("  ===================================================  \n");
+                              printf("                 SANTANDER BRASIL                      \n");
+                              printf("  ===================================================  \n");
+                                                  
+                              for(q = 0; q <= 100; q++) {
+                                   printf("\r[+] Sincronizando dados bancários: %d%%", q);
+                                   fflush(stdout); 
+                                   sleep(25); 
+                              }
+                              printf("\n");
+
+                              while (k != 1) { 
+                                   printf("\nSelecione a faixa de capital para enquadramento da proposta:\n");
+                                   for(z=0; z<=4; z++) {
+                                        printf("[%d] - %s\n", z + 1, fx[z]);
+                                   }
+                                   scanf(" %d", &f); 
+                                   l = lin + (f - 1); 
+
+                                   if (f < 0 || f > 4) { 
+                                        printf("Opção inválida! Tente novamente...\n"); 
+                                        continue;
+                                   }
+
+                                   printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                                   scanf("%lf", &emp);
+
+                                   printf("\nSelecione a unidade de tempo do contrato:\n");
+                                   printf("(1) Período em Meses | (0) Período em Anos\n");
+                                   scanf("%d", &op2);
+
+                                   opcao_valida = true; 
+
+                                   if (op2 == 0) { 
+                                        printf("Selecione a opção de parcelas (Anos): \n");  
+                                        for(x=0; x<=8; x++) {
+                                             printf("%d - %s\n", x + 1, parcela[x]);
+                                        }
+                                        scanf("%d", &c);
+                                        if (c == 9) {
+                                             printf("Digite quantos anos: ");
+                                             scanf("%d", &o);
+                                             prc = o * 12;
+                                        } else if (c >= 1 && c <= 8) {
+                                             prc = c * 12;
+                                        } else {
+                                             printf("Opção inválida!\n");
+                                             opcao_valida = false;
+                                        }
+                                   } else { 
+                                        printf("Selecione o número de parcelas mensais:\n");
+                                        for(h=0; h<=8; h++) {
+                                             printf("%d - %s\n", h + 1, parcela[h]);
+                                        } 
+                                        scanf("%d", &o);
+                                        
+                                        if (o >= 1 && o <= 8) {
+
+                                             prc = o * 12; 
+
+                                        } else if (o == 9) {
+
+                                             printf("Quantos meses no total? ");
+                                             scanf("%d", &prc);
+
+                                        } else {
+
+                                             opcao_valida = false;
+
+                                        }
+                                   } 
+
+                                   system("cls");
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                                   printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                                   printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf("\n Modalidade: ");
+                                   scanf("%d", &esc1);
+
+                                   switch(esc1){
+                                        case 1:
+                                             
+                                             tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                        
+                                        break;
+                                        
+                                        case 2:
+
+                                             tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                        break;
+
+                                        case 3:
+
+                                             tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                        break;
+
+                                        default: 
+
+                                             opcao_valida = false;
+
+                                        break;
+                                   }
+
+                                   if (opcao_valida) {
+
+                                        tx_decimal = tx_val / 100.0;
+                                        tac = 95.00;
+                                        iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+
+                                        if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                        valor_total_financiado = emp + iof_total + tac;
+                                        potencia = pow(1 + tx_decimal, prc);
+                                        vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                        mont = vpar * prc;
+                                        juros_totais = mont - emp;
+
+                                        srand(time(NULL));
+
+                                        id_transacao = rand() % 8999 + 1000;
+                                        sprintf(cod_seguranca, "BB-%X", id_transacao);
+
+                                        system("cls"); 
+                                        printf("  __________________________________________________  \n");
+                                        printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                        printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                        printf(" |__________________________________________________| \n");
+                                        printf(" |                                                  | \n");
+                                        printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                        printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                        printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                        printf(" |  ----------------------------------------------  | \n");
+                                        printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                        printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
+                                        printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                        printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                        printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                        printf(" |__________________________________________________| \n");
+                                        
+                                        printf("\nFLUXO DE AMORTIZAÇÃO (Projeção das 5 primeiras parcelas):\n");
+                                        s_dev = valor_total_financiado;    
+
+                                        for(z = 1; z <= 5 && z <= prc; z++) {
+
+                                             juros_mes = s_dev * tx_decimal;
+                                             amortizacao = vpar - juros_mes;
+                                             s_dev = s_dev - amortizacao;
+                                             printf("  Parcela %02d | Juros: R$ %7.2f | Amortização: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                   
+                                        }
+
+                                        printf("\nDeseja realizar uma nova cotação? (1) Sim | (0) Menu: ");
+                                        scanf("%d", &op3); 
+                                        if (op3 != 1) k = 1;
+                                        else system("cls");
+                                   }
+                              }
+                              u = 0;
+                         break;
+
+                         case 6:
+                              
+                              system("cls"); 
+                              printf("  ===================================================  \n");
+                              printf("                   BANCO INTER                         \n");
+                              printf("  ===================================================  \n");
+                              
+                              for(q = 0; q <= 100; q++) {
+                                   printf("\r[+] Sincronizando dados bancários: %d%%", q);
+                                   fflush(stdout); 
+                                   sleep(25); 
+                              }
+                              printf("\n");
+
+                              while (k != 1) { 
+                                   printf("\nSelecione a faixa de capital para enquadramento da proposta:\n");
+                                   for(z=0; z<=4; z++) {
+                                        printf("[%d] - %s\n", z + 1, fx[z]);
+                                   }
+                                   scanf(" %d", &f); 
+                                   l = lin + (f - 1); 
+
+                                   if (f < 0 || f > 4) { 
+                                        printf("Opção inválida! Tente novamente...\n"); 
+                                        continue;
+                                   }
+
+                                   printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                                   scanf("%lf", &emp);
+
+                                   printf("\nSelecione a unidade de tempo do contrato:\n");
+                                   printf("(1) Período em Meses | (0) Período em Anos\n");
+                                   scanf("%d", &op2);
+
+                                   opcao_valida = true; 
+
+                                   if (op2 == 0) { 
+                                        printf("Selecione a opção de parcelas (Anos): \n");  
+                                        for(x=0; x<=8; x++) {
+                                             printf("%d - %s\n", x + 1, parcela[x]);
+                                        }
+                                        scanf("%d", &c);
+                                        if (c == 9) {
+                                             printf("Digite quantos anos: ");
+                                             scanf("%d", &o);
+                                             prc = o * 12;
+                                        } else if (c >= 1 && c <= 8) {
+                                             prc = c * 12;
+                                        } else {
+                                             printf("Opção inválida!\n");
+                                             opcao_valida = false;
+                                        }
+                                   } else { 
+                                        printf("Selecione o número de parcelas mensais:\n");
+                                        for(h=0; h<=8; h++) {
+                                             printf("%d - %s\n", h + 1, parcela[h]);
+                                        } 
+                                        scanf("%d", &o);
+                                        
+                                        if (o >= 1 && o <= 8) {
+
+                                             prc = o * 12; 
+
+                                        } else if (o == 9) {
+
+                                             printf("Quantos meses no total? ");
+                                             scanf("%d", &prc);
+
+                                        } else {
+
+                                             opcao_valida = false;
+
+                                        }
+                                   } 
+
+                                   system("cls");
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                                   printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                                   printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf("\n Modalidade: ");
+                                   scanf("%d", &esc1);
+
+                                   switch(esc1){
+                                        case 1:
+                                             
+                                             tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                        
+                                        break;
+                                        
+                                        case 2:
+
+                                             tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                        break;
+
+                                        case 3:
+
+                                             tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                        break;
+
+                                        default: 
+
+                                             opcao_valida = false;
+
+                                        break;
+                                   }
+
+                                   if (opcao_valida) {
+
+                                        tx_decimal = tx_val / 100.0;
+                                        tac = 95.00;
+                                        iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+
+                                        if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                        valor_total_financiado = emp + iof_total + tac;
+                                        potencia = pow(1 + tx_decimal, prc);
+                                        vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                        mont = vpar * prc;
+                                        juros_totais = mont - emp;
+
+                                        srand(time(NULL));
+
+                                        id_transacao = rand() % 8999 + 1000;
+                                        sprintf(cod_seguranca, "BB-%X", id_transacao);
+
+                                        system("cls"); 
+                                        printf("  __________________________________________________  \n");
+                                        printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                        printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                        printf(" |__________________________________________________| \n");
+                                        printf(" |                                                  | \n");
+                                        printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                        printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                        printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                        printf(" |  ----------------------------------------------  | \n");
+                                        printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                        printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
+                                        printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                        printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                        printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                        printf(" |__________________________________________________| \n");
+                                        
+                                        printf("\nFLUXO DE AMORTIZAÇÃO (Projeção das 5 primeiras parcelas):\n");
+                                        s_dev = valor_total_financiado;    
+
+                                        for(z = 1; z <= 5 && z <= prc; z++) {
+
+                                             juros_mes = s_dev * tx_decimal;
+                                             amortizacao = vpar - juros_mes;
+                                             s_dev = s_dev - amortizacao;
+                                             printf("  Parcela %02d | Juros: R$ %7.2f | Amortização: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                   
+                                        }
+
+                                        printf("\nDeseja realizar uma nova cotação? (1) Sim | (0) Menu: ");
+                                        scanf("%d", &op3); 
+                                        if (op3 != 1) k = 1;
+                                        else system("cls");
+                                   }
+                              }
+                              u = 0;
+                         break;
+
+                         case 7:
+                              
+                              system("cls"); 
+                              printf("  ===================================================  \n");
+                              printf("                    PAGBANK                            \n");
+                              printf("  ===================================================  \n");
+                              
+                              for(q = 0; q <= 100; q++) {
+                                   printf("\r[+] Sincronizando dados bancários: %d%%", q);
+                                   fflush(stdout); 
+                                   sleep(25); 
+                              }
+                              printf("\n");
+
+                              while (k != 1) { 
+                                   printf("\nSelecione a faixa de capital para enquadramento da proposta:\n");
+                                   for(z=0; z<=4; z++) {
+                                        printf("[%d] - %s\n", z + 1, fx[z]);
+                                   }
+                                   scanf(" %d", &f); 
+                                   l = lin + (f - 1); 
+
+                                   if (f < 0 || f > 4) { 
+                                        printf("Opção inválida! Tente novamente...\n"); 
+                                        continue;
+                                   }
+
+                                   printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                                   scanf("%lf", &emp);
+
+                                   printf("\nSelecione a unidade de tempo do contrato:\n");
+                                   printf("(1) Período em Meses | (0) Período em Anos\n");
+                                   scanf("%d", &op2);
+
+                                   opcao_valida = true; 
+
+                                   if (op2 == 0) { 
+                                        printf("Selecione a opção de parcelas (Anos): \n");  
+                                        for(x=0; x<=8; x++) {
+                                             printf("%d - %s\n", x + 1, parcela[x]);
+                                        }
+                                        scanf("%d", &c);
+                                        if (c == 9) {
+                                             printf("Digite quantos anos: ");
+                                             scanf("%d", &o);
+                                             prc = o * 12;
+                                        } else if (c >= 1 && c <= 8) {
+                                             prc = c * 12;
+                                        } else {
+                                             printf("Opção inválida!\n");
+                                             opcao_valida = false;
+                                        }
+                                   } else { 
+                                        printf("Selecione o número de parcelas mensais:\n");
+                                        for(h=0; h<=8; h++) {
+                                             printf("%d - %s\n", h + 1, parcela[h]);
+                                        } 
+                                        scanf("%d", &o);
+                                        
+                                        if (o >= 1 && o <= 8) {
+
+                                             prc = o * 12; 
+
+                                        } else if (o == 9) {
+
+                                             printf("Quantos meses no total? ");
+                                             scanf("%d", &prc);
+
+                                        } else {
+
+                                             opcao_valida = false;
+
+                                        }
+                                   } 
+
+                                   system("cls");
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                                   printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                                   printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf("\n Modalidade: ");
+                                   scanf("%d", &esc1);
+
+                                   switch(esc1){
+                                        case 1:
+                                             
+                                             tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                        
+                                        break;
+                                        
+                                        case 2:
+
+                                             tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                        break;
+
+                                        case 3:
+
+                                             tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                        break;
+
+                                        default: 
+
+                                             opcao_valida = false;
+
+                                        break;
+                                   }
+
+                                   if (opcao_valida) {
+
+                                        tx_decimal = tx_val / 100.0;
+                                        tac = 95.00;
+                                        iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+
+                                        if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                        valor_total_financiado = emp + iof_total + tac;
+                                        potencia = pow(1 + tx_decimal, prc);
+                                        vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                        mont = vpar * prc;
+                                        juros_totais = mont - emp;
+
+                                        srand(time(NULL));
+
+                                        id_transacao = rand() % 8999 + 1000;
+                                        sprintf(cod_seguranca, "BB-%X", id_transacao);
+
+                                        system("cls"); 
+                                        printf("  __________________________________________________  \n");
+                                        printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                        printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                        printf(" |__________________________________________________| \n");
+                                        printf(" |                                                  | \n");
+                                        printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                        printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                        printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                        printf(" |  ----------------------------------------------  | \n");
+                                        printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                        printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
+                                        printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                        printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                        printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                        printf(" |__________________________________________________| \n");
+                                        
+                                        printf("\nFLUXO DE AMORTIZAÇÃO (Projeção das 5 primeiras parcelas):\n");
+                                        s_dev = valor_total_financiado;    
+
+                                        for(z = 1; z <= 5 && z <= prc; z++) {
+
+                                             juros_mes = s_dev * tx_decimal;
+                                             amortizacao = vpar - juros_mes;
+                                             s_dev = s_dev - amortizacao;
+                                             printf("  Parcela %02d | Juros: R$ %7.2f | Amortização: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                   
+                                        }
+
+                                        printf("\nDeseja realizar uma nova cotação? (1) Sim | (0) Menu: ");
+                                        scanf("%d", &op3); 
+                                        if (op3 != 1) k = 1;
+                                        else system("cls");
+                                   }
+                              }
+                              u = 0;
+                         break;
+
+                         case 8:
+                              
+                              system("cls"); 
+                              printf("  ===================================================  \n");
+                              printf("                     NUBANK                            \n");
+                              printf("  ===================================================  \n");
+                              
+                              for(q = 0; q <= 100; q++) {
+                                   printf("\r[+] Sincronizando dados bancários: %d%%", q);
+                                   fflush(stdout); 
+                                   sleep(25); 
+                              }
+                              printf("\n");
+
+                              while (k != 1) { 
+                                   printf("\nSelecione a faixa de capital para enquadramento da proposta:\n");
+                                   for(z=0; z<=4; z++) {
+                                        printf("[%d] - %s\n", z + 1, fx[z]);
+                                   }
+                                   scanf(" %d", &f); 
+                                   l = lin + (f - 1); 
+
+                                   if (f < 0 || f > 4) { 
+                                        printf("Opção inválida! Tente novamente...\n"); 
+                                        continue;
+                                   }
+
+                                   printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                                   scanf("%lf", &emp);
+
+                                   printf("\nSelecione a unidade de tempo do contrato:\n");
+                                   printf("(1) Período em Meses | (0) Período em Anos\n");
+                                   scanf("%d", &op2);
+
+                                   opcao_valida = true; 
+
+                                   if (op2 == 0) { 
+                                        printf("Selecione a opção de parcelas (Anos): \n");  
+                                        for(x=0; x<=8; x++) {
+                                             printf("%d - %s\n", x + 1, parcela[x]);
+                                        }
+                                        scanf("%d", &c);
+                                        if (c == 9) {
+                                             printf("Digite quantos anos: ");
+                                             scanf("%d", &o);
+                                             prc = o * 12;
+                                        } else if (c >= 1 && c <= 8) {
+                                             prc = c * 12;
+                                        } else {
+                                             printf("Opção inválida!\n");
+                                             opcao_valida = false;
+                                        }
+                                   } else { 
+                                        printf("Selecione o número de parcelas mensais:\n");
+                                        for(h=0; h<=8; h++) {
+                                             printf("%d - %s\n", h + 1, parcela[h]);
+                                        } 
+                                        scanf("%d", &o);
+                                        
+                                        if (o >= 1 && o <= 8) {
+
+                                             prc = o * 12; 
+
+                                        } else if (o == 9) {
+
+                                             printf("Quantos meses no total? ");
+                                             scanf("%d", &prc);
+
+                                        } else {
+
+                                             opcao_valida = false;
+
+                                        }
+                                   } 
+
+                                   system("cls");
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                                   printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                                   printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf("\n Modalidade: ");
+                                   scanf("%d", &esc1);
+
+                                   switch(esc1){
+                                        case 1:
+                                             
+                                             tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                        
+                                        break;
+                                        
+                                        case 2:
+
+                                             tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                        break;
+
+                                        case 3:
+
+                                             tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                        break;
+
+                                        default: 
+
+                                             opcao_valida = false;
+
+                                        break;
+                                   }
+
+                                   if (opcao_valida) {
+
+                                        tx_decimal = tx_val / 100.0;
+                                        tac = 95.00;
+                                        iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+
+                                        if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                        valor_total_financiado = emp + iof_total + tac;
+                                        potencia = pow(1 + tx_decimal, prc);
+                                        vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                        mont = vpar * prc;
+                                        juros_totais = mont - emp;
+
+                                        srand(time(NULL));
+
+                                        id_transacao = rand() % 8999 + 1000;
+                                        sprintf(cod_seguranca, "BB-%X", id_transacao);
+
+                                        system("cls"); 
+                                        printf("  __________________________________________________  \n");
+                                        printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                        printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                        printf(" |__________________________________________________| \n");
+                                        printf(" |                                                  | \n");
+                                        printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                        printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                        printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                        printf(" |  ----------------------------------------------  | \n");
+                                        printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                        printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
+                                        printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                        printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                        printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                        printf(" |__________________________________________________| \n");
+                                        
+                                        printf("\nFLUXO DE AMORTIZAÇÃO (Projeção das 5 primeiras parcelas):\n");
+                                        s_dev = valor_total_financiado;    
+
+                                        for(z = 1; z <= 5 && z <= prc; z++) {
+
+                                             juros_mes = s_dev * tx_decimal;
+                                             amortizacao = vpar - juros_mes;
+                                             s_dev = s_dev - amortizacao;
+                                             printf("  Parcela %02d | Juros: R$ %7.2f | Amortização: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                   
+                                        }
+
+                                        printf("\nDeseja realizar uma nova cotação? (1) Sim | (0) Menu: ");
+                                        scanf("%d", &op3); 
+                                        if (op3 != 1) k = 1;
+                                        else system("cls");
+                                   }
+                              }
+                              u = 0;
+                         break;
+
+                         case 9:
+                              
+                              system("cls"); 
+                              printf("  ===================================================  \n");
+                              printf("                  MERCADO PAGO                         \n");
+                              printf("  ===================================================  \n");
+                              
+                              for(q = 0; q <= 100; q++) {
+                                   printf("\r[+] Sincronizando dados bancários: %d%%", q);
+                                   fflush(stdout); 
+                                   sleep(25); 
+                              }
+                              printf("\n");
+
+                              while (k != 1) { 
+                                   printf("\nSelecione a faixa de capital para enquadramento da proposta:\n");
+                                   for(z=0; z<=4; z++) {
+                                        printf("[%d] - %s\n", z + 1, fx[z]);
+                                   }
+                                   scanf(" %d", &f); 
+                                   l = lin + (f - 1); 
+
+                                   if (f < 0 || f > 4) { 
+                                        printf("Opção inválida! Tente novamente...\n"); 
+                                        continue;
+                                   }
+
+                                   printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                                   scanf("%lf", &emp);
+
+                                   printf("\nSelecione a unidade de tempo do contrato:\n");
+                                   printf("(1) Período em Meses | (0) Período em Anos\n");
+                                   scanf("%d", &op2);
+
+                                   opcao_valida = true; 
+
+                                   if (op2 == 0) { 
+                                        printf("Selecione a opção de parcelas (Anos): \n");  
+                                        for(x=0; x<=8; x++) {
+                                             printf("%d - %s\n", x + 1, parcela[x]);
+                                        }
+                                        scanf("%d", &c);
+                                        if (c == 9) {
+                                             printf("Digite quantos anos: ");
+                                             scanf("%d", &o);
+                                             prc = o * 12;
+                                        } else if (c >= 1 && c <= 8) {
+                                             prc = c * 12;
+                                        } else {
+                                             printf("Opção inválida!\n");
+                                             opcao_valida = false;
+                                        }
+                                   } else { 
+                                        printf("Selecione o número de parcelas mensais:\n");
+                                        for(h=0; h<=8; h++) {
+                                             printf("%d - %s\n", h + 1, parcela[h]);
+                                        } 
+                                        scanf("%d", &o);
+                                        
+                                        if (o >= 1 && o <= 8) {
+
+                                             prc = o * 12; 
+
+                                        } else if (o == 9) {
+
+                                             printf("Quantos meses no total? ");
+                                             scanf("%d", &prc);
+
+                                        } else {
+
+                                             opcao_valida = false;
+
+                                        }
+                                   } 
+
+                                   system("cls");
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                                   printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                                   printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf("\n Modalidade: ");
+                                   scanf("%d", &esc1);
+
+                                   switch(esc1){
+                                        case 1:
+                                             
+                                             tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                        
+                                        break;
+                                        
+                                        case 2:
+
+                                             tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                        break;
+
+                                        case 3:
+
+                                             tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                        break;
+
+                                        default: 
+
+                                             opcao_valida = false;
+
+                                        break;
+                                   }
+
+                                   if (opcao_valida) {
+
+                                        tx_decimal = tx_val / 100.0;
+                                        tac = 95.00;
+                                        iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+
+                                        if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                        valor_total_financiado = emp + iof_total + tac;
+                                        potencia = pow(1 + tx_decimal, prc);
+                                        vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                        mont = vpar * prc;
+                                        juros_totais = mont - emp;
+
+                                        srand(time(NULL));
+
+                                        id_transacao = rand() % 8999 + 1000;
+                                        sprintf(cod_seguranca, "BB-%X", id_transacao);
+
+                                        system("cls"); 
+                                        printf("  __________________________________________________  \n");
+                                        printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                        printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                        printf(" |__________________________________________________| \n");
+                                        printf(" |                                                  | \n");
+                                        printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                        printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                        printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                        printf(" |  ----------------------------------------------  | \n");
+                                        printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                        printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
+                                        printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                        printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                        printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                        printf(" |__________________________________________________| \n");
+                                        
+                                        printf("\nFLUXO DE AMORTIZAÇÃO (Projeção das 5 primeiras parcelas):\n");
+                                        s_dev = valor_total_financiado;    
+
+                                        for(z = 1; z <= 5 && z <= prc; z++) {
+
+                                             juros_mes = s_dev * tx_decimal;
+                                             amortizacao = vpar - juros_mes;
+                                             s_dev = s_dev - amortizacao;
+                                             printf("  Parcela %02d | Juros: R$ %7.2f | Amortização: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                   
+                                        }
+
+                                        printf("\nDeseja realizar uma nova cotação? (1) Sim | (0) Menu: ");
+                                        scanf("%d", &op3); 
+                                        if (op3 != 1) k = 1;
+                                        else system("cls");
+                                   }
+                              }
+                              u = 0;
+                         break;
+
+                         case 10:
+                              
+                              system("cls"); 
+                              printf("  ===================================================  \n");
+                              printf("                    PICPAY                             \n");
+                              printf("  ===================================================  \n");
+                                                  
+                              for(q = 0; q <= 100; q++) {
+                                   printf("\r[+] Sincronizando dados bancários: %d%%", q);
+                                   fflush(stdout); 
+                                   sleep(25); 
+                              }
+                              printf("\n");
+
+                              while (k != 1) { 
+                                   printf("\nSelecione a faixa de capital para enquadramento da proposta:\n");
+                                   for(z=0; z<=4; z++) {
+                                        printf("[%d] - %s\n", z + 1, fx[z]);
+                                   }
+                                   scanf(" %d", &f); 
+                                   l = lin + (f - 1); 
+
+                                   if (f < 0 || f > 4) { 
+                                        printf("Opção inválida! Tente novamente...\n"); 
+                                        continue;
+                                   }
+
+                                   printf("\nInforme o valor líquido solicitado (Principal): R$ ");
+                                   scanf("%lf", &emp);
+
+                                   printf("\nSelecione a unidade de tempo do contrato:\n");
+                                   printf("(1) Período em Meses | (0) Período em Anos\n");
+                                   scanf("%d", &op2);
+
+                                   opcao_valida = true; 
+
+                                   if (op2 == 0) { 
+                                        printf("Selecione a opção de parcelas (Anos): \n");  
+                                        for(x=0; x<=8; x++) {
+                                             printf("%d - %s\n", x + 1, parcela[x]);
+                                        }
+                                        scanf("%d", &c);
+                                        if (c == 9) {
+                                             printf("Digite quantos anos: ");
+                                             scanf("%d", &o);
+                                             prc = o * 12;
+                                        } else if (c >= 1 && c <= 8) {
+                                             prc = c * 12;
+                                        } else {
+                                             printf("Opção inválida!\n");
+                                             opcao_valida = false;
+                                        }
+                                   } else { 
+                                        printf("Selecione o número de parcelas mensais:\n");
+                                        for(h=0; h<=8; h++) {
+                                             printf("%d - %s\n", h + 1, parcela[h]);
+                                        } 
+                                        scanf("%d", &o);
+                                        
+                                        if (o >= 1 && o <= 8) {
+
+                                             prc = o * 12; 
+
+                                        } else if (o == 9) {
+
+                                             printf("Quantos meses no total? ");
+                                             scanf("%d", &prc);
+
+                                        } else {
+
+                                             opcao_valida = false;
+
+                                        }
+                                   } 
+
+                                   system("cls");
+                                   printf("  __________________________________________________  \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |          SELECIONE A MODALIDADE DE CREDITO       | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |  [1] Credito Pessoal (Taxas Flexiveis)           | \n");
+                                   printf(" |  [2] Financiamento (Bens e Servicos)             | \n");
+                                   printf(" |  [3] Credito Consignado (Desconto em Folha)      | \n");
+                                   printf(" |                                                  | \n");
+                                   printf(" |__________________________________________________| \n");
+                                   printf("\n Modalidade: ");
+                                   scanf("%d", &esc1);
+
+                                   switch(esc1){
+                                        case 1:
+                                             
+                                             tx_val = tx[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+                                        
+                                        break;
+                                        
+                                        case 2:
+
+                                             tx_val = tx_financiamento[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+                                        break;
+
+                                        case 3:
+
+                                             tx_val = tx_consignado[l][(prc/12)-1 > 8 ? 8 : (prc/12)-1];
+
+
+                                        break;
+
+                                        default: 
+
+                                             opcao_valida = false;
+
+                                        break;
+                                   }
+
+                                   if (opcao_valida) {
+
+                                        tx_decimal = tx_val / 100.0;
+                                        tac = 95.00;
+                                        iof_total = emp * (0.0038 + (0.000082 * 30 * prc));
+
+                                        if (iof_total > emp * 0.0338) iof_total = emp * 0.0338;
+                                        
+                                        valor_total_financiado = emp + iof_total + tac;
+                                        potencia = pow(1 + tx_decimal, prc);
+                                        vpar = valor_total_financiado * ((tx_decimal * potencia) / (potencia - 1));
+                                        mont = vpar * prc;
+                                        juros_totais = mont - emp;
+
+                                        srand(time(NULL));
+
+                                        id_transacao = rand() % 8999 + 1000;
+                                        sprintf(cod_seguranca, "BB-%X", id_transacao);
+
+                                        system("cls"); 
+                                        printf("  __________________________________________________  \n");
+                                        printf(" |             PROTOCOLO DE SIMULACAO               | \n");
+                                        printf(" |  Ref: %-4d-2026        TOKEN: %-15s    | \n", id_transacao, cod_seguranca);
+                                        printf(" |__________________________________________________| \n");
+                                        printf(" |                                                  | \n");
+                                        printf(" |  VALOR DO CREDITO:            R$ %10.2f      | \n", emp);
+                                        printf(" |  TRIBUTOS E TARIFAS (CET):    R$ %10.2f      | \n", iof_total + tac);
+                                        printf(" |  MONTANTE TOTAL FINANCIADO:   R$ %10.2f      | \n", valor_total_financiado);
+                                        printf(" |  ----------------------------------------------  | \n");
+                                        printf(" |  PRAZO DO CONTRATO:            %3d PRESTACOES    | \n", prc);
+                                        printf(" |  TAXA DE JUROS NOMINAL:            %6.2f %% p.m. | \n", tx_val);
+                                        printf(" |  VALOR DA PARCELA FIXA:       R$ %10.2f      | \n", vpar);
+                                        printf(" |  TOTAL A PAGAR (FINAL):       R$ %10.2f      | \n", mont);
+                                        printf(" |  CUSTO FINANCEIRO TOTAL:      R$ %10.2f      | \n", juros_totais);
+                                        printf(" |__________________________________________________| \n");
+                                        
+                                        printf("\nFLUXO DE AMORTIZAÇÃO (Projeção das 5 primeiras parcelas):\n");
+                                        s_dev = valor_total_financiado;    
+
+                                        for(z = 1; z <= 5 && z <= prc; z++) {
+
+                                             juros_mes = s_dev * tx_decimal;
+                                             amortizacao = vpar - juros_mes;
+                                             s_dev = s_dev - amortizacao;
+                                             printf("  Parcela %02d | Juros: R$ %7.2f | Amortização: R$ %7.2f\n", z, juros_mes, amortizacao);
+                                   
+                                        }
+
+                                        printf("\nDeseja realizar uma nova cotação? (1) Sim | (0) Menu: ");
+                                        scanf("%d", &op3); 
+                                        if (op3 != 1) k = 1;
+                                        else system("cls");
+                                   }
+                              }
+                              u = 0;
+                         break;
+
+                         default: 
+                         
+                              printf("Opção inválida!");
+                              u = 1;
+                         break;
+                    }    
+               }
+
+               while (m = 1){
+                    printf("Deseja continuar?");
+                    printf("(1) Sim | (0) Não(finalizar)");
+                    sacanf("%d", &fim);
+
+                    if (fim = 1){
+
+                         m <- 1
+
+                    }else if(fim = 0){
+
+                         m <- 1
+                         i <- 1
+
+                    } else{
+
+                    printf("Opção invalida!");
+                    
+                    }
+               }
+          }
+     }
+
