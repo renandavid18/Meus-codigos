@@ -36,7 +36,7 @@
         p--;
       
         
-        printf("%s %s sua idade é: %d \n", periodo[p], nome, id);
+        printf("%s %s sua idade você tem %d anos! \n", periodo[p], nome, id);
 
         system("pause");
     
