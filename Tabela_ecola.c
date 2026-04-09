@@ -19,7 +19,7 @@
             fgets(alunos[i], 40, stdin);
             fflush(stdin);
 
-            printf("Agora me informa a nota no 1º bimestre do aluno nº: %d\n", i+1);
+            printf("Agora me informa a nota no %dº bimestre do aluno nº: %d\n", i+1, i+1);
             scanf("%lf", nota);
 
         }
