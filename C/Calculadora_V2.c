@@ -484,12 +484,12 @@
                         if (k != 0){
                         
                             printf("Me informa o primeiro valor por favor! \n");
-                            scanf("%lf", &a);
+                            scanf("%lf", &x);
 
                             ex = exp(a);
 
                             printf("O resultado de e^%.2f e: %.4f \n", x, ex);
-
+                            z = ex;
                             i = 0;
                             system("pause");
                     
@@ -517,7 +517,7 @@
                             loga = log(a);
 
                             printf("O resultado de log(%f) é: %.4f \n", a, loga);
-
+                            z = loga;
                             i = 0;
                             system("pause");
                     
@@ -545,7 +545,7 @@
                             loga10 = log10(a);
 
                             printf("O resultado de log10(%f) é: %.4f \n", a, loga10);
-
+                            z = loga10;
                             i = 0;
                             system("pause");
                     
@@ -578,7 +578,7 @@
                             hip = hypot(x, y);
 
                             printf("O A hypotenusa é: %.4f \n", hip);
-
+                            z = hip;
                             i = 0;
                             system("pause");
                     
@@ -613,7 +613,7 @@
                                 rad = graus * (M_PI / 180.0);
 
                                 printf("O radiano desse %.2f graus é: %.4f \n", graus, rad);
-
+                                z = rad;
                                 i = 0;
                                 system("pause");
 
@@ -626,7 +626,7 @@
                                 rad = graus * (M_PI / 180.0);
 
                                 printf("%.2f graus equivalem a %.4f radianos. \n", graus, rad);
-
+                                z = graus;
                                 i = 0;
                                 system("pause");
 
@@ -649,6 +649,5 @@
                 }
             }
         }
-
         return 0;
     }
