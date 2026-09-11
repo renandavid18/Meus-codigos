@@ -1,0 +1,11 @@
+	package Test_Carro;
+
+	import Carro.carro;
+	
+	public class test01{
+		public static void main(String[] args) {
+			
+			carro[] listadecarro = new carro[10];
+			
+		}
+	}

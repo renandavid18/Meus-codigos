@@ -1,0 +1,11 @@
+{"logTime": "0827/184137", "session": "START"}
+{"logTime": "0827/184146", "session": "END"}
+{"logTime": "0827/184146", "session": "START"}
+{"logTime": "0827/184221", "session": "END"}
+{"logTime": "0827/190115", "session": "START"}
+{"logTime": "0827/215053", "session": "END"}
+{"logTime": "0903/123931", "session": "START"}
+{"logTime": "0903/123931", "level": "INFO", "location": "chrome\\browser\\sessions\\session_service_log.cc:326 EdgeLogSessionServiceMessage", "message": "SessionServiceEvent: kStart - {\r\n   \"crashed\": false,\r\n   \"type\": 0\r\n}\r\n"}
+{"logTime": "0903/123959", "session": "END"}
+{"logTime": "0907/154124", "session": "START"}
+{"logTime": "0907/154124", "level": "INFO", "location": "chrome\\browser\\sessions\\session_service_log.cc:326 EdgeLogSessionServiceMessage", "message": "SessionServiceEvent: kStart - {\r\n   \"crashed\": false,\r\n   \"type\": 0\r\n}\r\n"}
