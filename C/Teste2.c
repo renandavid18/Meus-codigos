@@ -4,12 +4,11 @@
 
 int main(void){
     int i, x, y, k, j;
-
     setlocale(LC_CTYPE, "Portuguese");
-    printf("Aqui iremos ver a tabela de 1 a X (sendo x um valor real inteiro)\n Complete a frase: \n você verá a sequêcia de números de 1 à ");
+    printf("Aqui iremos ver a tabela de 1 a X (sendo x um valor real inteiro)\n Complete a frase: \n vocÃª verÃ¡ a sequÃªcia de nÃºmeros de 1 Ã  ");
     scanf("%d", &x);
 
-    printf("\n Complete será ignorado os valores que são multiplo de ");
+    printf("\n Complete serÃ¡ ignorado os valores que sÃ£o multiplo de ")
     scanf("%d", &y);
 
     for(i=1;i<=x;i++){
@@ -22,10 +21,9 @@ int main(void){
 
         }
 
-        printf("%dº valor: %d \n", i, j);
+        printf("%dÂº valor: %d", i, j);
         k = j;
+
     }
-    
-    system("pause");
 }
     
